@@ -1,0 +1,93 @@
+// <!-- <mdb:mork:z v="1.4"/> -->
+< <(a=c)> // (f=iso-8859-1)
+  (B8=storeToken)(B9=ns:msg:db:row:scope:ops:all)
+  (BA=ns:msg:db:table:kind:ops)(BB=op)(BC=msgKey)(BD=opFlags)
+  (BE=newFlags)(BF=moveDest)(C0=ns:msg:db:row:scope:pending:all)
+  (C1=ns:msg:db:table:kind:pending)(C2=account)(C3=dateReceived)
+  (C4=ProtoThreadFlags)(C5=gloda-id)(C6=gloda-dirty)(C7=junkscore)
+  (C8=X-Identity-Key)(C9=MRUTime)(CA=X-GM-MSGID)(CB=X-GM-THRID)
+  (CC=X-GM-LABELS)(CD=keywords)(CE=numDeletedHeaders)(CF=origURIs)
+  (D0=queuedDisposition)(D1=preview)(D2=sortType)(D3=sortOrder)
+  (D4=viewFlags)(D5=viewType)(D6=columnStates)(D7=sortColumns)
+  (D8=customSortCol)(D9=imageSize)(DA=recipient_names)
+  (DB=notAPhishMessage)(80=ns:msg:db:row:scope:msgs:all)(81=subject)
+  (82=sender)(83=message-id)(84=references)(85=recipients)(86=date)
+  (87=size)(88=flags)(89=priority)(8A=label)(8B=statusOfset)(8C=numLines)
+  (8D=ccList)(8E=bccList)(8F=msgThreadId)(90=threadId)(91=threadFlags)
+  (92=threadNewestMsgDate)(93=children)(94=unreadChildren)
+  (95=threadSubject)(96=msgCharSet)(97=ns:msg:db:table:kind:msgs)
+  (98=ns:msg:db:table:kind:thread)(99=ns:msg:db:table:kind:allthreads)
+  (9A=ns:msg:db:row:scope:threads:all)(9B=threadParent)(9C=threadRoot)
+  (9D=msgOffset)(9E=offlineMsgSize)
+  (9F=ns:msg:db:row:scope:dbfolderinfo:all)
+  (A0=ns:msg:db:table:kind:dbfolderinfo)(A1=numMsgs)(A2=numNewMsgs)
+  (A3=folderSize)(A4=expungedBytes)(A5=folderDate)(A6=highWaterKey)
+  (A7=mailboxName)(A8=UIDValidity)(A9=totPendingMsgs)
+  (AA=unreadPendingMsgs)(AB=expiredMark)(AC=version)(AD=forceReparse)
+  (AE=fixedBadRefThreading)(AF=onlineName)(B0=useServerRetention)
+  (B1=highestModSeq)(B2=imapFlags)(B3=charSetOverride)(B4=charSet)
+  (B5=highestRecordedUID)(B6=folderName)(B7=pseudoHdr)>
+<(BC=4)(81=0)>[4:m(^9C=4)(^90=4)(^92=0)(^91=0)(^93=0)(^94=0)]
+<(F8=5)>[5:m(^9C=5)(^90=5)(^92=0)(^91=0)(^93=0)(^94=0)]
+<(86=6)>[6:m(^9C=6)(^90=6)(^92=0)(^91=0)(^93=0)(^94=0)]
+
+<(80=1)(82=[Gmail]/Drafts)(83=8082414)(F4=7757)(85=ee00)(118=88ee)(115
+    =1499959607)(11A=c)(F1=12)(ED=)(F2
+    ={"threadCol":{"visible":true},"attachmentCol":{"visible":true},"flaggedCo\
+l":{"visible":true},"subjectCol":{"visible":true},"unreadButtonColHeader":{"vi\
+sible":true},"senderCol":{"visible":false},"recipientCol":{"visible":false},"c\
+orrespondentCol":{"visible":true},"junkStatusCol":{"visible":true},"dateCol":{\
+"visible":true},"locationCol":{"visible":false}})>
+{1:^9F {(k^A0:c)(s=9)} 
+  [1(^AC=1)(^AD=0)(^AE=1)(^AF^82)(^88^83)(^A7^82)(^B0=1)(^B1^F4)(^B2^85)
+    (^A8=6)(^B5=6)(^A1=0)(^A6=6)(^A9=0)(^A4^118)(^A2=0)(^C9^115)(^CE=c)
+    (^D2=12)(^D3=1)(^D4=0)(^D5=0)(^D7=)(^D6^F2)]}
+
+@$${58{@
+@$$}58}@
+
+@$${59{@
+@$$}59}@
+
+@$${5A{@
+<(11B=90)>[6:^80(^C5=90)]
+@$$}5A}@
+
+@$${5B{@
+@$$}5B}@
+
+@$${5C{@
+@$$}5C}@
+
+@$${5E{@
+{-1:^80 {(k^97:c)(s=9)} }
+{-FFFFFFFD:^9A {(k^99:c)(s=9)} }
+@$$}5E}@
+
+@$${5F{@
+@$$}5F}@
+
+@$${61{@
+<(11C=8111)>[1:^9F(^B1^11C)]
+{-1:^B9 {(k^BA:c)(s=9)} }
+@$$}61}@
+
+@$${63{@
+<(11D=1500046049)>[1:^9F(^C9^11D)]
+@$$}63}@
+
+@$${64{@
+<(11E=8887)>[1:^9F(^B1^11E)]
+@$$}64}@
+
+@$${66{@
+<(11F=1500062506)>[1:^9F(^C9^11F)]
+@$$}66}@
+
+@$${67{@
+<(120=9344)>[1:^9F(^B1^120)]
+@$$}67}@
+
+@$${69{@
+<(121=50470)>[1:^9F(^B1^121)]
+@$$}69}@

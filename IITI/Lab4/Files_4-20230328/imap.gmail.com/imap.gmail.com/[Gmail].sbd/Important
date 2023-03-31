@@ -1,0 +1,3176 @@
+From - Fri Jul  7 10:38:23 2017
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+Delivered-To: rockhammerfister@gmail.com
+Received: by 10.182.155.66 with SMTP id vu2csp923479obb;
+        Wed, 5 Jul 2017 07:56:51 -0700 (PDT)
+X-Received: by 10.55.182.4 with SMTP id g4mr36349260qkf.111.1499266611145;
+        Wed, 05 Jul 2017 07:56:51 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1499266611; cv=none;
+        d=google.com; s=arc-20160816;
+        b=DGBgA1Y0uQIvBcA8XQiVcaMajRVavQWooqvCEBLANuSMyJmBfJ5YDXjOcNyMpRZ0Y/
+         qgZXm9B7XEDUd6Wcgb8kMdsKop0tvAnxWKpVWdOlkl1Sb8vLzRsY2VGN/svvCMwLjU+H
+         pS3c+aorF2iD3OlQhRSiXauYd1OYcHzQ09Zza2b1i9oruulrhs09Q6ajvg5pU+0z/DIv
+         e2zIn7RTSdjqZT3YoodzRNSPo2+4WVRFwfEzFBPvDG0oIET6lCQmqkUXnTNyut62iLta
+         rheHdsS/B0OETAy8Y7+ife5ReJ3CB7nJQAcTfOyCNXYrbK3jvEVDtZ3r0WMFNGgPSqdW
+         qPeQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:message-id:feedback-id:reply-to:date:mime-version
+         :dkim-signature:arc-authentication-results;
+        bh=ijbuaS3m4C2rfPX/ErLJtghKsfiSssR4yzKOnoaTajM=;
+        b=fNAqfcez+yt2G91/fKyGih0P38MenGPRtHqhDLYlGYNeQwma0fj6P9AXgjhHjSsUTI
+         YMQGt9bl09eAhKw25xLmrZm0KpA/lJRsQbO6E07tAXCS7CoZ+mITHdWEyF2IunzQKSzi
+         jtVu6dKuM1/Ic3ylzQFumaueZQ3yE49v0Kf+5yB5SvGvcf3KMzdbRLy3lXYlovdCMGfX
+         yAg/mbem8FcVg/hR5A3+xkAmTy9na6cApZGCb/maW2I8twZnq8vtGnDAoESO7ocZTFMd
+         ovdi4eZsrQtLFPR2wiM1lAa2glBMQf4caQX/Y9+sxn0mw8BBcS/iM9ja+M25zYpuA3Js
+         RFMA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.b=gdFMlQXm;
+       spf=pass (google.com: domain of 3k_5cwqwkegwkxni-xybozviqyyqvo.mywbymurkwwobpscdobqwksv.myw@scoutcamp.bounces.google.com designates 2607:f8b0:400d:c0d::248 as permitted sender) smtp.mailfrom=3K_5cWQwKEGwKXNi-XYbOZViQYYQVO.MYWbYMURKWWObPScdObQWKSV.MYW@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <3K_5cWQwKEGwKXNi-XYbOZViQYYQVO.MYWbYMURKWWObPScdObQWKSV.MYW@scoutcamp.bounces.google.com>
+Received: from mail-qt0-x248.google.com (mail-qt0-x248.google.com. [2607:f8b0:400d:c0d::248])
+        by mx.google.com with ESMTPS id e125si14412228qkc.352.2017.07.05.07.56.43
+        for <rockhammerfister@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 05 Jul 2017 07:56:51 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3k_5cwqwkegwkxni-xybozviqyyqvo.mywbymurkwwobpscdobqwksv.myw@scoutcamp.bounces.google.com designates 2607:f8b0:400d:c0d::248 as permitted sender) client-ip=2607:f8b0:400d:c0d::248;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.b=gdFMlQXm;
+       spf=pass (google.com: domain of 3k_5cwqwkegwkxni-xybozviqyyqvo.mywbymurkwwobpscdobqwksv.myw@scoutcamp.bounces.google.com designates 2607:f8b0:400d:c0d::248 as permitted sender) smtp.mailfrom=3K_5cWQwKEGwKXNi-XYbOZViQYYQVO.MYWbYMURKWWObPScdObQWKSV.MYW@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Received: by mail-qt0-x248.google.com with SMTP id o3so92138057qto.15
+        for <rockhammerfister@gmail.com>; Wed, 05 Jul 2017 07:56:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20161025;
+        h=mime-version:date:reply-to:feedback-id:message-id:subject:from:to;
+        bh=ijbuaS3m4C2rfPX/ErLJtghKsfiSssR4yzKOnoaTajM=;
+        b=gdFMlQXm8v/qacy2JVbRgGCvEzV2hCwjRWYMFmW4LvQy3ZhjF2ldt6wWxmJ14Vmvkw
+         iFWhQlvtgiZiBI3eqTc5zC4wdifplYVAXSqq0+yeD9od9iZKFA3o0hv8ugkQto+IPY+C
+         +sZKrl69/SszGfsZ384uf2hxHJ1yNsBHfrFrsZelh+vIPwNegOVsHhwGNihAPalXJnjG
+         zm6j/SjZ/fLxavoX+a3GW/bXNbLsWYYdEWeVZ7sjQ3GPMYMnlqvX8Hc5PE+VpUjn3B6E
+         YQxZxvH9b+AnCUcZawPGBSQSvI2DbaktJRnuQyO22+LckPmOC8OaNmxbMCrPlg+JhPvF
+         6l7Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:date:reply-to:feedback-id
+         :message-id:subject:from:to;
+        bh=ijbuaS3m4C2rfPX/ErLJtghKsfiSssR4yzKOnoaTajM=;
+        b=GhmMHOrlyWyJ+GglMOPq2cZ2gALj5quyVdR3GVO5lsAggppxc4FG3mjy6l0tM5m8NZ
+         OSV8bfqO16SdNxjWT+wHx7uVhejN2TtqY5QL99EGID5I73XQHjbqXXYmDWfc5sT/Ppin
+         FAYDW1tFZbdwWz8HNLRMv9yyonLXS6teI/hayK6Ybu8P/BcNNT3Z/PVcUfH8cN4AjwXY
+         rIXedYjeDcf2n4BVLeT4qEEqu45fOJqdXcAJFQjehTIseM6Ah8Q/nJ6GHYV92OrQ82wk
+         LgBi3Wd4QKPpOY9xcMBQu6nLdlh5U/vn5+W6tlnjXHSVqoaoh+y/J5B9WMEaWXabQBui
+         cYmQ==
+X-Gm-Message-State: AIVw112MoL3KngbkWjEBJPDBw8j9etI2lYSoG6klwUPQjODytA7Fl3KP
+	9eUXBNLnYk9pxIg=
+MIME-Version: 1.0
+X-Received: by 10.200.0.148 with SMTP id c20mr23134580qtg.24.1499266603725;
+ Wed, 05 Jul 2017 07:56:43 -0700 (PDT)
+Date: Wed, 05 Jul 2017 07:56:43 -0700
+Reply-To: Andy from Google <andy-noreply@google.com>
+X-Google-Id: SP#6395862091563008
+Feedback-ID: Len:D1862017:C377502:gamma
+X-Notifications: GAMMA:<58cb54f3b366ee61.1499266602891.100052732.377502.en.912b6f9ddd976b56@google.com>
+Message-ID: <58cb54f3b366ee61.1499266602891.100052732.377502.en.912b6f9ddd976b56@google.com>
+Subject: Rock, welcome to your new Google Account
+From: Andy from Google <andy-noreply@google.com>
+To: rockhammerfister@gmail.com
+Content-Type: multipart/alternative; boundary="f403045eed6c56b6eb05539335dc"
+X-Antivirus: AVG (VPS 170706-0, 07/06/2017), Inbound message
+X-Antivirus-Status: Clean
+
+--f403045eed6c56b6eb05539335dc
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+SGkgUm9jaywNCg0KSeKAmW0gc28gZ2xhZCB5b3UgZGVjaWRlZCB0byB0cnkgb3V0IEdtYWlsLiBI
+ZXJlIGFyZSBhIGZldyB0aXBzIHRvIGdldCB5b3UgdXAgIA0KYW5kIHJ1bm5pbmcgZmFzdC4NCg0K
+LS0tLS0tLS0NCg0KR21haWwgIA0KPGh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vYXBwc2VydmUvbWt0
+L3AvQ3UyMEVWUzdkTFh5WG45NEhkbEZzQ2k3cExSU3ItU1FZWFlxQXY3WkhjeXNKaHJzQkZ3V0gt
+YXhSc3VZNXlPSVJlblhtcUpabXF4QjhBc0VEYXYydjRZWU5aRlc5V2toa3NWRUl3Q1ZMWGxONFFR
+RnB1VnJ0TkxwSnVWNkVxZTU4ejQ0N1hhR1BGbVQwUjBCX0QtM2pIeDZKNVNmS2c9PT4NCg0KR21h
+aWwgb24gdGhlIGdvDQoNCiAgV2l0aCBHbWFpbCBmb3IgQW5kcm9pZCAgDQo8aHR0cHM6Ly93d3cu
+Z29vZ2xlLmNvbS9hcHBzZXJ2ZS9ta3QvcC9wN1RHRzFoUkloTUhWMmlVT3FNWnlyV0tjRFhMaEts
+MEMxbHVXTFNnQktUNHF4WVFSYWVqbzFyQ1VRMVcyYkdweVBEN2RIdlp2UmV2S3BiQWlCLTdsWFll
+X05YQWo3WnNrbjJlY2dEQldPUHJPanFoOGpNaXdmczN3SUFPYnVrZWtQTFdPa2dCeFM5U2lhZjBZ
+cWJrbEpjcXN3Y1R2dVRBRFpxN1pkOXREWXlkQ2JSRlRVM3lSWV9yYzg5RDB1SmE+ICANCmFuZCBp
+T1MgIA0KPGh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vYXBwc2VydmUvbWt0L3AvMWtWSTBIdW40SVFl
+RDhxOHZFd1BNTDYxRDROTkl3djJHTHZxNWdxV1pzMDF5MHIyNXZVd1c1dXVKOXVaQldEUE5TNGxE
+TGVmT3ZwcVo4UkQwUHJoTXI0R2xqd0FqdXdoOXFBbVdvUEt4MGxIcG5kQVdpTWtrczBCYWhzbmxi
+ekJrX0UwQzlxZnJ5a3Rrd25CdzZUT1FxdDUxaW89PiwgIA0KeW91IGdldCByZWFsLXRpbWUgbm90
+aWZpY2F0aW9ucyBzbyB5b3UgZG9uJ3QgbWlzcyBpbXBvcnRhbnQgZW1haWxzLg0KDQotLS0tLS0t
+LQ0KDQpEcml2ZSAgDQo8aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9hcHBzZXJ2ZS9ta3QvcC9XX1NE
+Ry1WUXNXVnJ3VnVYcE5pMFdDRWZ5VHVfT2VvSkdZLWtIQzZac0lrbE9pbE5tdTZSbnk1dU9XYndO
+VUJ3MzJpYkhZSTFvd2lZc2JmVmVqbTZsSExENW52MlJDNmdUVmZUVlVyM29VZHBnOWxMajdFZkpM
+NUR1OTNobkV3ekhfSThqNm4xbmlNPT4NCg0KVGhlIGJlc3Qgb2YgR29vZ2xlDQoNCldoZW4geW91
+IHNpZ24gdXAgZm9yIEdtYWlsIHlvdSBnZXQgYSBHb29nbGUgQWNjb3VudCAgDQo8aHR0cHM6Ly93
+d3cuZ29vZ2xlLmNvbS9hcHBzZXJ2ZS9ta3QvcC9haks2U0dyc1RxN0FTdlB4cDIyMExkcmVYUVVm
+RjE4YWNVUHZnUDZ2MExYZUlid3BXaG1Cd3FQV1ZPUkVyVHNkdEx5ZDBjNE5tRE8zTkgxRU4wWXZW
+bjRmWlJYcHByc29zZFN3MFRqWTBmUHh2Rm9lVnpDVVc4OFhUaVB3YjRuN2pQbDNVWGtuRkxZRThJ
+QjMybFZOMkRrekgzWVo+ICANCnRoYXQgZ2l2ZXMgeW91IGFjY2VzcyB0byBsb3RzIG9mIEdvb2ds
+ZSBzdHVmZiBsaWtlIDE1R0Igb2YgZnJlZSBzdG9yYWdlIGluICANCkRyaXZlICANCjxodHRwczov
+L3d3dy5nb29nbGUuY29tL2FwcHNlcnZlL21rdC9wLzFKYTlDUEN4RGVtR00xdVZ5OTlTYVZjSHF6
+ZDc0bVBJY2pmNDdKVDltRmVwZ1E2UXlyMUNjUUNITzUyUWV1bTRPTzJ4c3RHSC1MMzZJMlNyVDFO
+Z1o2djRQT3k5VGhUN0p6ek1lOTg3ZF9mWUVEWk1rN29xcU1yWGlOMHZ6OGpya0c2Yk1RM3BhLTBn
+Pi4gIA0KQ2hlY2sgb3V0IG1vcmUgdGlwcyAgDQo8aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9hcHBz
+ZXJ2ZS9ta3QvcC9Kd3lZelI5QWdDQS1lVkZqNWg3M0gtM1IwbmEwekNhTmpuUzhzaWdLdGhwM1Nv
+NHNhRk12S1h3ZXB3enEtOVhPRVlrbHc3Z2VwUXIzNnNzcXdxWnVPc2s0dUtXNVlsd3FtS0pXZzEt
+LTl6UjBUQTNERlNmQkhxVktnTm1HOXlzanFIWHZyQzNhS1FWQzhnPT0+Lg0KDQotLS0tLS0tLQ0K
+DQpUcnVzdCBzaGllbGQgIA0KPGh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vYXBwc2VydmUvbWt0L3Av
+TFMtVmlqQkVibXJQbk4zbmlDS3hwU1F0QU9BLTZSLVYwZmpYejlyWmx4Yl9sSkx5dUF6ZmFXU3dk
+QjRxeU9wclVTQ3NTclRJX09VQmpSTU1hU1RnRUJmaDRJU181WmJwZk4tVHpUMm5XdHpnZjlPZmhI
+aER3RU9XRjlOXzhaZWFZN1lrajctOWxRVGFIUUpwPg0KDQpZb3XigJlyZSBpbiBjb250cm9sDQoN
+CkNob29zZSB3aGF04oCZcyByaWdodCBmb3IgeW91LiBZb3UgY2FuIHJldmlldyBhbmQgYWRqdXN0
+IHlvdXIgcHJpdmFjeSBhbmQgIA0Kc2VjdXJpdHkgc2V0dGluZ3MgYW55IHRpbWUgYXQgTXkgQWNj
+b3VudCAgDQo8aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9hcHBzZXJ2ZS9ta3QvcC9iOVNteWNUWXV5
+TnBRa1BqZGlmOEVKRDByRDNXdVRxZS1ERzJYeVZXcUVITGtrUWNaSTl3R2VFci04cUcwRUhLSURQ
+NXRPYWN2bGU1LVhhS1Y5WnB3M3J5eEoxM1pMY0RkR2RPblpvT2NWT3ctWFBtMEoza013Y3FvUTdp
+MHZza2dSajRqbFhtWW5oOTY3Nm10cjNaWkE9PT4uDQoNCi0tLS0tLS0tDQoNClJlcGxpZXMgdG8g
+dGhpcyBlbWFpbCBhcmVu4oCZdCBtb25pdG9yZWQsIGJ1dCBpZiB5b3UgaGF2ZSBhIHF1ZXN0aW9u
+IHRyeSB0aGUgIA0KSGVscCBDZW50ZXIgIA0KPGh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vYXBwc2Vy
+dmUvbWt0L3AvZDlVSk5OTE9sVVdnVWVNdWYyZzFtemZuekVpdkRmWnFPMGJfOHJueVlEcTNWTGtC
+LXhONGFMaG4wMnFCdkZlQk1XR25xd1N1MFA1UjhNSFdNLVZ6T21aUGU2dmE3UTdvc3laazE3UkJu
+NnEyWEJtOVVEa2pOeTI3a0xOdnkxZ05ZOTJPVC1LRHRnPT0+ICANCm9yIHBvc3QgaXQgdG8gdGhl
+IEdtYWlsIEhlbHAgRm9ydW0gIA0KPGh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vYXBwc2VydmUvbWt0
+L3AvQnJRcms2R1UwQXRSUlpsSHNYb3B0SmEybWhaOVkwV0tuS09BUUwyU095UE95d0xtNUhFUFRv
+cjF1alE1S2pTX3dtLUtCM1ZiSWppdGhjcUdZRE50ekx1YzB4U0M5TFFacWx1VFJjZ2Jycm1vZGE5
+SW9iNERZU0JrNy1nd1hLZ045UmN5cHNmTmdxMEJlelFyOWR6R3Z2ZjBsYXJZYk52TzNNajhldkI3
+LUlqWGZ3clpTdkRKM05HbjZoWUI2dkYtdDBvazd5eE9kRGNRb1hLcVBkZFhBajZVbkJWcVVKSG4y
+R0Ruc3NGUmVHU1FmWjA9PiAgDQp3aGVyZSBteSB0ZWFtIGFuZCBvdGhlciBleHBlcnQgdXNlcnMg
+YW5zd2VyIHF1ZXN0aW9ucy4NCg0KDQpFbmpveSB5b3VyIG5ldyBhY2NvdW50LA0KDQpBbmR5IAkN
+Cg0KDQpHbWFpbCBDb21tdW5pdHkgTWFuYWdlcg0KDQoNCktlZXAgaW4gdG91Y2g6IFR3aXR0ZXIg
+IA0KPGh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vYXBwc2VydmUvbWt0L3AvMWlETzNUdE9SV0daYXdS
+dF9rTTJpZlUwWmxrcm91WE9QNHFIUmtJTW1RcTNjR0R5QWM3UWVDcGkzWjVfSHUybmN5bWZ4UXM1
+VDQxVWtvNi1VRG9SeDR5Y1NqQl8tMUl4M19rdnp2SHd6SGRkUVRwMUlkZ1g4ZWRGVGFhYm9McDNZ
+QTh1a0VHR0k4UmdwSnVwRWpNPT4sICANCkZhY2Vib29rICANCjxodHRwczovL3d3dy5nb29nbGUu
+Y29tL2FwcHNlcnZlL21rdC9wL1lSMWlyQmdpMEc3SG9DSVpjZEtuSWYzNmU3N1Q4eEExZXBtNkR1
+UmlsT0RrUDdhREtCT2haV0JoYnZXcjluWWJDeDgtSmNxcE5ramJDRE5Kc2h3YWVOTDNTZGF0SWpI
+YTFzOVFXOHRPVkhWbVZsRmZOUVI0ZTRWZ1ZILWUzOFNPTUxNQktndnYtZ1lvZ2c9PT4sICANCkdv
+b2dsZSsgIA0KPGh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vYXBwc2VydmUvbWt0L3AveC1ySVAzdUZI
+aS1ZUHNNQ3lKWEMzcXRFUXprODJwVEItejNRbS1Ld3EwSDl2cVZWdzNkSkVmRWZWYVQ3RktwX3Z4
+Sk5Fc2JOa2xiSVVPWlVndzRaak4tcVo3dng2bXFQRUVxX2hLWDBGSE16WDRub0FlU1Y2OWMzUnN2
+REh2TTdIWlhUN19kUE80NFo0cVJNYXc9PT4NCg0KDQpHZXQgR21haWwgb24gdGhlIGdvLg0KDQpH
+b29nbGUgUGxheSAgDQo8aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9hcHBzZXJ2ZS9ta3QvcC90c1lE
+VzJtU3ZzSzVpczdpWGdGdzRBV2ZQSHFuZjBjcmYzNUxWazZjUTN3YXZDQXhBTTlWLXBMQ3BGQ2Iy
+RFNlRHppVHF4UzB0U1JRMTZxZWpXdDFlREppUHF0TUFIWmpZOVBYOXREZU9YempRMkFldGdZSHNQ
+UG5uWl9UTzBKZVNfUXVMWExSZUR1QnVDTGNGV3ZXODZrR2hmc0t1dEZTcUdheWljQVJBLUpiVUFJ
+SG5vd0ZQaWNqbkZ3bFBrNFo+DQoNCkFwcCBTdG9yZSAgDQo8aHR0cHM6Ly93d3cuZ29vZ2xlLmNv
+bS9hcHBzZXJ2ZS9ta3QvcC9rRXhmNm5JRVhWejFjRk0tak44ZzNDcWV0bncyVW1ZNUwwTy01VFhB
+OXMzNGNLZTl2RTIxR3g0RjBlTnJtMDZuYVk3MzlaMWFycDBITzRwVUJGRHBqYjRjUkFXZExaemNq
+dktvcGJVOWtnRm9GblUtTjdja2VyekRteWptTGNlTy1mLTdQWGFWa1Q5Zk1RLVFHTE4yOTBSb1kw
+ND0+DQoNCg0KR29vZ2xlICANCjxodHRwczovL3d3dy5nb29nbGUuY29tL2FwcHNlcnZlL21rdC9w
+L2FCN2lsbWpMZ0p4Yy00RG44a0tyTm5oMXdMT0R5MU9keW1ENVhiSXZrZWR1VkNFdlhxaG5vaEpL
+MXRkTnhMOHFhVTlHSHBxYnlDaHUxNU90ZjRpUllBYjV1dE55WDlPVjBjN3AwQzhNeW4zQTZBUThq
+ZExYdFNpU21iOEtvR0ZpTTcxb1Q2SXp2dz09Pg0KDQoNCkdvb2dsZSBTZWFyY2ggIA0KPGh0dHBz
+Oi8vd3d3Lmdvb2dsZS5jb20vYXBwc2VydmUvbWt0L3AvRzFxVV9hYlpXYlBqU0Q0LUdCcHRrMFlX
+VHNwWm92RmluOV9jUnd1dDJSaDJxd1dQLU5UZkxxQ243ZTM3MGdtak1Qbm9JYy0xQkpTUHVFSTVx
+MHNjb2RKZHkyQzYzTzNsenVwU05hUHAxVjhSS09INVBGczFRVFFreVJUemZ5LTI2anJ5ZFRDQ2pR
+PT0+DQoNCkdtYWlsICANCjxodHRwczovL3d3dy5nb29nbGUuY29tL2FwcHNlcnZlL21rdC9wL0pZ
+MVRlSzJGM2NGdVY5QUh6dVFGRGNrMTJRQWNMR3dPeUtVQzM1Z1BfUXlIUC03ZFJJNzBHZk1RcDc4
+TmtsVE0wNFhjTGx4eTNnUnJ6ZlZaV3V5TExUNVNkZ195NzRVc1FwYXpvdktQeHVmLVAxZFhSUW5v
+SmVoSjVfLXNKcXM5OVBzRHluZU42NkgtQjhpVWI2Q3hUNHhQUHNVNDJRcz0+DQoNCk1hcHMgIA0K
+PGh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vYXBwc2VydmUvbWt0L3AvX29NVU5DR3JzVEJ0VG9TR0wy
+ekJoU0xVakNaRy1kVGdNZ1lHQ0NCaG0zWGRSbWNjbTdaVWpsMVViTnJERmRveXhXWVVST3BOYUcz
+Q0RPNWpnZXhmMFVrUEJaY1ZJdlZhdlNmbENtT1RVUHNzdmV6czcwVUNqelZHblN4Tm90dDdtcktH
+ODk4aXhWQ0NQZz09Pg0KDQpZb3VUdWJlICANCjxodHRwczovL3d3dy5nb29nbGUuY29tL2FwcHNl
+cnZlL21rdC9wL0ZlVWk1Y1p3Z3BLdFVnMVlJbHZNYXZIRmh1N1FJaENFSFo4N05SMkVRQ1VXSTJ3
+VzkwbTB6eUNxOEZIVF9yaWpsRUNvaXRpSHB3UFVIaUdVX0c3NEtkdHBDMzkxUE9IMnFnNGtOdFMy
+SE45azF4cnVfTzhQZ2FRaUdWNXhmanprZWJYVGVBPT0+DQoNCkRyaXZlICANCjxodHRwczovL3d3
+dy5nb29nbGUuY29tL2FwcHNlcnZlL21rdC9wL2h3WnYtWUNQVlBfeElyWWpBWEZTdGJPcUVsd1Ju
+SXhVbTRFcjhsRzFaUU82S0l2N0Y1S1ZUNGN4amo5WmdOUm9RZkVhZ1ZmZ2ZyazJnTE5TR0ZsLU9E
+R3MzM2piUG8xbzdWUy14di1oaW42NXA2bGJKUEF3eHNCXzZkaDA1OGtFdHowXzE5Y0xDYW53Pg0K
+DQpQaG90b3MgIA0KPGh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vYXBwc2VydmUvbWt0L3AvcFYyNEV3
+bTYzRjdYdFo5eHpETlpRcTZIeWh0OXlGR2lXYUJqVk05SHoxY1NZRk5yRVdKUE1STlFxbUhjUndP
+Y1dfcGI5aDBLSHgwbTNMTURoSlM1UTVGNjR3aHp0UUxlMEFTN1UybElnRmUxYUtvRlZlWjZRRXlq
+dnI0cmd4UDVzVFFDM0dhLVZSQjN4QT09Pg0KDQpQbGF5ICANCjxodHRwczovL3d3dy5nb29nbGUu
+Y29tL2FwcHNlcnZlL21rdC9wL0FPUTNXRUQxX2tIVW5xeUtEMDBCaXNsbzUzZHJtZWM0VE5Jd3V1
+Z2RrbnBFZmhOWmpRMWlMMF9rczROcnREX3RtR1BqMjlJMkNnWE5oSGR5LTZ0b1NGMmJXTnA5VS0x
+WlJ2Qks0Y01aSWhYXzFzTThSVGNJaTA3dlFnTTlILUd2ejBoRU9zU0hVNUFCai1nPT4NCg0KQ2hy
+b21lICANCjxodHRwczovL3d3dy5nb29nbGUuY29tL2FwcHNlcnZlL21rdC9wL1ZlY3RiSEhUMHgx
+ZFBTU1dIUnl0WWN3dGh4eUJpOG9rcmJwMHVjbXVzYV9jcDVaY2x6VExqUkJPNzVNWXdWRTJONzBj
+UnZMN09YbGJ3SXBRQy1IdFZFUUJGTEZ2SkZaakNyUjE0YnFYaDl2S2tJY2NfVWhsQzh2d21SYmxR
+Q0lwNnNBRzhJQkxlTG5LZDBYdGpITT0+DQoNCg0KwqkgMjAxNyBHb29nbGUgSW5jLiAxNjAwIEFt
+cGhpdGhlYXRyZSBQYXJrd2F5LCBNb3VudGFpbiBWaWV3LCBDQSA5NDA0Mw0KVGhpcyBlbWFpbCB3
+YXMgc2VudCB0byB5b3UgYmVjYXVzZSB5b3UgY3JlYXRlZCBhIEdvb2dsZSBBY2NvdW50Lg0K
+--f403045eed6c56b6eb05539335dc
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1, maximum-scale=3D1">
+    <!--<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1.0"/>
+    <meta name=3D"viewport" content=3D"target-densitydpi=3Ddevice-dpi"/> --=
+>
+    <title>Get more from your new Google Account</title>
+</head>
+<body style=3D"padding: 0; margin: 0;">
+    <style>
+@media screen{@font-face{font-family:'Open Sans';font-style:normal;font-wei=
+ght:300;src:local('Open Sans Light'),local('OpenSans-Light'),url(http://fon=
+ts.gstatic.com/s/opensans/v9/DXI1ORHCpsQm3Vp6mXoaTRampu5_7CjHW5spxoeN3Vs.wo=
+ff2) format('woff2'),url(http://fonts.gstatic.com/s/opensans/v9/DXI1ORHCpsQ=
+m3Vp6mXoaTaRDOzjiPcYnFooOUGCOsRk.woff) format('woff')}}body{padding:0;margi=
+n:0}@media only screen and (max-width:520px){-webkit-text-size-adjust:100%}
+</style>
+<center>
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" wi=
+dth=3D"520" bgcolor=3D"#ffffff" style=3D"background: #ffffff; max-width: 52=
+0px; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; -=
+ms-text-size-adjust: 100%;">
+  <tr>
+    <td width=3D"20" bgcolor=3D"#eeeeee" style=3D"background: #eeeeee;"></t=
+d>
+		<td width=3D"480" style=3D"-webkit-font-smoothing: antialiased; -webkit-t=
+ext-size-adjust: none; -ms-text-size-adjust: 100%;">
+			<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">
+				<tr>
+					<td height=3D"20" bgcolor=3D"#eeeeee" style=3D"background: #eeeeee;"><=
+/td>
+				</tr>
+				<tr>
+					<td>
+  				 <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"cen=
+ter" width=3D"100%" style=3D"border-bottom: 1px solid #eeeeee;">
+            <tr>
+    			    <td height=3D"49"></td>
+             </tr>
+             <tr>
+      		    <td align=3D"center" class=3D"whom" style=3D'color:#4285f4; fon=
+t-family:"Roboto", OpenSans, "Open Sans", Arial, sans-serif; font-size:32px=
+; font-weight:300; line-height:46px; margin:0; padding:0 25px 0 25px; text-=
+align:center'>Hi Rock,</td>
+             </tr>
+             <!--[if !mso]><!-- -->
+              <tr>
+        	      <td height=3D"20"></td>
+              </tr>
+            <!--<![endif]-->
+           =20
+            <!--[if mso]>
+              <tr>
+                <td height=3D"7">&nbsp;</td>
+              </tr>
+            <![endif]-->
+            <tr>
+      		    <td align=3D"center" class=3D"parasec" style=3D'color:#757575; =
+font-family:"Roboto", OpenSans, "Open Sans", Arial, sans-serif; font-size:1=
+7px; font-weight:300; line-height:24px; margin:0; padding:0 25px 0 25px; te=
+xt-align:center'> I=E2=80=99m so glad you decided to try out Gmail.  Here a=
+re a few tips to get you up and running fast.</td>
+             </tr>
+             <tr>
+      		    <td height=3D"30">
+
+</td>
+             </tr>
+            =20
+  				 </table>
+					</td>
+				</tr>
+        <tr>
+          <td>
+            <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" width=3D"100%" style=3D"border-bottom: 1px solid #eeeeee;">
+            <tr>
+      		    <td height=3D"32"></td>
+             </tr>
+             <tr>
+      		    <td align=3D"center">
+              <a href=3D"https://www.google.com/appserve/mkt/p/Cu20EVS7dLXy=
+Xn94HdlFsCi7pLRSr-SQYXYqAv7ZHcysJhrsBFwWH-axRsuY5yOIRenXmqJZmqxB8AsEDav2v4Y=
+YNZFW9WkhksVEIwCVLXlN4QQFpuVrtNLpJuV6Eqe58z447XaGPFmT0R0B_D-3jHx6J5SfKg=3D=
+=3D" target=3D"_blank" style=3D"color:#4285f4; text-decoration:underline">
+              <img width=3D"64" border=3D"0" src=3D"https://services.google=
+.com/fh/files/emails/owe_gmail_128dp.png" alt=3D"Gmail" style=3D"width: 64p=
+x; text-align: center; border: none;">
+              </a>
+              </td>
+             </tr>
+             <tr>
+      		    <td height=3D"15"></td>
+             </tr>
+             <tr>
+      		    <td align=3D"center" class=3D"paraheading" style=3D'color:#7575=
+75; font-family:"Roboto", OpenSans, "Open Sans", Arial, sans-serif; font-si=
+ze:24px; font-weight:300; line-height:33px; margin:0; padding:0 25px 0 25px=
+; text-align:center'>Gmail on the go</td>
+             </tr>
+             <tr>
+      		    <td height=3D"4" style=3D"line-height: 4px; font-size: 4px;"></=
+td>
+             </tr>
+             <tr>
+               <td align=3D"center" class=3D"para" style=3D'color:#757575; =
+font-family:"Roboto", OpenSans, "Open Sans", Arial, sans-serif; font-size:1=
+7px; font-weight:300; line-height:24px; margin:0; padding:0 25px 0 25px; te=
+xt-align:center'> With Gmail for <a href=3D"https://www.google.com/appserve=
+/mkt/p/p7TGG1hRIhMHV2iUOqMZyrWKcDXLhKl0C1luWLSgBKT4qxYQRaejo1rCUQ1W2bGpyPD7=
+dHvZvRevKpbAiB-7lXYe_NXAj7Zskn2ecgDBWOPrOjqh8jMiwfs3wIAObukekPLWOkgBxS9Siaf=
+0YqbklJcqswcTvuTADZq7Zd9tDYydCbRFTU3yRY_rc89D0uJa" target=3D"_blank" style=
+=3D"color:#4285f4; text-decoration:underline">Android</a> and <a href=3D"ht=
+tps://www.google.com/appserve/mkt/p/1kVI0Hun4IQeD8q8vEwPML61D4NNIwv2GLvq5gq=
+WZs01y0r25vUwW5uuJ9uZBWDPNS4lDLefOvpqZ8RD0PrhMr4GljwAjuwh9qAmWoPKx0lHpndAWi=
+Mkks0BahsnlbzBk_E0C9qfryktkwnBw6TOQqt51io=3D" target=3D"_blank" style=3D"co=
+lor:#4285f4; text-decoration:underline">iOS</a>, you get real-time notifica=
+tions so you don't miss important emails.</td>
+             </tr>
+             <tr>
+        	    <td height=3D"30"></td>
+             </tr>
+           </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" width=3D"100%" style=3D"border-bottom: 1px solid #eeeeee;">
+            <tr>
+        	    <td height=3D"32"></td>
+             </tr>
+             <tr>
+      		    <td align=3D"center">
+              <a href=3D"https://www.google.com/appserve/mkt/p/W_SDG-VQsWVr=
+wVuXpNi0WCEfyTu_OeoJGY-kHC6ZsIklOilNmu6Rny5uOWbwNUBw32ibHYI1owiYsbfVejm6lHL=
+D5nv2RC6gTVfTVUr3oUdpg9lLj7EfJL5Du93hnEwzH_I8j6n1niM=3D" target=3D"_blank" =
+style=3D"color:#4285f4; text-decoration:underline">
+             <img width=3D"64" border=3D"0" src=3D"https://services.google.=
+com/fh/files/emails/owe_drive_128dp.png" alt=3D"Drive" style=3D"width: 64px=
+; text-align: center; border: none;">
+             </a>=20
+              </td>
+             </tr>
+             <tr>
+      		    <td height=3D"15"></td>
+             </tr>
+             <tr>
+      		    <td align=3D"center" class=3D"paraheading" style=3D'color:#7575=
+75; font-family:"Roboto", OpenSans, "Open Sans", Arial, sans-serif; font-si=
+ze:24px; font-weight:300; line-height:33px; margin:0; padding:0 25px 0 25px=
+; text-align:center'>The best of Google</td>
+             </tr>
+             <tr>
+      		    <td height=3D"4" style=3D"line-height: 4px; font-size: 4px;"></=
+td>
+             </tr>
+             <tr>
+               <td align=3D"center" class=3D"para" style=3D'color:#757575; =
+font-family:"Roboto", OpenSans, "Open Sans", Arial, sans-serif; font-size:1=
+7px; font-weight:300; line-height:24px; margin:0; padding:0 25px 0 25px; te=
+xt-align:center'>When you sign up for Gmail you get a <a href=3D"https://ww=
+w.google.com/appserve/mkt/p/ajK6SGrsTq7ASvPxp220LdreXQUfF18acUPvgP6v0LXeIbw=
+pWhmBwqPWVORErTsdtLyd0c4NmDO3NH1EN0YvVn4fZRXpprsosdSw0TjY0fPxvFoeVzCUW88XTi=
+Pwb4n7jPl3UXknFLYE8IB32lVN2DkzH3YZ" target=3D"_blank" style=3D"color:#4285f=
+4; text-decoration:underline;white-space:nowrap;">Google Account</a> that g=
+ives you access to lots of Google stuff like 15GB of free storage in <a hre=
+f=3D"https://www.google.com/appserve/mkt/p/1Ja9CPCxDemGM1uVy99SaVcHqzd74mPI=
+cjf47JT9mFepgQ6Qyr1CcQCHO52Qeum4OO2xstGH-L36I2SrT1NgZ6v4POy9ThT7JzzMe987d_f=
+YEDZMk7oqqMrXiN0vz8jrkG6bMQ3pa-0g" target=3D"_blank" style=3D"color:#4285f4=
+; text-decoration:underline">Drive</a>. Check out more <a href=3D"https://w=
+ww.google.com/appserve/mkt/p/JwyYzR9AgCA-eVFj5h73H-3R0na0zCaNjnS8sigKthp3So=
+4saFMvKXwepwzq-9XOEYklw7gepQr36ssqwqZuOsk4uKW5YlwqmKJWg1--9zR0TA3DFSfBHqVKg=
+NmG9ysjqHXvrC3aKQVC8g=3D=3D" target=3D"_blank" style=3D"color:#4285f4; text=
+-decoration:underline">tips</a>.</td>
+             </tr>
+             <tr>
+        	    <td height=3D"30"></td>
+             </tr>
+           </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" width=3D"100%" style=3D"border-bottom: 1px solid #eeeeee;">
+            <tr>
+              <td height=3D"32"></td>
+             </tr>
+             <tr>
+      		    <td align=3D"center">
+              <a href=3D"https://www.google.com/appserve/mkt/p/LS-VijBEbmrP=
+nN3niCKxpSQtAOA-6R-V0fjXz9rZlxb_lJLyuAzfaWSwdB4qyOprUSCsSrTI_OUBjRMMaSTgEBf=
+h4IS_5ZbpfN-TzT2nWtzgf9OfhHhDwEOWF9N_8ZeaY7Ykj7-9lQTaHQJp" target=3D"_blank=
+" style=3D"color:#4285f4; text-decoration:underline">
+             <img width=3D"60" height=3D"77" src=3D"https://services.google=
+.com/fh/files/emails/shield_logo_150_rt.png" alt=3D"Trust shield" border=3D=
+"0" style=3D"width: 60px; height: 77px; text-align: center; border: none;">
+              </a>
+              </td>
+             =20
+             </tr>
+             <tr>
+      		    <td height=3D"15"></td>
+             </tr>
+             <tr>
+      		    <td align=3D"center" class=3D"paraheading" style=3D'color:#7575=
+75; font-family:"Roboto", OpenSans, "Open Sans", Arial, sans-serif; font-si=
+ze:24px; font-weight:300; line-height:33px; margin:0; padding:0 25px 0 25px=
+; text-align:center'>You=E2=80=99re in control</td>
+             </tr>
+             <tr>
+      		    <td height=3D"4" style=3D"line-height: 4px; font-size: 4px;"></=
+td>
+             </tr>
+             <tr>
+               <td align=3D"center" class=3D"para1" style=3D'color:#757575;=
+ font-family:"Roboto", OpenSans, "Open Sans", Arial, sans-serif; font-size:=
+17px; font-weight:300; line-height:24px; margin:0; padding:0 20px 0 20px; t=
+ext-align:center'>Choose what=E2=80=99s right for you. You can review and a=
+djust your privacy and security settings any time at <a href=3D"https://www=
+.google.com/appserve/mkt/p/b9SmycTYuyNpQkPjdif8EJD0rD3WuTqe-DG2XyVWqEHLkkQc=
+ZI9wGeEr-8qG0EHKIDP5tOacvle5-XaKV9Zpw3ryxJ13ZLcDdGdOnZoOcVOw-XPm0J3kMwcqoQ7=
+i0vskgRj4jlXmYnh9676mtr3ZZA=3D=3D" target=3D"_blank" style=3D"color:#4285f4=
+; text-decoration:underline">My Account</a>.</td>
+             </tr>
+             <tr>
+        	    <td height=3D"30"></td>
+             </tr>
+           </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" width=3D"100%">
+            <tr>
+              <td height=3D"27"></td>
+             </tr>
+             <tr>
+        	    <td align=3D"center" class=3D"parasec" style=3D'color:#757575;=
+ font-family:"Roboto", OpenSans, "Open Sans", Arial, sans-serif; font-size:=
+17px; font-weight:300; line-height:24px; margin:0; padding:0 25px 0 25px; t=
+ext-align:center'>Replies to this email aren=E2=80=99t monitored, but if yo=
+u have a question try the <a href=3D"https://www.google.com/appserve/mkt/p/=
+d9UJNNLOlUWgUeMuf2g1mzfnzEivDfZqO0b_8rnyYDq3VLkB-xN4aLhn02qBvFeBMWGnqwSu0P5=
+R8MHWM-VzOmZPe6va7Q7osyZk17RBn6q2XBm9UDkjNy27kLNvy1gNY92OT-KDtg=3D=3D" targ=
+et=3D"_blank" style=3D"text-decoration:underline; color: #4285f4;">Help Cen=
+ter</a> or post it to the <a href=3D"https://www.google.com/appserve/mkt/p/=
+BrQrk6GU0AtRRZlHsXoptJa2mhZ9Y0WKnKOAQL2SOyPOywLm5HEPTor1ujQ5KjS_wm-KB3VbIji=
+thcqGYDNtzLuc0xSC9LQZqluTRcgbrrmoda9Iob4DYSBk7-gwXKgN9RcypsfNgq0BezQr9dzGvv=
+f0larYbNvO3Mj8evB7-IjXfwrZSvDJ3NGn6hYB6vF-t0ok7yxOdDcQoXKqPddXAj6UnBVqUJHn2=
+GDnssFReGSQfZ0=3D" target=3D"_blank" style=3D"color:#4285f4; text-decoratio=
+n:underline; white-space: nowrap!important;">Gmail Help Forum</a> where my =
+team and other expert users answer questions.
+
+</td>
+             </tr>
+             <tr>
+      		    <td height=3D"25"></td>
+             </tr>
+             <tr>
+      		    <td align=3D"center" class=3D"parasec" style=3D'color:#757575; =
+font-family:"Roboto", OpenSans, "Open Sans", Arial, sans-serif; font-size:1=
+7px; font-weight:300; line-height:24px; margin:0; padding:0 25px 0 25px; te=
+xt-align:center'>Enjoy your new account,</td>
+             </tr>
+            =20
+             <tr>
+        	    <td align=3D"center" style=3D"padding-top:13px; padding-bottom=
+:8px;">
+              <img border=3D"0" src=3D"https://services.google.com/fh/files=
+/emails/andy.png" alt=3D"Andy" style=3D"text-align: center; border: none;" =
+width=3D"75" height=3D"45">
+                            </td>
+             </tr>
+            =20
+            =20
+            =20
+            =20
+             <tr>
+               <td align=3D"center" class=3D"parasec" style=3D'color:#75757=
+5; font-family:"Roboto", OpenSans, "Open Sans", Arial, sans-serif; font-siz=
+e:17px; font-weight:300; line-height:24px; margin:0; padding:0 25px 0 25px;=
+ text-align:center'>
+               Gmail Community Manager
+                </td>
+             </tr>
+             <tr>
+              <td height=3D"35"></td>
+             </tr>
+             <tr>
+               <td align=3D"center" class=3D"para" style=3D'color:#757575; =
+font-family:"Roboto", OpenSans, "Open Sans", Arial, sans-serif; font-size:1=
+7px; font-weight:300; line-height:24px; margin:0; padding:0 25px 0 25px; te=
+xt-align:center'> Keep in touch: <a href=3D"https://www.google.com/appserve=
+/mkt/p/1iDO3TtORWGZawRt_kM2ifU0ZlkrouXOP4qHRkIMmQq3cGDyAc7QeCpi3Z5_Hu2ncymf=
+xQs5T41Uko6-UDoRx4ycSjB_-1Ix3_kvzvHwzHddQTp1IdgX8edFTaaboLp3YA8ukEGGI8RgpJu=
+pEjM=3D" target=3D"_blank" style=3D"color:#4285f4; text-decoration:underlin=
+e">Twitter</a>, <a href=3D"https://www.google.com/appserve/mkt/p/YR1irBgi0G=
+7HoCIZcdKnIf36e77T8xA1epm6DuRilODkP7aDKBOhZWBhbvWr9nYbCx8-JcqpNkjbCDNJshwae=
+NL3SdatIjHa1s9QW8tOVHVmVlFfNQR4e4VgVH-e38SOMLMBKgvv-gYogg=3D=3D" target=3D"=
+_blank" style=3D"color:#4285f4; text-decoration:underline">Facebook</a>, <a=
+ href=3D"https://www.google.com/appserve/mkt/p/x-rIP3uFHi-YPsMCyJXC3qtEQzk8=
+2pTB-z3Qm-Kwq0H9vqVVw3dJEfEfVaT7FKp_vxJNEsbNklbIUOZUgw4ZjN-qZ7vx6mqPEEq_hKX=
+0FHMzX4noAeSV69c3RsvDHvM7HZXT7_dPO44Z4qRMaw=3D=3D" target=3D"_blank" style=
+=3D"color:#4285f4; text-decoration:underline">Google+</a> </td>
+             </tr>
+             <tr>
+              <td height=3D"27"></td>
+             </tr>
+              <tr>
+              <td>
+                 <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" wi=
+dth=3D"100%">
+<tr>
+<td colspan=3D"3" align=3D"center" style=3D"text-align: center; font-family=
+: 'Roboto',OpenSans,'Open Sans',Arial,sans-serif; font-size: 17px; line-hei=
+ght: 24px; font-weight: 300; color: #757575;">Get Gmail on the go.
+</td>
+</tr>
+<tr>
+<td colspan=3D"3" style=3D"height:10px">
+</td>
+</tr>
+<tr>
+<td style=3D"text-align:right; line-height:10px;" width=3D"229">
+<a href=3D"https://www.google.com/appserve/mkt/p/tsYDW2mSvsK5is7iXgFw4AWfPH=
+qnf0crf35LVk6cQ3wavCAxAM9V-pLCpFCb2DSeDziTqxS0tSRQ16qejWt1eDJiPqtMAHZjY9PX9=
+tDeOXzjQ2AetgYHsPPnnZ_TO0JeS_QuLXLReDuBuCLcFWvW86kGhfsKutFSqGayicARA-JbUAIH=
+nowFPicjnFwlPk4Z" target=3D"_blank" style=3D"color:#4285f4; text-decoration=
+:underline"><img src=3D"https://services.google.com/fh/files/emails/en_gene=
+ric_rgb_wo_60.png" alt=3D"Google Play" width=3D"162" height=3D"48" style=3D=
+"max-width: none; height: 48px; width:162px; outline: none; display: block;=
+ -ms-interpolation-mode: bicubic; border-top-width: 0; border-right-width: =
+0; border-bottom-width: 0; border-left-width: 0;" align=3D"right"></a>
+</td>
+<td width=3D"21" height=3D"48" style=3D"width:21px;height:48px">=20
+</td>
+<td style=3D"text-align:left; line-height:10px;" width=3D"230">
+<a href=3D"https://www.google.com/appserve/mkt/p/kExf6nIEXVz1cFM-jN8g3Cqetn=
+w2UmY5L0O-5TXA9s34cKe9vE21Gx4F0eNrm06naY739Z1arp0HO4pUBFDpjb4cRAWdLZzcjvKop=
+bU9kgFoFnU-N7ckerzDmyjmLceO-f-7PXaVkT9fMQ-QGLN290RoY04=3D" target=3D"_blank=
+" style=3D"color:#4285f4; text-decoration:underline"><img src=3D"https://se=
+rvices.google.com/fh/files/emails/one_wel_email_itunes_icon.png" alt=3D"App=
+ Store" width=3D"162" height=3D"48" style=3D"max-width: none; width:162; he=
+ight: 48px; outline: none; display: block; -ms-interpolation-mode: bicubic;=
+ border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border=
+-left-width: 0;" align=3D"left"></a>
+</td>
+
+</tr>
+</table>
+              </td>
+
+             </tr>
+
+
+            =20
+             <tr>
+              <td height=3D"36"></td>
+
+             </tr>
+            =20
+            =20
+            =20
+            =20
+            =20
+             <tr>
+               <td align=3D"center">
+               <a href=3D"https://www.google.com/appserve/mkt/p/aB7ilmjLgJx=
+c-4Dn8kKrNnh1wLODy1OdymD5XbIvkeduVCEvXqhnohJK1tdNxL8qaU9GHpqbyChu15Otf4iRYA=
+b5utNyX9OV0c7p0C8Myn3A6AQ8jdLXtSiSmb8KoGFiM71oT6Izvw=3D=3D" target=3D"_blan=
+k" style=3D"color:#4285f4; text-decoration:underline">
+               <img width=3D"134" height=3D"46" border=3D"0" src=3D"https:/=
+/services.google.com/fh/files/emails/google_log_new.png" alt=3D"Google" sty=
+le=3D"width: 134px; height: 46px; text-align: center; border: none;">
+               </a>
+               </td>
+             </tr>
+             <tr>
+              <td height=3D"31"></td>
+             </tr>
+             <tr>
+              <td align=3D"center">
+                <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" ali=
+gn=3D"center" width=3D"405" class=3D"strip" style=3D"padding-left:4px">=20
+                  <tr>
+                    <td width=3D"32" class=3D"prod-icon" style=3D"margin:0;=
+ padding:0 0 0 0">
+                      <a href=3D"https://www.google.com/appserve/mkt/p/G1qU=
+_abZWbPjSD4-GBptk0YWTspZovFin9_cRwut2Rh2qwWP-NTfLqCn7e370gmjMPnoIc-1BJSPuEI=
+5q0scodJdy2C63O3lzupSNaPp1V8RKOH5PFs1QTQkyRTzfy-26jrydTCCjQ=3D=3D" target=
+=3D"_blank" style=3D"color:#4285f4; text-decoration:underline">
+                        <img width=3D"32" border=3D"0" src=3D"https://servi=
+ces.google.com/fh/files/emails/owe_googleg_32dp.png" alt=3D"Google Search" =
+style=3D"width: 32px; text-align: center; border: none;">
+                      </a>
+                    </td>
+                   =20
+                    <td width=3D"20" style=3D"margin:0; padding:0"></td>
+                    <td width=3D"32" class=3D"prod-icon" style=3D"margin:0;=
+ padding:0 0 0 0">
+                    <a href=3D"https://www.google.com/appserve/mkt/p/JY1TeK=
+2F3cFuV9AHzuQFDck12QAcLGwOyKUC35gP_QyHP-7dRI70GfMQp78NklTM04XcLlxy3gRrzfVZW=
+uyLLT5Sdg_y74UsQpazovKPxuf-P1dXRQnoJehJ5_-sJqs99PsDyneN66H-B8iUb6CxT4xPPsU4=
+2Qs=3D" target=3D"_blank" style=3D"color:#4285f4; text-decoration:underline=
+">
+                    <img src=3D"https://services.google.com/fh/files/emails=
+/owe-new_gmail_32dp.png" width=3D"32" alt=3D"Gmail">
+                      </a>
+                    </td>
+                   =20
+                    <td width=3D"18" style=3D"margin:0; padding:0"></td>
+                    <td width=3D"32" class=3D"prod-icon" style=3D"margin:0;=
+ padding:0 0 0 0">
+                    <a href=3D"https://www.google.com/appserve/mkt/p/_oMUNC=
+GrsTBtToSGL2zBhSLUjCZG-dTgMgYGCCBhm3XdRmccm7ZUjl1UbNrDFdoyxWYUROpNaG3CDO5jg=
+exf0UkPBZcVIvVavSflCmOTUPssvezs70UCjzVGnSxNott7mrKG898ixVCCPg=3D=3D" target=
+=3D"_blank" style=3D"color:#4285f4; text-decoration:underline">
+                    <img width=3D"32" border=3D"0" src=3D"https://services.=
+google.com/fh/files/emails/owe_maps_32dp.png" alt=3D"Maps" style=3D"width: =
+32px; text-align: center; border: none;">
+                      </a>
+                    </td>
+                   =20
+                   =20
+                    <td width=3D"22" style=3D"margin:0; padding:0"></td>
+                    <td width=3D"32" class=3D"prod-icon" style=3D"margin:0;=
+ padding:0 0 0 0">
+                    <a href=3D"https://www.google.com/appserve/mkt/p/FeUi5c=
+ZwgpKtUg1YIlvMavHFhu7QIhCEHZ87NR2EQCUWI2wW90m0zyCq8FHT_rijlECoitiHpwPUHiGU_=
+G74KdtpC391POH2qg4kNtS2HN9k1xru_O8PgaQiGV5xfjzkebXTeA=3D=3D" target=3D"_bla=
+nk" style=3D"color:#4285f4; text-decoration:underline">
+                    <img width=3D"32" border=3D"0" src=3D"https://services.=
+google.com/fh/files/emails/owe_youtube_32dp.png" alt=3D"YouTube" style=3D"w=
+idth: 32px; text-align: center; border: none; -ms-interpolation-mode: bicub=
+ic;">
+                      </a>
+                    </td>
+                   =20
+                    <td width=3D"22" style=3D"margin:0; padding:0"></td>
+                    <td width=3D"32" class=3D"prod-icon" style=3D"margin:0;=
+ padding:0 0 0 0">
+                    <a href=3D"https://www.google.com/appserve/mkt/p/hwZv-Y=
+CPVP_xIrYjAXFStbOqElwRnIxUm4Er8lG1ZQO6KIv7F5KVT4cxjj9ZgNRoQfEagVfgfrk2gLNSG=
+Fl-ODGs33jbPo1o7VS-xv-hin65p6lbJPAwxsB_6dh058kEtz0_19cLCanw" target=3D"_bla=
+nk" style=3D"color:#4285f4; text-decoration:underline">
+                    <img width=3D"32" border=3D"0" src=3D"https://services.=
+google.com/fh/files/emails/owe_drive_32dp.png" alt=3D"Drive" style=3D"width=
+: 32px; text-align: center; border: none;">
+                      </a>
+                    </td>
+                   =20
+                    <td width=3D"17" style=3D"margin:0; padding:0"></td>
+                    <td width=3D"32" class=3D"prod-icon" style=3D"margin:0;=
+ padding:0 0 0 0">
+                    <a href=3D"https://www.google.com/appserve/mkt/p/pV24Ew=
+m63F7XtZ9xzDNZQq6Hyht9yFGiWaBjVM9Hz1cSYFNrEWJPMRNQqmHcRwOcW_pb9h0KHx0m3LMDh=
+JS5Q5F64whztQLe0AS7U2lIgFe1aKoFVeZ6QEyjvr4rgxP5sTQC3Ga-VRB3xA=3D=3D" target=
+=3D"_blank" style=3D"color:#4285f4; text-decoration:underline">
+                      <img width=3D"32" border=3D"0" src=3D"https://service=
+s.google.com/fh/files/emails/owe_photos_32dp.png" alt=3D"Photos" style=3D"w=
+idth: 32px; text-align: center; border: none;">=20
+                    </a>
+                    </td>=20
+                   =20
+                    <td width=3D"16" style=3D"margin:0; padding:0"></td>
+                    <td width=3D"32" class=3D"prod-icon" style=3D"margin:0;=
+ padding:0 0 0 0">
+                      <a href=3D"https://www.google.com/appserve/mkt/p/AOQ3=
+WED1_kHUnqyKD00Bislo53drmec4TNIwuugdknpEfhNZjQ1iL0_ks4NrtD_tmGPj29I2CgXNhHd=
+y-6toSF2bWNp9U-1ZRvBK4cMZIhX_1sM8RTcIi07vQgM9H-Gvz0hEOsSHU5ABj-g=3D" target=
+=3D"_blank" style=3D"color:#4285f4; text-decoration:underline">
+                        <img width=3D"32" border=3D"0" src=3D"https://servi=
+ces.google.com/fh/files/emails/owe_play_32dp.png" alt=3D"Play" style=3D"wid=
+th: 32px; text-align: center; border: none;">=20
+                      </a>
+                    </td>                   =20
+                    <td width=3D"18" style=3D"margin:0; padding:0"></td>
+                    <td width=3D"32" class=3D"prod-icon" style=3D"margin:0;=
+ padding:0 0 0 0">
+                      <a href=3D"https://www.google.com/appserve/mkt/p/Vect=
+bHHT0x1dPSSWHRytYcwthxyBi8okrbp0ucmusa_cp5ZclzTLjRBO75MYwVE2N70cRvL7OXlbwIp=
+QC-HtVEQBFLFvJFZjCrR14bqXh9vKkIcc_UhlC8vwmRblQCIp6sAG8IBLeLnKd0XtjHM=3D" ta=
+rget=3D"_blank" style=3D"color:#4285f4; text-decoration:underline">
+                       <img width=3D"32" border=3D"0" src=3D"https://servic=
+es.google.com/fh/files/emails/owe_chrome_32dp.png" alt=3D"Chrome" style=3D"=
+width: 32px; text-align: center; border: none;">
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+             </tr>
+             <tr>
+  				<td height=3D"28"></td>
+				</tr>
+        <tr>
+          <td height=3D"19" bgcolor=3D"#eeeeee" style=3D"background: #eeeee=
+e;"></td>
+          </tr>
+             <tr>
+             <td class=3D"footer" valign=3D"middle" style=3D'background:#ee=
+e; color:#777; font-family:"Roboto", OpenSans, "Open Sans", Arial, sans-ser=
+if; font-size:10px; font-weight:300; line-height:14px; margin:0; padding:0 =
+6px 0 6px; text-align:center' align=3D"center">
+                =C2=A9 2017 Google Inc. 1600 Amphitheatre Parkway, Mountain=
+ View, CA 94043<br>This email was sent to you because you created a Google =
+Account.
+            </td>
+             </tr>
+           </table>
+          </td>
+        </tr>
+       =20
+				<tr>
+					<td height=3D"18" bgcolor=3D"#eeeeee" style=3D"background: #eeeeee;"><=
+/td>
+				</tr>
+			</table>
+		</td>
+		<td width=3D"20" bgcolor=3D"#eeeeee" style=3D"background: #eeeeee;"></td>
+	</tr>
+</table>
+<div style=3D"display:none; white-space:nowrap; font:15px courier; line-hei=
+ght:0;">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=
+ &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; &nbsp; &nbsp; &nbsp; &nbsp;
+</div>
+</center>
+<img height=3D"1" src=3D"https://www.google.com/appserve/mkt/img/uVpxge4I-e=
+pPjVHGTyYJH-IUg_YgBOxO36nf.gif" width=3D"3">
+</body>
+</html>
+
+--f403045eed6c56b6eb05539335dc--
+From - Fri Jul  7 10:38:23 2017
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+Delivered-To: rockhammerfister@gmail.com
+Received: by 10.182.155.66 with SMTP id vu2csp929545obb;
+        Wed, 5 Jul 2017 08:02:13 -0700 (PDT)
+X-Received: by 10.55.212.69 with SMTP id l66mr40523779qki.152.1499266933141;
+        Wed, 05 Jul 2017 08:02:13 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1499266933; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ylUaUuUli1wT8cfOQ9ZTaZ8bJCwp9qx+4Aiqnaa376WYibTX9h3qbNLz0jUSXjZBL1
+         IuhP3G4IGCQRDxGOTpX5CrpqVHOe3aSzfM9aphphMuuacWKcw7qDG+vBEqanjOmXBQAF
+         m03E71pPmFdfsvSwTwQqGMatptr85HKCGl0lesRCyMnePak7mib+/6mflZRGl6VrBVqc
+         sb6Bg7jqzcGS0KLNPXslvxrnIt1LK0YL/TpjeDOVf78E13JfetmoV1aV1HSomv481hRD
+         dPHHd4nRhEmfQ6Cge3O8RfCnqQRur3hFdx0SxUPyqxI58oDVrfvJ7EOYSqCi4aGQaqo7
+         9+Vg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:date:message-id:from:subject:to
+         :arc-authentication-results;
+        bh=CGTPreyQ2CNKXgCtFfCvhtnSQQ2Bi7/nZqoDwAGN/nE=;
+        b=zSOh2P+A9xTMEFHuyBlVl+w1oZTufCYglGu/jYCi8rBgCrr9UIk9SL8COun2NfrDr/
+         bn+WJ1Vry29i5hkqKC0Hn+jDuPEMjtn2YEAwPwZPmv0YxG/jqY74sYZ4pUt6pJVNZ+Pp
+         u9k2tR80ZKtwJhBN4+mrxIPa+E+gp+7OfXovY/wH7lSqIEt0OK8uh7iXQj1tudNNCuQC
+         A8GS5n5tgnxrMMvCv/LD7agET5d1Qqc87TgEsIFiXFL0+YyGZL+uJHE2O0s6fZpWfwhp
+         b8eedWzUO0q0mW6/WlzbOxhrw8ASHdCPWW2i6lHIT8BcL/pR9mWlOFX4KfBxxnRrJm1T
+         05tA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: best guess record for domain of apache@broadlandshoa.org designates 198.199.120.241 as permitted sender) smtp.mailfrom=apache@broadlandshoa.org
+Return-Path: <apache@broadlandshoa.org>
+Received: from www.broadlandshoa.org (www.broadlandshoa.org. [198.199.120.241])
+        by mx.google.com with ESMTP id b185si21005276qkf.160.2017.07.05.08.02.12
+        for <rockhammerfister@gmail.com>;
+        Wed, 05 Jul 2017 08:02:12 -0700 (PDT)
+Received-SPF: pass (google.com: best guess record for domain of apache@broadlandshoa.org designates 198.199.120.241 as permitted sender) client-ip=198.199.120.241;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: best guess record for domain of apache@broadlandshoa.org designates 198.199.120.241 as permitted sender) smtp.mailfrom=apache@broadlandshoa.org
+Received: by www.broadlandshoa.org (Postfix, from userid 48)
+	id AA5DCE0870; Wed,  5 Jul 2017 15:02:12 +0000 (UTC)
+To: Rock Hammerfist <rockhammerfister@gmail.com>
+Subject: Broadlands HOA Discussion Forum Account Confirmation Required
+X-PHP-Originating-Script: 0:Sendmail.php
+From: Broadlands HOA Forums <DoNotReply@broadlandshoa.org>
+X-To-Validate: 055ba3dc+rockhammerfister@gmail.com
+Message-Id: <df3ba2c5c5c6eb74c60d45239baf5f32185ceb9f@www.broadlandshoa.org>
+Date: Wed, 05 Jul 2017 15:02:12 +0000
+Content-Type: multipart/alternative;
+ boundary="=_4240799bb747973509b7125e46817a2c"
+MIME-Version: 1.0
+X-Antivirus: AVG (VPS 170706-0, 07/06/2017), Inbound message
+X-Antivirus-Status: Clean
+
+--=_4240799bb747973509b7125e46817a2c
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Rock Hammerfist,=0A=0AIn order to complete your registration at Broadlan=
+ds HOA Discussion Forum, you need to confirm your account by following t=
+he link below.=0A=0Ahttp://www.broadlandshoa.org/hoaforum/index.php?acco=
+unt-confirmation/9186/email&c=3DkIi4hbvAgezNFV5B=0A=0AThanks for registe=
+ring,=0ABroadlands HOA Discussion Forum
+
+--=_4240799bb747973509b7125e46817a2c
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html lang=3D"en-US" dir=3D"LTR">=0A<head>=0A=09<meta charset=3D"UTF-8"=
+ />=0A=09<base href=3D"http://www.broadlandshoa.org/hoaforum/" />=0A=09<=
+title>Broadlands HOA Discussion Forum Account Confirmation Required</tit=
+le>=0A</head>=0A<body dir=3D"LTR" text=3D"#141414" bgcolor=3D"#F0F0F0" l=
+ink=3D"#176093" alink=3D"#176093" vlink=3D"#176093" style=3D"padding: 10=
+px">=0A=0A=09<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" dir=
+=3D"LTR" style=3D"=0A=09=09background-color: #F0F7FC;=0A=09=09border: 1p=
+x solid #A5CAE4;=0A=09=09border-radius: 5px;=0A=09=09direction: LTR;">=
+=0A=09<tr>=0A=09=09<td style=3D"=0A=09=09=09background-color: #D7EDFC;=
+=0A=09=09=09padding: 5px 10px;=0A=09=09=09border-bottom: 1px solid #A5CA=
+E4;=0A=09=09=09border-top-left-radius: 4px;=0A=09=09=09border-top-right-=
+radius: 4px;=0A=09=09=09font-family: 'Trebuchet MS', Helvetica, Arial, s=
+ans-serif;=0A=09=09=09font-size: 11px;=0A=09=09=09line-height: 1.231;">=
+=0A=09=09=09<a href=3D"http://www.broadlandshoa.org/hoaforum/index.php"=
+ style=3D"color: #176093; text-decoration:none">Broadlands HOA Discussio=
+n Forum</a>=0A=09=09</td>=0A=09</tr>=0A=09<tr>=0A=09=09<td style=3D"=0A=
+=09=09=09background-color: #FCFCFF;=0A=09=09=09padding: 1em;=0A=09=09=09=
+color: #141414;=0A=09=09=09font-family: 'Trebuchet MS', Helvetica, Arial=
+, sans-serif;=0A=09=09=09font-size: 13px;=0A=09=09=09line-height: 1.231;=
+">=0A=09=09=09<p style=3D"margin-top: 0">Rock Hammerfist, in order to co=
+mplete your registration at <a href=3D"http://www.broadlandshoa.org/hoaf=
+orum/index.php" style=3D"color: #176093; text-decoration: none">Broadlan=
+ds HOA Discussion Forum</a>, you need to confirm your account by followi=
+ng the link below.</p>=0A=0A<h2 style=3D"font-size: 18pt; font-weight: n=
+ormal; margin: 10px 0"><a href=3D"http://www.broadlandshoa.org/hoaforum/=
+index.php?account-confirmation/9186/email&amp;c=3DkIi4hbvAgezNFV5B" styl=
+e=3D"color: #176093; text-decoration: none">http://www.broadlandshoa.org=
+/hoaforum/index.php?account-confirmation/9186/email&amp;c=3DkIi4hbvAgezN=
+FV5B</a></h2>=0A=0A<p>Thanks for registering.<br />=0ABroadlands HOA Dis=
+cussion Forum</p>=0A=09=09</td>=0A=09</tr>=0A=09<tr>=0A=09=09<td style=
+=3D"=0A=09=09=09background-color: #F0F7FC;=0A=09=09=09padding: 5px 10px;=
+=0A=09=09=09border-top: 1px solid #D7EDFC;=0A=09=09=09border-bottom-left=
+-radius: 4px;=0A=09=09=09border-bottom-right-radius: 4px;=0A=09=09=09tex=
+t-align: right;=0A=09=09=09font-family: 'Trebuchet MS', Helvetica, Arial=
+, sans-serif;=0A=09=09=09font-size: 11px;=0A=09=09=09line-height: 1.231;=
+">=0A=09=09=09<a href=3D"http://www.broadlandshoa.org/hoaforum/index.php=
+" style=3D"color: #176093; text-decoration: none">http://www.broadlandsh=
+oa.org/hoaforum/index.php</a>=0A=09=09</td>=0A=09</tr>=0A=09</table>=09=
+=0A=0A</body>=0A</html>
+
+--=_4240799bb747973509b7125e46817a2c--
+From - Fri Jul  7 10:52:23 2017
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+Delivered-To: rockhammerfister@gmail.com
+Received: by 10.129.167.198 with SMTP id e189csp293317ywh;
+        Fri, 7 Jul 2017 07:52:20 -0700 (PDT)
+X-Received: by 10.98.108.74 with SMTP id h71mr28465811pfc.206.1499439140751;
+        Fri, 07 Jul 2017 07:52:20 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1499439140; cv=none;
+        d=google.com; s=arc-20160816;
+        b=U17wWAdaN5/MrYHv50/LNymUYM9nIG/2U0b1YNRvSajECyo+gbU9jmDPTkOG1t3Mdj
+         6wpvInc0LMdHtwu+xbZwdrZor7afPv8f+HaK1aUF/Il3hPvwVAAr2Blvdk8gB+/XoWy1
+         TfW9sfH6nuLBXOw3LCAq4ElHwdSM3qwF/OsxL8osfZDizFbZR0vp/FloAyn3kRo7aKmY
+         mBTjxRAXQ4EPN+QNLnyokZFPTSHoaOA3y03XzVj+lXmHyRvP6OAQNEky7sCfqlGgzELX
+         DjjIzKQSdNo22FP5mMV1VMkWxyl4czPOjVDm9ed2n2/7xGaId54B54puolaBUegqD2c3
+         ts1A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=dkim-signature:mime-version:subject:message-id:to:from:date
+         :arc-authentication-results;
+        bh=vvb4fH1w4pQfgl2ssrguCnX3UcSmXyAQ3qPnopeOBpU=;
+        b=PJ1dg2IIrR1N54qlhSEcqEUqNCN6ePTUqWcHBkK5VOH1upzCZYlk6g8es4jdILkp/G
+         18QvmGY8ux7ZL+7jdVziB9SLSNJxJBlQWWxoog4lt7leWtEB3deGAU5kUtljXtEVgi4d
+         5LqX7dYrDvFQRN3KomjBUD7AF+4S28L0TlWuC5GXwtq8p/VVmE1jpeeMi9wDfdLinNz0
+         AAV4Vl1s9yyx5fOhVHpdjs8l/MDk4mmsJlmzJKkFWv04u4uI/ap4k5Xxcjpl/OnOe0PH
+         u+8VE6+hbqdq2FH46RVRmD1I5CXF1032azbKU7uclkf8DdayrVleBcr7KwI1ryXSFEMM
+         58Iw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mx.aol.com header.b=C8WzaVtJ;
+       spf=pass (google.com: domain of pebblehammerfist@aol.com designates 204.29.186.57 as permitted sender) smtp.mailfrom=pebblehammerfist@aol.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=aol.com
+Return-Path: <pebblehammerfist@aol.com>
+Received: from omr-a003e.mx.aol.com (omr-a003e.mx.aol.com. [204.29.186.57])
+        by mx.google.com with ESMTPS id 7si2786936plb.66.2017.07.07.07.52.20
+        for <rockhammerfister@gmail.com>
+        (version=TLS1 cipher=AES128-SHA bits=128/128);
+        Fri, 07 Jul 2017 07:52:20 -0700 (PDT)
+Received-SPF: pass (google.com: domain of pebblehammerfist@aol.com designates 204.29.186.57 as permitted sender) client-ip=204.29.186.57;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mx.aol.com header.b=C8WzaVtJ;
+       spf=pass (google.com: domain of pebblehammerfist@aol.com designates 204.29.186.57 as permitted sender) smtp.mailfrom=pebblehammerfist@aol.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=aol.com
+Received: from mtaomg-mac01.mx.aol.com (mtaomg-mac01.mx.aol.com [172.26.222.207])
+	by omr-a003e.mx.aol.com (Outbound Mail Relay) with ESMTP id D254638000A4
+	for <rockhammerfister@gmail.com>; Fri,  7 Jul 2017 10:52:19 -0400 (EDT)
+Received: from core-mdx12c.mail.aol.com (core-mdx12.mail.aol.com [10.75.23.9])
+	by mtaomg-mac01.mx.aol.com (OMAG/Core Interface) with ESMTP id 7DB4A38000086
+	for <rockhammerfister@gmail.com>; Fri,  7 Jul 2017 10:52:19 -0400 (EDT)
+Received: from 23.29.98.154 by webjasstg-vaa26.srv.aolmail.net (10.96.25.29) with HTTP (WebMailUI); Fri, 07 Jul 2017 10:52:19 -0400
+Date: Fri, 7 Jul 2017 10:52:19 -0400
+From: pebblehammerfist@aol.com
+To: rockhammerfister@gmail.com
+Message-Id: <15d1d8989d1-1ad7-5a04@webjasstg-vaa26.srv.aolmail.net>
+Subject: Retirement
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_26940_762151067.1499439139281"
+X-MB-Message-Source: WebUI
+X-MB-Message-Type: User
+X-Mailer: JAS STD
+X-Originating-IP: [23.29.98.154]
+x-aol-global-disposition: G
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mx.aol.com;
+	s=20150623; t=1499439139;
+	bh=vvb4fH1w4pQfgl2ssrguCnX3UcSmXyAQ3qPnopeOBpU=;
+	h=From:To:Subject:Message-Id:Date:MIME-Version:Content-Type;
+	b=C8WzaVtJKgDphVGdOOjEI3a3BN9rlHq9UTOIv6khv/4pgnXl8aibk9wilpfDJw9SH
+	 9zXKuQq2f6Wcbh8PttxR+eUlsWVZwHwKODPOHrXV7JZzSrvO2voOlWRGMvNk6K4xXT
+	 ho5Q67zumj16YDprwrurwl9hTQ5U+GtZtESRpVjo=
+x-aol-sid: 3039ac1adecf595fa0233e7a
+X-Antivirus: AVG (VPS 170706-0, 07/06/2017), Inbound message
+X-Antivirus-Status: Clean
+
+------=_Part_26940_762151067.1499439139281
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+Hey Dad,
+
+
+I don't know why you can't just remember these things on your own, but as you requested, I'm reminding you to research retirement locations.  
+
+
+I vote for warm weather and a pool or ocean if you ever want me to visit you :)
+
+
+Also, I was planning to come over tonight if you guys are going be around.   Maybe I'll let you take me to dinner!
+
+
+Pebs
+
+------=_Part_26940_762151067.1499439139281
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+<font color='black' size='2' face='arial'>Hey Dad,
+<div><br>
+</div>
+
+<div>I don't know why you can't just remember these things on your own, but as you requested, I'm reminding you to research retirement locations. &nbsp;</div>
+
+<div><br>
+</div>
+
+<div>I vote for warm weather and a pool or ocean if you ever want me to visit you :)</div>
+
+<div><br>
+</div>
+
+<div>Also, I was planning to come over tonight if you guys are going be around. &nbsp; Maybe I'll let you take me to dinner!</div>
+
+<div><br>
+</div>
+
+<div>Pebs</div>
+</font>
+------=_Part_26940_762151067.1499439139281--
+From - Fri Jul  7 13:45:09 2017
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+Delivered-To: rockhammerfister@gmail.com
+Received: by 10.129.167.198 with SMTP id e189csp473348ywh;
+        Fri, 7 Jul 2017 10:45:08 -0700 (PDT)
+X-Received: by 10.107.164.207 with SMTP id d76mr61944570ioj.158.1499449508422;
+        Fri, 07 Jul 2017 10:45:08 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1499449508; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YVXDSzc1+PLHYrJBP+2JdR7onl5y//9zWWRnlsSlAXY9hc/xdkvrS2ODsL7H+t3PgU
+         lXRHbvy6npfAKmmvOSVapuPOOVWuNnYjsLC8nbkSvZu3a8O/DUHZvKixjuBWdZsC7GfH
+         YVSx8Bn1hEh2JLmHlymm1aXVFGIBs++cKjOTetsH/TmyVX8p0SNifYIwyELRn9kTwD87
+         qkSe0yI7OL2DXZkT5EWWVCetU3jkWpXrgTG6JJ9cSwJLiWKv+172UlYYJxbTHSrYkhSZ
+         aS3pwVgGlFWbqp/NeNTy9GoyfrFQTDkADOrgo/kRNu0XCrVJsoZJchYFpl6Cho4Pzt+v
+         yuuA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-length:mime-version:subject:references:in-reply-to
+         :message-id:to:reply-to:from:date:dkim-signature
+         :arc-authentication-results;
+        bh=UKoLY9RR5rpTY1ooPQ+E7a01BYnUMQtTo9LgESwSNPE=;
+        b=IpPBIadkP4N8OOmkifRzXPj2khhNG+PB8kjBTJz7QW8bTxuz2B3w6QwP6ZX8jg+SBJ
+         ROSr0QqoTwGKiHZLoq39V7AyLGWBG2/hC00qlPM33cZPnpAOhunU0yrUNWvNO7ZVO6Bu
+         3CAzPEqr11sxJIlwKneNGl6UM2gSnpmIJdFs3xVgOZko7UW/691orMkbxXvUJK6jPl2t
+         RUYWPhUR2djIO2738aV8YcFoffu+CqEjAa/XVlx1ynYXu6EMAZJh3QxPgqUUi+5E5139
+         z8TVuViKANASNMEqpsbaBJP53/RbzISC2ugRpNli0ugPYevbdMbS+HM7hjaJIfj13Lmi
+         wREA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@yahoo.com header.b=MKBOGJu0;
+       spf=pass (google.com: domain of brockrockington@yahoo.com designates 66.163.191.62 as permitted sender) smtp.mailfrom=brockrockington@yahoo.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=yahoo.com
+Return-Path: <brockrockington@yahoo.com>
+Received: from sonic328-39.consmr.mail.ne1.yahoo.com (sonic328-39.consmr.mail.ne1.yahoo.com. [66.163.191.62])
+        by mx.google.com with ESMTPS id 72si3928252iol.215.2017.07.07.10.45.08
+        for <rockhammerfister@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 07 Jul 2017 10:45:08 -0700 (PDT)
+Received-SPF: pass (google.com: domain of brockrockington@yahoo.com designates 66.163.191.62 as permitted sender) client-ip=66.163.191.62;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@yahoo.com header.b=MKBOGJu0;
+       spf=pass (google.com: domain of brockrockington@yahoo.com designates 66.163.191.62 as permitted sender) smtp.mailfrom=brockrockington@yahoo.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=yahoo.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1499449507; bh=UKoLY9RR5rpTY1ooPQ+E7a01BYnUMQtTo9LgESwSNPE=; h=Date:From:Reply-To:To:In-Reply-To:References:Subject:From:Subject; b=MKBOGJu0qLGQ/o1+Dh7mRYLvbPG0ttaMNRMU55CyicLKzqxX0IYDCts6RI+vIWQuNanywcCpaJrRe4da1jc6TaCwODXaKSRrOYu3vkC9xodwcfVF/8LYIET6LHNVSy8a8a+lHUJ6dYbDhRPJUkk26fEVaJtsQEquTfR69T85BgXKaD5xqxZDBPjN+eBav8Y76ZcAuI5i3IXR698ZDLRVOh11UquD5Z0TjeXsi+JQV0FB0LZUCnnUpxLqZ99t7yGbfPLyI5UhNrDGNL1J8zD0fIPv4KHkHdpN57wLMXJduQIqAK83x2DH1hrurxrZIGTxzinrt4bK6M4R64oWigKq+g==
+X-YMail-OSG: YbFHCu4VM1misPsuUe0Zih4q24PeXj_7IDr6I5reSVbesJAOd5hL1Gusyh42nd2
+ 3Vig9cfieXHisPDKnpNtJC9NbsYMPo9q7_k0Jv26yqifcSxNx3igdoPT75.cer3eB6Xh2dXI3Gns
+ JVm2ILXqK0Mbz3EiCporubo_X3yvXaR7hq6ow6ye4xcqWQeDhrIKhb8Y57LXOXW4plzkkBTYkK81
+ 5WPnOqH3m1vh2DFTTQTSJuKBcfJPgLLWoVRimrsqBtzRkWyctVuzZdiEXMMMNTFbovvr3hRWuB3B
+ EWElNReDLS57aQZhxEaskPSc0490UazvsPvTlTvmtMspKCl3_019SQ4an1RGCeJP7EBIdOmN_cMr
+ 63cRIki3u3Fu5ik_c.mQoFonZtyDoAEvPRSJzy6oNwX2BwKjsA.gclXPL..a3nipTx1F4TTbk8KJ
+ Q31T2fVFG9pjQ_fPN_JcZE3NqSqxuA7NqkXOi5WrnxIw3z3x2sNQIfcVvILrIwTDrp1Mw9Lc4L6B
+ yQTEo53r77EnmyXi9
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic328.consmr.mail.ne1.yahoo.com with HTTP; Fri, 7 Jul 2017 17:45:07 +0000
+Date: Fri, 7 Jul 2017 17:41:07 +0000 (UTC)
+From: Brock Rockington <brockrockington@yahoo.com>
+Reply-To: Brock Rockington <brockrockington@yahoo.com>
+To: Rock Hammerfist <rockhammerfister@gmail.com>
+Message-ID: <2059408043.789753.1499449267320@mail.yahoo.com>
+In-Reply-To: <ad988ce0-81bc-525b-0e66-6308275b1426@gmail.com>
+References: <bb6e7c14-d295-ee61-5a83-048b8f72be84@gmail.com> <1046998952.679657.1499439211769@mail.yahoo.com> <ad988ce0-81bc-525b-0e66-6308275b1426@gmail.com>
+Subject: Re: Happy Hour
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_789750_1011444465.1499449267317"
+X-Mailer: WebService/1.1.10014 YahooMailNeo Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/603.2.5 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.5
+Content-Length: 5896
+X-Antivirus: AVG (VPS 170707-0, 07/07/2017), Inbound message
+X-Antivirus-Status: Clean
+
+------=_Part_789750_1011444465.1499449267317
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+No problem. =C2=A0Candy is planning to come and she's got an awesome skirt =
+on today. =C2=A0You may change your mind about how long you stay once you s=
+ee her!
+
+    On Friday, July 7, 2017 1:38 PM, Rock Hammerfist <rockhammerfister@gmai=
+l.com> wrote:
+=20
+
+  I'm not going to be able to stay too long tonight.=C2=A0 Pebbles is comin=
+g over for dinner.=C2=A0 Sorry8-)
+ =20
+ On 7/7/2017 10:53 AM, Brock Rockington wrote:
+ =20
+  Sounds good. =C2=A0I'll ask around here to see if anyone else wants to jo=
+in.=20
+=20
+      On Friday, July 7, 2017 10:46 AM, Rock Hammerfist <rockhammerfister@g=
+mail.com> wrote:
+ =20
+=20
+  Want to hit Fosters at 4:00?
+ =20
+ =20
+  ---
+  This email has been checked for viruses by AVG.
+  http://www.avg.com
+ =20
+ =20
+=20
+     =20
+=20
+=20
+
+|  | Virus-free. www.avg.com  |
+
+=20
+
+  =20
+------=_Part_789750_1011444465.1499449267317
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head></head><body><div style=3D"color:#000; background-color:#fff; f=
+ont-family:=E6=A8=99=E6=A5=B7=E9=AB=94, dfkai-sb;font-size:16px">No problem=
+. &nbsp;Candy is planning to come and she's got an awesome skirt on today. =
+&nbsp;You may change your mind about how long you stay once you see her!<di=
+v class=3D"qtdSeparateBR"><br><br></div><div class=3D"yahoo_quoted" style=
+=3D"display: block;"> <div style=3D"font-family: =E6=A8=99=E6=A5=B7=E9=AB=
+=94, dfkai-sb; font-size: 16px;"> <div style=3D"font-family: HelveticaNeue,=
+ Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif; font-size: 16=
+px;"> <div dir=3D"ltr"><font size=3D"2" face=3D"Arial"> On Friday, July 7, =
+2017 1:38 PM, Rock Hammerfist &lt;rockhammerfister@gmail.com&gt; wrote:<br>=
+</font></div>  <br><br> <div class=3D"y_msg_container"><div id=3D"yiv287555=
+8817"><div>
+    <div>I'm not going to be able to stay too long tonight.&nbsp; Pebbles i=
+s
+      coming over for dinner.&nbsp; Sorry<span class=3D"yiv2875558817moz-sm=
+iley-s11"><span>8-)</span></span><br clear=3D"none">
+    </div>
+    <br clear=3D"none">
+    <div class=3D"yiv2875558817yqt8781895176" id=3D"yiv2875558817yqt81563">=
+<div class=3D"yiv2875558817moz-cite-prefix">On 7/7/2017 10:53 AM, Brock Roc=
+kington
+      wrote:<br clear=3D"none">
+    </div>
+    <blockquote type=3D"cite">
+      <div style=3D"color:#000;background-color:#fff;font-family:=E6=A8=99=
+=E6=A5=B7=E9=AB=94, dfkai-sb;font-size:16px;">
+        <div><span>Sounds good. &nbsp;I'll ask around here to see if anyone
+            else wants to join.</span></div>
+        <div class=3D"yiv2875558817qtdSeparateBR"><br clear=3D"none">
+          <br clear=3D"none">
+        </div>
+        <div class=3D"yiv2875558817yahoo_quoted" style=3D"display:block;">
+          <div style=3D"font-family:=E6=A8=99=E6=A5=B7=E9=AB=94, dfkai-sb;f=
+ont-size:16px;">
+            <div style=3D"font-family:HelveticaNeue, Helvetica Neue, Helvet=
+ica, Arial, Lucida Grande, sans-serif;font-size:16px;">
+              <div dir=3D"ltr"><font face=3D"Arial" size=3D"2"> On Friday,
+                  July 7, 2017 10:46 AM, Rock Hammerfist
+                  <a rel=3D"nofollow" shape=3D"rect" class=3D"yiv2875558817=
+moz-txt-link-rfc2396E" ymailto=3D"mailto:rockhammerfister@gmail.com" target=
+=3D"_blank" href=3D"mailto:rockhammerfister@gmail.com">&lt;rockhammerfister=
+@gmail.com&gt;</a> wrote:<br clear=3D"none">
+                </font></div>
+              <br clear=3D"none">
+              <br clear=3D"none">
+              <div class=3D"yiv2875558817y_msg_container">
+                <div dir=3D"ltr">Want to hit Fosters at 4:00?<br clear=3D"n=
+one">
+                </div>
+                <div dir=3D"ltr"><br clear=3D"none">
+                </div>
+                <div dir=3D"ltr"><br clear=3D"none">
+                </div>
+                <div dir=3D"ltr">---<br clear=3D"none">
+                </div>
+                <div dir=3D"ltr">This email has been checked for viruses
+                  by AVG.<br clear=3D"none">
+                </div>
+                <div dir=3D"ltr"><a rel=3D"nofollow" shape=3D"rect" target=
+=3D"_blank" href=3D"http://www.avg.com/">http://www.avg.com</a><br clear=3D=
+"none">
+                </div>
+                <div dir=3D"ltr"><br clear=3D"none">
+                </div>
+                <br clear=3D"none">
+                <br clear=3D"none">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote></div>
+    <br clear=3D"none">
+  <div id=3D"yiv2875558817DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2"><br clear=
+=3D"none">
+<table style=3D"border-top:1px solid #D3D4DE;"><tbody><tr><td colspan=3D"1"=
+ rowspan=3D"1" style=3D"width:55px;padding-top:13px;"><a rel=3D"nofollow" s=
+hape=3D"rect" target=3D"_blank" href=3D"http://www.avg.com/email-signature?=
+utm_medium=3Demail&amp;utm_source=3Dlink&amp;utm_campaign=3Dsig-email&amp;u=
+tm_content=3Demailclient"><img src=3D"https://ipmcdn.avast.com/images/icons=
+/icon-envelope-tick-green-avg-v1.png" alt=3D"" width=3D"46" height=3D"29" s=
+tyle=3D"width:46px;min-height:29px;"></a></td><td colspan=3D"1" rowspan=3D"=
+1" style=3D"width:470px;padding-top:12px;color:#41424e;font-size:13px;font-=
+family:Arial, Helvetica, sans-serif;line-height:18px;">Virus-free. <a rel=
+=3D"nofollow" shape=3D"rect" target=3D"_blank" href=3D"http://www.avg.com/e=
+mail-signature?utm_medium=3Demail&amp;utm_source=3Dlink&amp;utm_campaign=3D=
+sig-email&amp;utm_content=3Demailclient" style=3D"color:#4453ea;">www.avg.c=
+om</a>
+=09=09</td></tr></tbody></table><a rel=3D"nofollow" shape=3D"rect" href=3D"=
+https://mg.mail.yahoo.com/neo/launch?.rand=3Ddkcfr01cjsddc#DAB4FAD8-2DD7-40=
+BB-A1B8-4E2AA1F9FDF2"> </a></div></div></div><br><br></div>  </div> </div> =
+ </div></div></body></html>
+------=_Part_789750_1011444465.1499449267317--
+From - Wed Jul 12 12:38:08 2017
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+Delivered-To: rockhammerfister@gmail.com
+Received: by 10.13.233.134 with SMTP id s128csp138779ywe;
+        Wed, 12 Jul 2017 09:38:05 -0700 (PDT)
+X-Received: by 10.200.48.237 with SMTP id w42mr7724210qta.54.1499877485466;
+        Wed, 12 Jul 2017 09:38:05 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1499877485; cv=none;
+        d=google.com; s=arc-20160816;
+        b=By+if5xipJ6XmBHLP+JyTNqqGLp3V9YNkFVDvn4q68Sr3QbYICV6cePhsHYuHUZYiA
+         AQmevYQsdRh+ooKN/MLbWxgC7rWmop08jdWxbvRIYpn54Ub9XmfJDngOBAmdEgGbow8Q
+         GeLxUj5kachCY2ZUnu0sCuowK0INpXpbnF+bNpCMWzHhx2dPZJptGh/ZsKjGQLVZPsb1
+         jK2p19hrbnuXS+EWgslWGn2At4+ke5cNA8b5gcZpuv1Z3UTY0nYv1luXsZbAHqc9R30A
+         eBqOkDg3TittCZeEvccmHt2bRIecZksvdH5DEjioY41dIBvqOECeLYOxyK5R/jaFdzJm
+         L8yg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=dkim-signature:mime-version:subject:message-id:to:from:date
+         :arc-authentication-results;
+        bh=iv2xdYQBjx+cyC0LxTEoQwtVgEUogac/vElxapMai3I=;
+        b=Y3Fb9zp2ZAAqQFI72eCs3joR/v8ZZFlufOREE9IRkYtNqEwM6emAqxi8bdzqSaePVr
+         i6uaM1Hp1BheAPpb5HWJ5uM711qr8RNHLbJw+QTfPQ6gYdOUpU8WxRdg8932Gi/QIHDO
+         TkP1W1sqoUPXGwNWnc5tWo2wZn9o3xQcHTY5iB8EBrPrqyCEME8BFgWUD1DAkB8G7DEI
+         i00Deh6yV++lkdCak6OD8ciYSa3RazYUVnm2oBsZijstYEynPgip/0tzRTc8wAFY7ZSD
+         O8/ydDsKbsX/umF/lbH8/fHBkZbaE5GxWFGBfPsCdi9uVR4MSeink52rpJjQVCjgKj8s
+         oxFg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mx.aol.com header.b=P02fyFHJ;
+       spf=pass (google.com: domain of pebblehammerfist@aol.com designates 204.29.186.156 as permitted sender) smtp.mailfrom=pebblehammerfist@aol.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=aol.com
+Return-Path: <pebblehammerfist@aol.com>
+Received: from oms-a016e.mx.aol.com (oms-a016e.mx.aol.com. [204.29.186.156])
+        by mx.google.com with ESMTPS id t188si2709226qkd.239.2017.07.12.09.38.05
+        for <rockhammerfister@gmail.com>
+        (version=TLS1 cipher=AES128-SHA bits=128/128);
+        Wed, 12 Jul 2017 09:38:05 -0700 (PDT)
+Received-SPF: pass (google.com: domain of pebblehammerfist@aol.com designates 204.29.186.156 as permitted sender) client-ip=204.29.186.156;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mx.aol.com header.b=P02fyFHJ;
+       spf=pass (google.com: domain of pebblehammerfist@aol.com designates 204.29.186.156 as permitted sender) smtp.mailfrom=pebblehammerfist@aol.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=aol.com
+Received: from omr-a011e.mx.aol.com (omr-a011.mx.aol.com [10.72.114.237])
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+	by oms-a016e.mx.aol.com (AOL Outbound OMS Interface) with ESMTPS id 3BD953800050
+	for <rockhammerfister@gmail.com>; Wed, 12 Jul 2017 12:38:05 -0400 (EDT)
+Received: from mtaomg-mbd02.mx.aol.com (mtaomg-mbd02.mx.aol.com [172.26.252.16])
+	by omr-a011e.mx.aol.com (Outbound Mail Relay) with ESMTP id 2D87838000BA
+	for <rockhammerfister@gmail.com>; Wed, 12 Jul 2017 12:38:05 -0400 (EDT)
+Received: from core-mdb07f.mail.aol.com (core-mdb07.mail.aol.com [172.27.97.7])
+	by mtaomg-mbd02.mx.aol.com (OMAG/Core Interface) with ESMTP id 9F6ED38000082
+	for <rockhammerfister@gmail.com>; Wed, 12 Jul 2017 12:38:04 -0400 (EDT)
+Received: from 23.29.98.154 by webjasstg-vaa02.srv.aolmail.net (10.96.25.5) with HTTP (WebMailUI); Wed, 12 Jul 2017 12:38:04 -0400
+Date: Wed, 12 Jul 2017 12:38:04 -0400
+From: Pebble Hammerfist <pebblehammerfist@aol.com>
+To: rockhammerfister@gmail.com
+Message-Id: <15d37aa276e-18de-bbd@webjasstg-vaa02.srv.aolmail.net>
+Subject: Re: My business trip
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_3643_1436833334.1499877484398"
+X-MB-Message-Source: WebUI
+X-MB-Message-Type: User
+X-Mailer: JAS STD
+X-Originating-IP: [23.29.98.154]
+x-aol-global-disposition: S
+X-SPAM-FLAG: YES
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mx.aol.com;
+	s=20150623; t=1499877485;
+	bh=iv2xdYQBjx+cyC0LxTEoQwtVgEUogac/vElxapMai3I=;
+	h=From:To:Subject:Message-Id:Date:MIME-Version:Content-Type;
+	b=P02fyFHJIVhSd/MPOobadH581XB030i36vCzQ9MEY5kWaJETmv2+n8p5tWgoHWNXE
+	 p8cHQGQLqkgbpOo8P4AtXBsz2JEDR4w2oJIPS9lS+yln6mnLwOp1VlxUU7IkH+YXK3
+	 1/Ieztv6bqsfYAYz5OgSTwnTDuQIKPHPyFCFkZ88=
+X-AOL-REROUTE: YES
+x-aol-sid: 3039ac1afc105966506c0dcd
+X-Antivirus: AVG (VPS 170712-0, 07/12/2017), Inbound message
+X-Antivirus-Status: Clean
+
+------=_Part_3643_1436833334.1499877484398
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+I love those!  They're way better than your layout.  JK!  They did a nice job.  
+
+
+isn't this so cute???!!!!:
+
+
+https://content.uplynk.com/ab62b52a41e2486c9f3a9851281db5b7.m3u8?tc=1&exp=1499880438&rn=9.72024570724023E8&ct=a&cid=ab62b52a41e2486c9f3a9851281db5b7&rays=fghe&sig=185b73dbf881c1524e633e2ffc80a6f3587cf7bbdf2018889b0d497eb4c546b1
+
+
+
+-----Original Message-----
+From: Rock Hammerfist <rockhammerfister@gmail.com>
+To: pebblehammerfist <pebblehammerfist@aol.com>
+Sent: Wed, Jul 12, 2017 12:31 pm
+Subject: My business trip
+
+Hey Pebs,
+
+
+I just got back from my latest business trip.  I thought you might enjoy 
+these pics!
+
+
+Much luv,
+
+Dad
+
+
+
+---
+This email has been checked for viruses by AVG.
+http://www.avg.com
+
+
+
+------=_Part_3643_1436833334.1499877484398
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+<font color='black' size='2' face='arial'>I love those! &nbsp;They're way better than your layout. &nbsp;JK! &nbsp;They did a nice job. &nbsp;
+<div><br>
+</div>
+
+<div>isn't this so cute???!!!!:</div>
+
+<div><br>
+</div>
+
+<div>https://content.uplynk.com/ab62b52a41e2486c9f3a9851281db5b7.m3u8?tc=1&amp;exp=1499880438&amp;rn=9.72024570724023E8&amp;ct=a&amp;cid=ab62b52a41e2486c9f3a9851281db5b7&amp;rays=fghe&amp;sig=185b73dbf881c1524e633e2ffc80a6f3587cf7bbdf2018889b0d497eb4c546b1<br>
+<br>
+<br>
+
+<div style="font-family:helvetica,arial;font-size:10pt;color:black">-----Original Message-----<br>
+From: Rock Hammerfist &lt;rockhammerfister@gmail.com&gt;<br>
+To: pebblehammerfist &lt;pebblehammerfist@aol.com&gt;<br>
+Sent: Wed, Jul 12, 2017 12:31 pm<br>
+Subject: My business trip<br>
+<br>
+Hey Pebs,<br>
+<br>
+<br>
+I just got back from my latest business trip.  I thought you might enjoy <br>
+these pics!<br>
+<br>
+<br>
+Much luv,<br>
+<br>
+Dad<br>
+<br>
+<br>
+<br>
+---<br>
+This email has been checked for viruses by AVG.<br>
+<a href="http://www.avg.com" target="_blank">http://www.avg.com</a><br>
+
+<br>
+
+
+
+
+
+
+
+
+</div>
+</div>
+</font>
+------=_Part_3643_1436833334.1499877484398--
+From - Mon Jul 31 15:31:26 2017
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+Delivered-To: rockhammerfister@gmail.com
+Received: by 10.13.241.195 with SMTP id a186csp3863321ywf;
+        Mon, 31 Jul 2017 12:31:01 -0700 (PDT)
+X-Received: by 10.84.194.228 with SMTP id h91mr18088499pld.46.1501529461801;
+        Mon, 31 Jul 2017 12:31:01 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1501529461; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Rpi28ho6fOtvZugrPVmXF4KVpGL2JrXXD9hjI97h8Gn7+GXtiJtRbW81/YmqOj9FNT
+         s2thchJrJYxqzqiED4eYXOhbGyNSikidBRY/83f7XsX36mbCiimKwBvwyuT4UN1lb+Di
+         Z0LfwIsQvDCZjgJyF4EO4zT5yejL8Ju9hrwOS+0b9bnA0vFifCBK+0UbenvFpaYRGZVw
+         XYeIONE8DMswdEFa22mBgIQMDKeYwS8/Gd8dpUa8LMrd/iot14oyXIcnlLksi+EEle7N
+         +Lo7ev0ovs7KoRAlsHkJMiI+whFTPACRxMeqQPYeWB4QJQfVThxpCNAsfHXfDHmTA5UA
+         aYhQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:message-id:feedback-id:date:mime-version
+         :dkim-signature:arc-authentication-results;
+        bh=z3ZnLZaw9LZSQBc431sAZm1RM9B5kyeYs3iasgppDdM=;
+        b=Y8+A73bLEnH56qNSz35ceyjheViLQtX7JZdu/63wpUZ+JRNfOlSZ7plkDiML3U1FdL
+         cJbRV1jYyAPox/BS7fveC06vr6WPxMYxM9+WfgV4JFfsqVEv64UWlx/X2WiiIOyTMnzO
+         Yz3b4uqqdDnYAUtK2ERdS1LdcX1V/dussP4nyUqM8tR/oIfDGKC4YmuAn3toP9Yvh8/J
+         bTkHwUo2t3YBExwzn5AH4NNXVUGKMr7I+OHIUl8IhSTGe61ZNEyIVwJXMc+kFPfulEjx
+         SmYBjLuVGEHsJOOF7Um3kX/yJseApb/FlxwKp7ykvSn7n4WEEiKjMNayOkjZrqnDKqX2
+         UQ+A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@accounts.google.com header.b=LWkYgySC;
+       spf=pass (google.com: domain of 3dyv_wqgtafa56-9w73gsuu6c5ba.y66y3w.u64@gaia.bounces.google.com designates 2607:f8b0:400e:c00::245 as permitted sender) smtp.mailfrom=3dYV_WQgTAFA56-9w73Gsuu6C5BA.y66y3w.u64@gaia.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=accounts.google.com
+Return-Path: <3dYV_WQgTAFA56-9w73Gsuu6C5BA.y66y3w.u64@gaia.bounces.google.com>
+Received: from mail-pf0-x245.google.com (mail-pf0-x245.google.com. [2607:f8b0:400e:c00::245])
+        by mx.google.com with ESMTPS id o32si2685116pld.619.2017.07.31.12.31.01
+        for <rockhammerfister@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 31 Jul 2017 12:31:01 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3dyv_wqgtafa56-9w73gsuu6c5ba.y66y3w.u64@gaia.bounces.google.com designates 2607:f8b0:400e:c00::245 as permitted sender) client-ip=2607:f8b0:400e:c00::245;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@accounts.google.com header.b=LWkYgySC;
+       spf=pass (google.com: domain of 3dyv_wqgtafa56-9w73gsuu6c5ba.y66y3w.u64@gaia.bounces.google.com designates 2607:f8b0:400e:c00::245 as permitted sender) smtp.mailfrom=3dYV_WQgTAFA56-9w73Gsuu6C5BA.y66y3w.u64@gaia.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=accounts.google.com
+Received: by mail-pf0-x245.google.com with SMTP id r13so39037845pfd.14
+        for <rockhammerfister@gmail.com>; Mon, 31 Jul 2017 12:31:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=accounts.google.com; s=20161025;
+        h=mime-version:date:feedback-id:message-id:subject:from:to;
+        bh=z3ZnLZaw9LZSQBc431sAZm1RM9B5kyeYs3iasgppDdM=;
+        b=LWkYgySCMgKFAGL81fNVACnDEdQSUAE/N7cy+mMqLRp7Z5jHAW7jxxENzYAstfYTBK
+         qG9H2Gpq22XK7UzohlkoS+aG61/4llEBNnkA31vQiHcTkOruypEOtkR2adIO6tZBHg/T
+         AsGtE+hi6sTRFhaajxGVJjZczE/GWtalbZO/HVW7gT/i2N9Iglatgll9n5eTQDEDFUqC
+         TujrCBveaGvwSnNyUGTKK3JfL9rnzOyvKEVVpTfo4Z7/VhDE7sntDbwvxk2k+j1/Yx6q
+         a1rdESy5waCD1dOaGFRpedzkdZ5n7IYjUMIsoK/R1mbHey2zxtO/KxBM5U5xbBRG3eEj
+         VZvg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:date:feedback-id:message-id:subject
+         :from:to;
+        bh=z3ZnLZaw9LZSQBc431sAZm1RM9B5kyeYs3iasgppDdM=;
+        b=PN3fHI33rYhToppLppQ1TA89MyZRl+zyS1RTcTHjRbLSEsGCTaBi+44dDGOb8QDTPZ
+         l5GZ1yOhZtdvUMqij7+pJNSUfGJxCGCvhtblqYEOEXS8cp0AgDPq3nDPwSD23JcHn9L7
+         M66kpweQHYeu9NvAY0kgGyWtx3oPTvC6BAyp2SxLTcIrf7KRL9SzbYIxsxWdhfvHQVZF
+         akuzzuPA1iEo9rQSJ0niE0R9MbUVS/90K1kAnPCuXY3AzZYGgWmmfmab8btcWnhA6xOq
+         2l2Gy6nrzg6YlvlaZ6LEacNyIrWZIyulV4DzEBTYsBlUZXfBqzQtHoYtMIGwGqRMm3zw
+         PPqQ==
+X-Gm-Message-State: AIVw113lCvhPQxVgtl3wjJMt9czvLkQTHmiUZBKrVgVChX+5589ohlOx
+	b0IIim0UxLNWu5dZw/yoLAuGxO/ek6ir
+MIME-Version: 1.0
+X-Received: by 10.101.76.138 with SMTP id m10mr13040377pgt.200.1501529461566;
+ Mon, 31 Jul 2017 12:31:01 -0700 (PDT)
+Date: Mon, 31 Jul 2017 19:30:55 +0000 (UTC)
+X-Notifications: XEAAAAA__eiHpinJe6MX_LoorRE0
+X-Account-Notification-Type: 31
+Feedback-ID: 31:account-notifier
+Message-ID: <O-mc10lgrV67RMHg4eZNPA@notifications.google.com>
+Subject: New sign-in from Windows
+From: Google <no-reply@accounts.google.com>
+To: rockhammerfister@gmail.com
+Content-Type: multipart/alternative; boundary="089e082349882d2d9e0555a2126d"
+X-Antivirus: AVG (VPS 170731-2, 07/31/2017), Inbound message
+X-Antivirus-Status: Clean
+
+--089e082349882d2d9e0555a2126d
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+TmV3IHNpZ24taW4gZnJvbSBXaW5kb3dzDQoNCg0KDQpIaSBSb2NrLA0KWW91ciBHb29nbGUgQWNj
+b3VudCByb2NraGFtbWVyZmlzdGVyQGdtYWlsLmNvbSB3YXMganVzdCB1c2VkIHRvIHNpZ24gaW4g
+b24NCldpbmRvd3MuDQoNClJvY2sgSGFtbWVyZmlzdA0Kcm9ja2hhbW1lcmZpc3RlckBnbWFpbC5j
+b20NCg0KV2luZG93cw0KTW9uZGF5LCBKdWx5IDMxLCAyMDE3IDc6MzAgUE0gKEdNVCkqRG9uJ3Qg
+cmVjb2duaXplIHRoaXMgYWN0aXZpdHk/Kg0KUmV2aWV3IHlvdXIgcmVjZW50bHkgdXNlZCBkZXZp
+Y2VzDQo8aHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tL0FjY291bnRDaG9vc2VyP0VtYWlsPXJv
+Y2toYW1tZXJmaXN0ZXJAZ21haWwuY29tJmNvbnRpbnVlPWh0dHBzOi8vbXlhY2NvdW50Lmdvb2ds
+ZS5jb20vbmV3ZGV2aWNlL250LzE1MDE1Mjk0NTUwMDA/cmZuJTNEMzElMjZyZm5jJTNEMSUyNmVp
+ZCUzRDI3NTU1MzU2MjUzNjI4NzkwNjclMjZldCUzRDAlMjZhc2FlJTNEMj4NCm5vdy4NCg0KV2h5
+IGFyZSB3ZSBzZW5kaW5nIHRoaXM/IFdlIHRha2Ugc2VjdXJpdHkgdmVyeSBzZXJpb3VzbHkgYW5k
+IHdlIHdhbnQgdG8NCmtlZXAgeW91IGluIHRoZSBsb29wIG9uIGltcG9ydGFudCBhY3Rpb25zIGlu
+IHlvdXIgYWNjb3VudC4NCldlIHdlcmUgdW5hYmxlIHRvIGRldGVybWluZSB3aGV0aGVyIHlvdSBo
+YXZlIHVzZWQgdGhpcyBicm93c2VyIG9yIGRldmljZQ0Kd2l0aCB5b3VyIGFjY291bnQgYmVmb3Jl
+LiBUaGlzIGNhbiBoYXBwZW4gd2hlbiB5b3Ugc2lnbiBpbiBmb3IgdGhlIGZpcnN0DQp0aW1lIG9u
+IGEgbmV3IGNvbXB1dGVyLCBwaG9uZSBvciBicm93c2VyLCB3aGVuIHlvdSB1c2UgeW91ciBicm93
+c2VyJ3MNCmluY29nbml0byBvciBwcml2YXRlIGJyb3dzaW5nIG1vZGUgb3IgY2xlYXIgeW91ciBj
+b29raWVzLCBvciB3aGVuIHNvbWVib2R5DQplbHNlIGlzIGFjY2Vzc2luZyB5b3VyIGFjY291bnQu
+DQpUaGUgR29vZ2xlIEFjY291bnRzIHRlYW0NCg0KDQoNClRoaXMgZW1haWwgY2FuJ3QgcmVjZWl2
+ZSByZXBsaWVzLiBUbyBnaXZlIHVzIGZlZWRiYWNrIG9uIHRoaXMgYWxlcnQsIGNsaWNrDQpoZXJl
+DQo8aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vYWNjb3VudHMvY29udGFjdC9kZXZpY2VfYWxl
+cnRfZmVlZGJhY2s/aGw9ZW4+Lg0KRm9yIG1vcmUgaW5mb3JtYXRpb24sIHZpc2l0IHRoZSBHb29n
+bGUgQWNjb3VudHMgSGVscCBDZW50ZXINCjxodHRwczovL3N1cHBvcnQuZ29vZ2xlLmNvbS9hY2Nv
+dW50cy9hbnN3ZXIvMjczMzIwMz4uDQoNCg0KDQpZb3UgcmVjZWl2ZWQgdGhpcyBtYW5kYXRvcnkg
+ZW1haWwgc2VydmljZSBhbm5vdW5jZW1lbnQgdG8gdXBkYXRlIHlvdSBhYm91dA0KaW1wb3J0YW50
+IGNoYW5nZXMgdG8geW91ciBHb29nbGUgcHJvZHVjdCBvciBhY2NvdW50Lg0KDQrCqSAyMDE3IEdv
+b2dsZSBJbmMuLCAxNjAwIEFtcGhpdGhlYXRyZSBQYXJrd2F5LCBNb3VudGFpbiBWaWV3LCBDQSA5
+NDA0MywgVVNBDQpldDozMQ0K
+--089e082349882d2d9e0555a2126d
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html lang=3D"en"><head><meta name=3D"format-detection" content=3D"date=3Dn=
+o"><meta name=3D"format-detection" content=3D"email=3Dno"></head><body styl=
+e=3D"margin: 0; padding: 0;" bgcolor=3D"#FFFFFF"><table width=3D"100%" heig=
+ht=3D"100%" style=3D"min-width: 348px;" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0"><tr height=3D"32px"></tr><tr align=3D"center"><td width=3D"32=
+px"></td><td><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D"max-width: 600px;"><tr><td><table width=3D"100%" border=3D"0" cellspaci=
+ng=3D"0" cellpadding=3D"0"><tr><td align=3D"left"><img width=3D"92" height=
+=3D"32" src=3D"https://www.gstatic.com/accountalerts/email/googlelogo_color=
+_188x64dp.png" style=3D"display: block; width: 92px; height: 32px;"></td><t=
+d align=3D"right"><img width=3D"32" height=3D"32" style=3D"display: block; =
+width: 32px; height: 32px;" src=3D"https://www.gstatic.com/accountalerts/em=
+ail/keyhole.png"></td></tr></table></td></tr><tr height=3D"16"></tr><tr><td=
+><table bgcolor=3D"#4184F3" width=3D"100%" border=3D"0" cellspacing=3D"0" c=
+ellpadding=3D"0" style=3D"min-width: 332px; max-width: 600px; border: 1px s=
+olid #F0F0F0; border-bottom: 0; border-top-left-radius: 3px; border-top-rig=
+ht-radius: 3px;"><tr><td height=3D"72px" colspan=3D"3"></td></tr><tr><td wi=
+dth=3D"32px"></td><td style=3D"font-family: Roboto-Regular,Helvetica,Arial,=
+sans-serif; font-size: 24px; color: #FFFFFF; line-height: 1.25; min-width: =
+300px;">New sign-in from Windows</td><td width=3D"32px"></td></tr><tr><td h=
+eight=3D"18px" colspan=3D"3"></td></tr></table></td></tr><tr><td><table bgc=
+olor=3D"#FAFAFA" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" style=3D"min-width: 332px; max-width: 600px; border: 1px solid #F0F0=
+F0; border-bottom: 1px solid #C0C0C0; border-top: 0; border-bottom-left-rad=
+ius: 3px; border-bottom-right-radius: 3px;"><tr height=3D"16px"><td width=
+=3D"32px" rowspan=3D"3"></td><td></td><td width=3D"32px" rowspan=3D"3"></td=
+></tr><tr><td><table style=3D"min-width: 300px;" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0"><tr><td style=3D"font-family: Roboto-Regular,Helve=
+tica,Arial,sans-serif; font-size: 13px; color: #202020; line-height: 1.5;pa=
+dding-bottom: 4px;">Hi Rock,</td></tr><tr><td style=3D"font-family: Roboto-=
+Regular,Helvetica,Arial,sans-serif; font-size: 13px; color: #202020; line-h=
+eight: 1.5;padding: 4px 0;">Your Google Account <a>rockhammerfister@gmail.c=
+om</a> was just used to sign in on <span style=3D"white-space:nowrap;">Wind=
+ows</span>.<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D=
+"margin-top: 48px; margin-bottom: 48px;"><tr valign=3D"middle"><td width=3D=
+"32px"></td><td align=3D"center"><img src=3D"https://www.gstatic.com/accoun=
+talerts/email/anonymous_profile_photo.png" width=3D"48px" height=3D"48px" s=
+tyle=3D"width: 48px; height: 48px; display: block; border-radius: 50%;"></t=
+d><td width=3D"16px"></td><td style=3D"line-height: 1.2;"><span style=3D"fo=
+nt-family: Roboto-Regular,Helvetica,Arial,sans-serif;font-size: 20px; color=
+: #202020;">Rock Hammerfist</span><br><span style=3D"font-family: Roboto-Re=
+gular,Helvetica,Arial,sans-serif;font-size: 13px; color: #727272;"><a>rockh=
+ammerfister@gmail.com</a></span></td></tr><tr valign=3D"middle"><td width=
+=3D"32px" height=3D"24px"></td><td align=3D"center" height=3D"24px"><img sr=
+c=3D"https://www.gstatic.com/accountalerts/email/down_arrow.png" width=3D"4=
+px" height=3D"10px" style=3D"width: 4px; height: 10px; display: block; "></=
+td></tr><tr valign=3D"top"><td width=3D"32px"></td><td align=3D"center"><im=
+g src=3D"https://www.gstatic.com/accountalerts/devices/windows_laptop_wallp=
+aper_big.png" width=3D"48px" height=3D"48px" style=3D"width: 48px; height: =
+48px; display: block; "></td><td width=3D"16px"></td><td style=3D"line-heig=
+ht: 1.2;"><span style=3D"font-family: Roboto-Regular,Helvetica,Arial,sans-s=
+erif; font-size: 16px; color: #202020;">Windows</span><br><span style=3D"fo=
+nt-family: Roboto-Regular,Helvetica,Arial,sans-serif; font-size: 13px; colo=
+r: #727272;">Monday, July 31, 2017 7:30 PM (GMT)</span></td></tr></table><b=
+>Don&#39;t recognize this activity?</b><br>Review your <a href=3D"https://a=
+ccounts.google.com/AccountChooser?Email=3Drockhammerfister@gmail.com&amp;co=
+ntinue=3Dhttps://myaccount.google.com/newdevice/nt/1501529455000?rfn%3D31%2=
+6rfnc%3D1%26eid%3D2755535625362879067%26et%3D0%26asae%3D2" data-meta-key=3D=
+"review-devices" style=3D"text-decoration: none; color: #4285F4;" target=3D=
+"_blank">recently used devices</a> now.<br><br>Why are we sending this? We =
+take security very seriously and we want to keep you in the loop on importa=
+nt actions in your account.<br>We were unable to determine whether you have=
+ used this browser or device with your account before. This can happen when=
+ you sign in for the first time on a new computer, phone or browser, when y=
+ou use your browser's incognito or private browsing mode or clear your cook=
+ies, or when somebody else is accessing your account.</td></tr><tr><td styl=
+e=3D"font-family: Roboto-Regular,Helvetica,Arial,sans-serif; font-size: 13p=
+x; color: #202020; line-height: 1.5; padding-top: 28px;">The Google Account=
+s team</td></tr><tr height=3D"16px"></tr><tr><td><table style=3D"font-famil=
+y: Roboto-Regular,Helvetica,Arial,sans-serif; font-size: 12px; color: #B9B9=
+B9; line-height: 1.5;"><tr><td>This email can't receive replies. To give us=
+ feedback on this alert, <a href=3D"https://support.google.com/accounts/con=
+tact/device_alert_feedback?hl=3Den" data-meta-key=3D"feedback" style=3D"tex=
+t-decoration: none; color: #4285F4;" target=3D"_blank">click here</a>.<br>F=
+or more information, visit the <a href=3D"https://support.google.com/accoun=
+ts/answer/2733203" data-meta-key=3D"help" style=3D"text-decoration: none; c=
+olor: #4285F4;" target=3D"_blank">Google Accounts Help Center</a>.</td></tr=
+></table></td></tr></table></td></tr><tr height=3D"32px"></tr></table></td>=
+</tr><tr height=3D"16"></tr><tr><td style=3D"max-width: 600px; font-family:=
+ Roboto-Regular,Helvetica,Arial,sans-serif; font-size: 10px; color: #BCBCBC=
+; line-height: 1.5;"><tr><td><table style=3D"font-family: Roboto-Regular,He=
+lvetica,Arial,sans-serif; font-size: 10px; color: #666666; line-height: 18p=
+x; padding-bottom: 10px"><tr><td>You received this mandatory email service =
+announcement to update you about important changes to your Google product o=
+r account.</td></tr><tr height=3D"6px"></tr><tr><td><div style=3D"direction=
+: ltr; text-align: left">&copy; 2017 Google Inc., 1600 Amphitheatre Parkway=
+, Mountain View, CA 94043, USA</div><div style=3D"display: none !important;=
+ mso-hide:all; max-height:0px; max-width:0px;">et:31</div></td></tr></table=
+></td></tr></td></tr></table></td><td width=3D"32px"></td></tr><tr height=
+=3D"32px"></tr></table></body></html>
+--089e082349882d2d9e0555a2126d--
+From - Tue Aug  8 11:21:44 2017
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+MIME-Version: 1.0
+Received: by 10.129.56.6 with HTTP; Tue, 8 Aug 2017 08:06:23 -0700 (PDT)
+In-Reply-To: <276611846.1924525.1502204704975@mail.yahoo.com>
+References: <977877121.503921.1500996663695.ref@mail.yahoo.com>
+	<977877121.503921.1500996663695@mail.yahoo.com>
+	<f019f1f6-b46b-c158-f230-c7daeba4e37d@gmail.com>
+	<596189589.522764.1500997278476@mail.yahoo.com>
+	<2527cb76-0909-dae9-cf9f-e6ecb7f1596b@gmail.com>
+	<1543384845.3987279.1501597509104@mail.yahoo.com>
+	<982298886.4015602.1501597943392@mail.yahoo.com>
+	<CAB0Qv+MQQAoDPC-gZbjrpaw0kt73vodLkGWttpA-c2kHDFbyfQ@mail.gmail.com>
+	<276611846.1924525.1502204704975@mail.yahoo.com>
+Date: Tue, 8 Aug 2017 11:06:23 -0400
+Delivered-To: rockhammerfister@gmail.com
+Message-ID: <CAB0Qv+NVAQn04Pe9nMps2FXaxrHYKd=t9xFExsN9vWbZLrx-5g@mail.gmail.com>
+Subject: Re: Beer links
+From: Rock Hammerfist <rockhammerfister@gmail.com>
+To: Brock Rockington <brockrockington@yahoo.com>
+Content-Type: multipart/alternative; boundary="001a114224467da63e05563f4e64"
+
+--001a114224467da63e05563f4e64
+Content-Type: text/plain; charset="UTF-8"
+
+By the way, that beer list looked good, but why did it ask me for
+credentials? I used my Windows username and it worked, must have been
+something with Microsoft Word.  Who are they playing this weekend?
+
+-rock
+
+On Tue, Aug 8, 2017 at 11:05 AM, Brock Rockington <brockrockington@yahoo.com
+> wrote:
+
+> Sure, let's do it. Maybe we can catch a ballgame after.
+>
+>
+> On Tuesday, August 8, 2017 10:57 AM, Rock Hammerfist <
+> rockhammerfister@gmail.com> wrote:
+>
+>
+> Sorry about the delay, I had to handle some family stuff, I shot you a
+> text message. Maybe we can try and link up again this weekend and try out
+> YankStreet Brewing?
+>
+> -rock
+>
+> On Tue, Aug 1, 2017 at 10:32 AM, Brock Rockington <
+> brockrockington@yahoo.com> wrote:
+>
+> Oh and here's their beer menu.
+>
+> http://yankstreetbrewing.com/ BeerMenu.docx
+> <http://yankstreetbrewing.com/BeerMenu.docx>
+>
+> -brock
+>
+>
+> On Tuesday, August 1, 2017 10:25 AM, Brock Rockington <
+> brockrockington@yahoo.com> wrote:
+>
+>
+> Hey Rocko,
+>
+> I found this place called Yank Street Brewing. The menu looks awesome,
+> they have some nice looking IPAs. Check it out, wanna hit it up on Saturday?
+>
+> http://yankstreetbrewing.com
+>
+> -brock
+>
+>
+> On Monday, July 31, 2017 3:23 PM, Rock Hammerfist <
+> rockhammerfister@gmail.com> wrote:
+>
+>
+> That was awesome! We should go to some new places this weekend. Did you
+> find any other good microbrews when you were researching last week? Glad
+> there is Uber!
+>
+> On 7/25/2017 11:41 AM, Brock Rockington wrote:
+>
+> If you wanna do a tour, let's check these out too.
+>
+> Ocelot Brewing Co. <http://ocelotbrewing.com/#beermenu>
+>
+>
+> Ocelot Brewing Co.
+> <http://ocelotbrewing.com/#beermenu>
+>
+> http://www.caboosebrewing.com/ drinks/beerlist.exe
+> <http://www.caboosebrewing.com/drinks/>
+>
+>
+>
+>
+> Drinks
+> Great beverages are the cornerstone of Caboose. We craft each of our beers
+> in our 15 barrel brewhouse and serv...
+>
+> <http://www.caboosebrewing.com/drinks/>
+>
+>
+>
+> On Tuesday, July 25, 2017 11:37 AM, Rock Hammerfist
+> <rockhammerfister@gmail.com> <rockhammerfister@gmail.com> wrote:
+>
+>
+> Yeah, I heard Quattro Goomba is a winery AND a brewery. Let's check that
+> one out. I'm gonna search for some others too. Maybe we can make a tour of
+> it.
+>
+> On 7/25/2017 11:31 AM, Brock Rockington wrote:
+>
+> Hey Rock,
+>
+> Check out these craft brew places we should try. Wanna try one out on
+> Saturday? Some of them are having events...let me know.
+>
+> crookedrunbrewing <http://www.crookedrunbrewing.com/events>
+>
+>
+>
+>
+> crookedrunbrewing
+> <http://www.crookedrunbrewing.com/events>
+>
+> What's on Tap? <http://www.goombabrewery.com/whatsontap/>
+>
+>
+> What's on Tap?
+> What's on tap at Quattro Goomba's Brewery
+>
+> <http://www.goombabrewery.com/whatsontap/>
+>
+> Beer <http://www.lostrhino.com/beer.html>
+>
+>
+>
+>
+>
+> Beer
+> HOME
+>
+> <http://www.lostrhino.com/beer.html>
+>
+>
+>
+>
+>
+>
+>
+> ------------------------------
+> [image: AVG logo] <http://www.avg.com/internet-security>
+> This email has been checked for viruses by AVG antivirus software.
+> www.avg.com <http://www.avg.com/internet-security>
+>
+>
+> <https://mg.mail.yahoo.com/neo/launch?.rand=5adgu3me64mgj#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+
+--001a114224467da63e05563f4e64
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">By the way, that beer list looked good, but why did it ask=
+ me for credentials? I used my Windows username and it worked, must have be=
+en something with Microsoft Word.=C2=A0 Who are they playing this weekend?<=
+div><br></div><div>-rock</div></div><div class=3D"gmail_extra"><br><div cla=
+ss=3D"gmail_quote">On Tue, Aug 8, 2017 at 11:05 AM, Brock Rockington <span =
+dir=3D"ltr">&lt;<a href=3D"mailto:brockrockington@yahoo.com" target=3D"_bla=
+nk">brockrockington@yahoo.com</a>&gt;</span> wrote:<br><blockquote class=3D=
+"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding=
+-left:1ex"><div><div style=3D"color:#000;background-color:#fff;font-family:=
+=E6=A8=99=E6=A5=B7=E9=AB=94,dfkai-sb;font-size:16px"><div><span>Sure, let&#=
+39;s do it. Maybe we can catch a ballgame after.</span></div><div><div clas=
+s=3D"h5"> <div class=3D"m_-8868577783836231651qtdSeparateBR"><br><br></div>=
+<div class=3D"m_-8868577783836231651yahoo_quoted" style=3D"display:block"> =
+<div style=3D"font-family:=E6=A8=99=E6=A5=B7=E9=AB=94,dfkai-sb;font-size:16=
+px"> <div style=3D"font-family:HelveticaNeue,Helvetica Neue,Helvetica,Arial=
+,Lucida Grande,sans-serif;font-size:16px"> <div dir=3D"ltr"><font size=3D"2=
+" face=3D"Arial"> On Tuesday, August 8, 2017 10:57 AM, Rock Hammerfist &lt;=
+<a href=3D"mailto:rockhammerfister@gmail.com" target=3D"_blank">rockhammerf=
+ister@gmail.com</a>&gt; wrote:<br></font></div>  <br><br> <div class=3D"m_-=
+8868577783836231651y_msg_container"><div id=3D"m_-8868577783836231651yiv627=
+7512426"><div><div dir=3D"ltr">Sorry about the delay, I had to handle some =
+family stuff, I shot you a text message. Maybe we can try and link up again=
+ this weekend and try out YankStreet Brewing?=C2=A0<div><br clear=3D"none">=
+</div><div>-rock</div></div><div class=3D"m_-8868577783836231651yiv62775124=
+26yqt4626233528" id=3D"m_-8868577783836231651yiv6277512426yqt79286"><div cl=
+ass=3D"m_-8868577783836231651yiv6277512426gmail_extra"><br clear=3D"none"><=
+div class=3D"m_-8868577783836231651yiv6277512426gmail_quote">On Tue, Aug 1,=
+ 2017 at 10:32 AM, Brock Rockington <span dir=3D"ltr">&lt;<a rel=3D"nofollo=
+w" shape=3D"rect" href=3D"mailto:brockrockington@yahoo.com" target=3D"_blan=
+k">brockrockington@yahoo.com</a>&gt;</span> wrote:<br clear=3D"none"><block=
+quote class=3D"m_-8868577783836231651yiv6277512426gmail_quote" style=3D"mar=
+gin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div><div style=
+=3D"color:#000;background-color:#fff;font-family:=E6=A8=99=E6=A5=B7=E9=AB=
+=94,dfkai-sb;font-size:16px"><div id=3D"m_-8868577783836231651yiv6277512426=
+m_-5071016804456461269yui_3_16_0_ym19_1_1501575044319_12100"><span>Oh and h=
+ere&#39;s their beer menu.</span></div><div id=3D"m_-8868577783836231651yiv=
+6277512426m_-5071016804456461269yui_3_16_0_ym19_1_1501575044319_12100"><br =
+clear=3D"none"></div><div id=3D"m_-8868577783836231651yiv6277512426m_-50710=
+16804456461269yui_3_16_0_ym19_1_1501575044319_12100"><a rel=3D"nofollow" sh=
+ape=3D"rect" href=3D"http://yankstreetbrewing.com/BeerMenu.docx" target=3D"=
+_blank">http://yankstreetbrewing.com/ BeerMenu.docx</a></div><span class=3D=
+"m_-8868577783836231651yiv6277512426HOEnZb"><font color=3D"#888888"></font>=
+</span><div id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269=
+yui_3_16_0_ym19_1_1501575044319_12100"><br clear=3D"none"></div><div id=3D"=
+m_-8868577783836231651yiv6277512426m_-5071016804456461269yui_3_16_0_ym19_1_=
+1501575044319_12100">-brock</div><div><div class=3D"m_-8868577783836231651y=
+iv6277512426h5"> <div class=3D"m_-8868577783836231651yiv6277512426m_-507101=
+6804456461269qtdSeparateBR"><br clear=3D"none"><br clear=3D"none"></div><di=
+v class=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yahoo_q=
+uoted" style=3D"display:block"> <div style=3D"font-family:=E6=A8=99=E6=A5=
+=B7=E9=AB=94,dfkai-sb;font-size:16px"> <div style=3D"font-family:HelveticaN=
+eue,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;font-size:16px"=
+> <div dir=3D"ltr"><font size=3D"2" face=3D"Arial"> On Tuesday, August 1, 2=
+017 10:25 AM, Brock Rockington &lt;<a rel=3D"nofollow" shape=3D"rect" href=
+=3D"mailto:brockrockington@yahoo.com" target=3D"_blank">brockrockington@yah=
+oo.com</a>&gt; wrote:<br clear=3D"none"></font></div>  <br clear=3D"none"><=
+br clear=3D"none"> <div class=3D"m_-8868577783836231651yiv6277512426m_-5071=
+016804456461269y_msg_container"><div id=3D"m_-8868577783836231651yiv6277512=
+426m_-5071016804456461269yiv1184908586"><div><div style=3D"color:#000;backg=
+round-color:#fff;font-family:=E6=A8=99=E6=A5=B7=E9=AB=94,dfkai-sb;font-size=
+:16px"><div id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269=
+yiv1184908586yui_3_16_0_ym19_1_1501575044319_8387"><span id=3D"m_-886857778=
+3836231651yiv6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1=
+_1501575044319_8386">Hey Rocko,=C2=A0</span></div><div id=3D"m_-88685777838=
+36231651yiv6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1=
+501575044319_9228"><span><br clear=3D"none"></span></div><div dir=3D"ltr" i=
+d=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586=
+yui_3_16_0_ym19_1_1501575044319_9201"><span id=3D"m_-8868577783836231651yiv=
+6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_150157504431=
+9_9200">I found this place called Yank Street Brewing. The menu looks aweso=
+me, they have some nice looking IPAs. Check it out, wanna hit it up on Satu=
+rday?</span></div><div dir=3D"ltr" id=3D"m_-8868577783836231651yiv627751242=
+6m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1501575044319_9198"><=
+span><br clear=3D"none"></span></div><div dir=3D"ltr" id=3D"m_-886857778383=
+6231651yiv6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_15=
+01575044319_9198"><span id=3D"m_-8868577783836231651yiv6277512426m_-5071016=
+804456461269yiv1184908586yui_3_16_0_ym19_1_1501575044319_9245"><a rel=3D"no=
+follow" shape=3D"rect" href=3D"http://yankstreetbrewing.com/" target=3D"_bl=
+ank">http://yankstreetbrewing.com</a></span></div><div dir=3D"ltr" id=3D"m_=
+-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586yui_3_1=
+6_0_ym19_1_1501575044319_9198"><span><br clear=3D"none"></span></div><div d=
+ir=3D"ltr" id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269y=
+iv1184908586yui_3_16_0_ym19_1_1501575044319_9197"><span>-brock</span></div>=
+ <div class=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv=
+1184908586qtdSeparateBR"><br clear=3D"none"><br clear=3D"none"></div><div c=
+lass=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908=
+586yqt7204478591" id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456=
+461269yiv1184908586yqt30169"><div class=3D"m_-8868577783836231651yiv6277512=
+426m_-5071016804456461269yiv1184908586yahoo_quoted" style=3D"display:block"=
+> <div style=3D"font-family:=E6=A8=99=E6=A5=B7=E9=AB=94,dfkai-sb;font-size:=
+16px"> <div style=3D"font-family:HelveticaNeue,Helvetica Neue,Helvetica,Ari=
+al,Lucida Grande,sans-serif;font-size:16px"> <div dir=3D"ltr"><font size=3D=
+"2" face=3D"Arial"> On Monday, July 31, 2017 3:23 PM, Rock Hammerfist &lt;<=
+a rel=3D"nofollow" shape=3D"rect" href=3D"mailto:rockhammerfister@gmail.com=
+" target=3D"_blank">rockhammerfister@gmail.com</a>&gt; wrote:<br clear=3D"n=
+one"></font></div>  <br clear=3D"none"><br clear=3D"none"> <div class=3D"m_=
+-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586y_msg_c=
+ontainer"><div id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461=
+269yiv1184908586"><div>
+    <div>That was awesome! We should go to some new places this weekend.
+      Did you find any other good microbrews when you were researching
+      last week? Glad there is Uber!<br clear=3D"none">
+    </div>
+    <br clear=3D"none">
+    <div class=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269=
+yiv1184908586yqt3238986330" id=3D"m_-8868577783836231651yiv6277512426m_-507=
+1016804456461269yiv1184908586yqt33521"><div class=3D"m_-8868577783836231651=
+yiv6277512426m_-5071016804456461269yiv1184908586moz-cite-prefix">On 7/25/20=
+17 11:41 AM, Brock Rockington
+      wrote:<br clear=3D"none">
+    </div>
+    <blockquote type=3D"cite">
+      <div style=3D"color:#000;background-color:#fff;font-family:=E6=A8=99=
+=E6=A5=B7=E9=AB=94,dfkai-sb;font-size:16px">
+        <div id=3D"m_-8868577783836231651yiv6277512426m_-507101680445646126=
+9yiv1184908586yui_3_16_0_ym19_1_1500995456007_11456"><span id=3D"m_-8868577=
+783836231651yiv6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19=
+_1_1500995456007_11525">If you wanna do a
+            tour, let&#39;s check these out too.</span></div>
+        <div id=3D"m_-8868577783836231651yiv6277512426m_-507101680445646126=
+9yiv1184908586yui_3_16_0_ym19_1_1500995456007_11240"><span><br clear=3D"non=
+e">
+          </span></div>
+        <div dir=3D"ltr" id=3D"m_-8868577783836231651yiv6277512426m_-507101=
+6804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_11212"><span id=
+=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586y=
+ui_3_16_0_ym19_1_1500995456007_11210"><a rel=3D"nofollow" shape=3D"rect" cl=
+ass=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv11849085=
+86enhancr2_1826fd37-7965-71db-a090-d1ed15e9e875" id=3D"m_-88685777838362316=
+51yiv6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995=
+456007_11209" href=3D"http://ocelotbrewing.com/#beermenu" target=3D"_blank"=
+>Ocelot Brewing Co.</a><br clear=3D"none">
+          </span></div>
+        <div id=3D"m_-8868577783836231651yiv6277512426m_-507101680445646126=
+9yiv1184908586yui_3_16_0_ym19_1_1500995456007_11239"><br clear=3D"none">
+        </div>
+        <div class=3D"m_-8868577783836231651yiv6277512426m_-507101680445646=
+1269yiv1184908586yahoo-link-enhancr-card m_-8868577783836231651yiv627751242=
+6m_-5071016804456461269yiv1184908586yahoo-link-enhancr-not-allow-cover m_-8=
+868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586ymail-pre=
+serve-class m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv118=
+4908586ymail-preserve-style" dir=3D"ltr" id=3D"m_-8868577783836231651yiv627=
+7512426m_-5071016804456461269yiv1184908586enhancr2_1826fd37-7965-71db-a090-=
+d1ed15e9e875" style=3D"max-width:400px;font-family:&#39;Helvetica Neue&#39;=
+,Helvetica,Arial,sans-serif"> <a rel=3D"nofollow" shape=3D"rect" class=3D"m=
+_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586yahoo-=
+enhancr-cardlink" id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456=
+461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_11228" href=3D"http://oc=
+elotbrewing.com/#beermenu" style=3D"text-decoration:none;color:#000" target=
+=3D"_blank">
+            <table class=3D"m_-8868577783836231651yiv6277512426m_-507101680=
+4456461269yiv1184908586card-wrapper" id=3D"m_-8868577783836231651yiv6277512=
+426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_11227=
+" style=3D"max-width:400px" cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+"><tbody id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv=
+1184908586yui_3_16_0_ym19_1_1500995456007_11226"><tr id=3D"m_-8868577783836=
+231651yiv6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_150=
+0995456007_11225"><td colspan=3D"1" rowspan=3D"1" id=3D"m_-8868577783836231=
+651yiv6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_150099=
+5456007_11224" width=3D"400">
+                    <table class=3D"m_-8868577783836231651yiv6277512426m_-5=
+071016804456461269yiv1184908586card-info" id=3D"m_-8868577783836231651yiv62=
+77512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_=
+11223" style=3D"background:#fff;max-width:400px;border:1px solid #e0e4e9;bo=
+rder-bottom:3px solid #000000" width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0"><tbody id=3D"m_-8868577783836231651yiv6277512426m_-5071=
+016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_11222"><tr id=
+=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586y=
+ui_3_16_0_ym19_1_1500995456007_11221"><td colspan=3D"1" rowspan=3D"1" id=3D=
+"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586yui_=
+3_16_0_ym19_1_1500995456007_11523" style=3D"vertical-align:top;padding:16px=
+ 0 16px 12px">
+                            <br clear=3D"none">
+                          </td><td colspan=3D"1" rowspan=3D"1" id=3D"m_-886=
+8577783836231651yiv6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_=
+ym19_1_1500995456007_11220" style=3D"vertical-align:middle;padding:16px 12p=
+x;width:99%">
+                            <h2 class=3D"m_-8868577783836231651yiv627751242=
+6m_-5071016804456461269yiv1184908586card-title" style=3D"margin:0 0 4px 0;f=
+ont-size:16px;font-family:&#39;Helvetica                               Neue=
+&#39;,Helvetica,Arial,sans-serif">Ocelot
+                              Brewing Co.</h2>
+                          </td><td colspan=3D"1" rowspan=3D"1" class=3D"m_-=
+8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586card-sha=
+re-container"><br clear=3D"none">
+                          </td></tr></tbody></table>
+                  </td></tr></tbody></table>
+          </a></div>
+        <div id=3D"m_-8868577783836231651yiv6277512426m_-507101680445646126=
+9yiv1184908586yui_3_16_0_ym19_1_1500995456007_11333"><br clear=3D"none" id=
+=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586y=
+ui_3_16_0_ym19_1_1500995456007_11467">
+        </div>
+        <div dir=3D"ltr" id=3D"m_-8868577783836231651yiv6277512426m_-507101=
+6804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_11326"><a rel=3D"=
+nofollow" shape=3D"rect" id=3D"m_-8868577783836231651yiv6277512426m_-507101=
+6804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_11465" href=3D"ht=
+tp://www.caboosebrewing.com/drinks/" target=3D"_blank">http://www.caboosebr=
+ewing.com/ drinks/beerlist.exe</a><br clear=3D"none">
+        </div>
+        <div id=3D"m_-8868577783836231651yiv6277512426m_-507101680445646126=
+9yiv1184908586yui_3_16_0_ym19_1_1500995456007_11463"><br clear=3D"none">
+        </div>
+        <div class=3D"m_-8868577783836231651yiv6277512426m_-507101680445646=
+1269yiv1184908586yahoo-link-enhancr-card m_-8868577783836231651yiv627751242=
+6m_-5071016804456461269yiv1184908586ymail-preserve-class m_-886857778383623=
+1651yiv6277512426m_-5071016804456461269yiv1184908586ymail-preserve-style" d=
+ir=3D"ltr" id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269y=
+iv1184908586enhancr2_1a6eeaca-9967-2d6d-1327-e6609e39b7d7" style=3D"max-wid=
+th:400px;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif"> =
+<a rel=3D"nofollow" shape=3D"rect" class=3D"m_-8868577783836231651yiv627751=
+2426m_-5071016804456461269yiv1184908586yahoo-enhancr-cardlink" href=3D"http=
+://www.caboosebrewing.com/drinks/" style=3D"text-decoration:none;color:#000=
+" target=3D"_blank">
+            <table class=3D"m_-8868577783836231651yiv6277512426m_-507101680=
+4456461269yiv1184908586card-wrapper m_-8868577783836231651yiv6277512426m_-5=
+071016804456461269yiv1184908586yahoo-ignore-table" style=3D"max-width:400px=
+" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tbody><tr><td colspan=
+=3D"1" rowspan=3D"1" width=3D"400">
+                    <table class=3D"m_-8868577783836231651yiv6277512426m_-5=
+071016804456461269yiv1184908586card m_-8868577783836231651yiv6277512426m_-5=
+071016804456461269yiv1184908586yahoo-ignore-table" style=3D"max-width:400px=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tbody><t=
+r><td colspan=3D"1" rowspan=3D"1" valign=3D"top" class=3D"m_-88685777838362=
+31651yiv6277512426m_-5071016804456461269yiv1184908586card-primary-image-cel=
+l" style=3D"background:#000 no-repeat center center;background-size:cover;m=
+in-height:200px" bgcolor=3D"#000000" background=3D"https://s.yimg.com/vv//a=
+pi/res/1.2/rqYrRGQLYjyIzpSfER5rNA--/YXBwaWQ9bWFpbDtmaT1maWxsO2g9MjAwO3c9NDA=
+w/http://static1.squarespace.com/static/54ad55e4e4b07c2f08587c33/t/5963d9ac=
+1e5b6c2143675cb2/1499716023234/Black+Vertical+Caboose+Logo.png?format=3D100=
+0w.cf.jpg">
+                           =20
+                            <table class=3D"m_-8868577783836231651yiv627751=
+2426m_-5071016804456461269yiv1184908586yahoo-ignore-table" style=3D"width:1=
+00%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tbody><tr><td colspa=
+n=3D"1" rowspan=3D"1" valign=3D"top" style=3D"background:transparent repeat=
+ left top;min-height:200px" bgcolor=3D"transparent" background=3D"https://s=
+.yimg.com/nq/storm/assets/enhancrV2/12/overlay-tile.png">
+                                   =20
+                                    <table class=3D"m_-8868577783836231651y=
+iv6277512426m_-5071016804456461269yiv1184908586yahoo-ignore-table" style=3D=
+"width:100%;min-height:185px;min-height:185px" height=3D"185"><tbody><tr><t=
+d colspan=3D"1" rowspan=3D"1" class=3D"m_-8868577783836231651yiv6277512426m=
+_-5071016804456461269yiv1184908586card-richInfo2" style=3D"text-align:left;=
+text-align:left;padding:15px 0 0 15px;vertical-align:top"> <br clear=3D"non=
+e">
+                                          </td><td colspan=3D"1" rowspan=3D=
+"1" class=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv11=
+84908586card-actions" style=3D"text-align:right;padding:15px 15px 0 0;verti=
+cal-align:top"> <br clear=3D"none">
+                                          </td></tr></tbody></table>
+                                   =20
+                                  </td></tr></tbody></table>
+                          </td></tr><tr><td colspan=3D"1" rowspan=3D"1">
+                            <table align=3D"center" class=3D"m_-88685777838=
+36231651yiv6277512426m_-5071016804456461269yiv1184908586card-info m_-886857=
+7783836231651yiv6277512426m_-5071016804456461269yiv1184908586yahoo-ignore-t=
+able" style=3D"background:#fff;width:95%;max-width:380px;border:1px solid #=
+e0e4e9;border-bottom:3px solid #000000;margin-left:auto;margin-right:auto" =
+cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tbody><tr><td colspan=3D"=
+1" rowspan=3D"1" style=3D"background-color:#ffffff;padding:16px 0 16px 12px=
+;vertical-align:top"> <br clear=3D"none">
+                                  </td><td colspan=3D"1" rowspan=3D"1" styl=
+e=3D"vertical-align:middle;padding:16px 12px;width:99%">
+                                    <h2 class=3D"m_-8868577783836231651yiv6=
+277512426m_-5071016804456461269yiv1184908586card-title" style=3D"font-size:=
+16px;line-height:19px;margin:0 0 4px 0;font-family:&#39;Helvetica Neue&#39;=
+,Helvetica,Arial,sans-serif">Drinks</h2>
+                                    <div class=3D"m_-8868577783836231651yiv=
+6277512426m_-5071016804456461269yiv1184908586card-description" style=3D"fon=
+t-size:11px;line-height:15px;color:#999">Great
+                                      beverages are the cornerstone of
+                                      Caboose. We craft each of our
+                                      beers in our 15 barrel brewhouse
+                                      and serv...</div>
+                                  </td><td colspan=3D"1" rowspan=3D"1" styl=
+e=3D"text-align:right;padding:16px 12px 16px 0"> <br clear=3D"none">
+                                  </td></tr></tbody></table>
+                          </td></tr></tbody></table>
+                  </td></tr></tbody></table>
+          </a></div>
+        <div><br clear=3D"none">
+        </div>
+        <div class=3D"m_-8868577783836231651yiv6277512426m_-507101680445646=
+1269yiv1184908586qtdSeparateBR"><br clear=3D"none">
+          <br clear=3D"none">
+        </div>
+        <div class=3D"m_-8868577783836231651yiv6277512426m_-507101680445646=
+1269yiv1184908586yahoo_quoted" style=3D"display:block">
+          <div style=3D"font-family:=E6=A8=99=E6=A5=B7=E9=AB=94,dfkai-sb;fo=
+nt-size:16px">
+            <div style=3D"font-family:HelveticaNeue,Helvetica Neue,Helvetic=
+a,Arial,Lucida Grande,sans-serif;font-size:16px">
+              <div dir=3D"ltr"><font face=3D"Arial" size=3D"2"> On Tuesday,
+                  July 25, 2017 11:37 AM, Rock Hammerfist
+                  <a rel=3D"nofollow" shape=3D"rect" class=3D"m_-8868577783=
+836231651yiv6277512426m_-5071016804456461269yiv1184908586moz-txt-link-rfc23=
+96E" href=3D"mailto:rockhammerfister@gmail.com" target=3D"_blank">&lt;rockh=
+ammerfister@gmail.com&gt;</a> wrote:<br clear=3D"none">
+                </font></div>
+              <br clear=3D"none">
+              <br clear=3D"none">
+              <div class=3D"m_-8868577783836231651yiv6277512426m_-507101680=
+4456461269yiv1184908586y_msg_container">
+                <div id=3D"m_-8868577783836231651yiv6277512426m_-5071016804=
+456461269yiv1184908586">
+                  <div>
+                    <div>Yeah, I heard Quattro Goomba is a winery AND a
+                      brewery. Let&#39;s check that one out. I&#39;m gonna
+                      search for some others too. Maybe we can make a
+                      tour of it.<br clear=3D"none">
+                    </div>
+                    <br clear=3D"none">
+                    <div class=3D"m_-8868577783836231651yiv6277512426m_-507=
+1016804456461269yiv1184908586yqt6882388476" id=3D"m_-8868577783836231651yiv=
+6277512426m_-5071016804456461269yiv1184908586yqt04772">
+                      <div class=3D"m_-8868577783836231651yiv6277512426m_-5=
+071016804456461269yiv1184908586moz-cite-prefix">On
+                        7/25/2017 11:31 AM, Brock Rockington wrote:<br clea=
+r=3D"none">
+                      </div>
+                      <blockquote type=3D"cite">
+                        <div style=3D"color:#000;background-color:#fff;font=
+-family:=E6=A8=99=E6=A5=B7=E9=AB=94,dfkai-sb;font-size:16px">
+                          <div id=3D"m_-8868577783836231651yiv6277512426m_-=
+5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4872">Hey
+                            Rock,=C2=A0</div>
+                          <div id=3D"m_-8868577783836231651yiv6277512426m_-=
+5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4871"><br c=
+lear=3D"none">
+                          </div>
+                          <div id=3D"m_-8868577783836231651yiv6277512426m_-=
+5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4862">Check
+                            out these craft brew places we should try.
+                            Wanna try one out on Saturday? Some of them
+                            are having events...let me know.</div>
+                          <div id=3D"m_-8868577783836231651yiv6277512426m_-=
+5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4862"><br c=
+lear=3D"none">
+                          </div>
+                          <div dir=3D"ltr" id=3D"m_-8868577783836231651yiv6=
+277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007=
+_4862"><a rel=3D"nofollow" shape=3D"rect" class=3D"m_-8868577783836231651yi=
+v6277512426m_-5071016804456461269yiv1184908586enhancr2_3730e64b-50ff-6427-6=
+28e-905485d2b56a" id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456=
+461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4904" href=3D"http://www=
+.crookedrunbrewing.com/events" target=3D"_blank">crookedrunbrewing</a><br c=
+lear=3D"none">
+                          </div>
+                          <div id=3D"m_-8868577783836231651yiv6277512426m_-=
+5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4911"><br c=
+lear=3D"none">
+                          </div>
+                          <div class=3D"m_-8868577783836231651yiv6277512426=
+m_-5071016804456461269yiv1184908586yahoo-link-enhancr-card m_-8868577783836=
+231651yiv6277512426m_-5071016804456461269yiv1184908586ymail-preserve-class =
+m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586ymail=
+-preserve-style" dir=3D"ltr" id=3D"m_-8868577783836231651yiv6277512426m_-50=
+71016804456461269yiv1184908586enhancr2_3730e64b-50ff-6427-628e-905485d2b56a=
+" style=3D"max-width:400px;font-family:&#39;Helvetica                      =
+       Neue&#39;,Helvetica,Arial,sans-serif"> <a rel=3D"nofollow" shape=3D"=
+rect" class=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv=
+1184908586yahoo-enhancr-cardlink" id=3D"m_-8868577783836231651yiv6277512426=
+m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4960" hr=
+ef=3D"http://www.crookedrunbrewing.com/events" style=3D"text-decoration:non=
+e;color:#000" target=3D"_blank">
+                              <table class=3D"m_-8868577783836231651yiv6277=
+512426m_-5071016804456461269yiv1184908586card-wrapper m_-886857778383623165=
+1yiv6277512426m_-5071016804456461269yiv1184908586yahoo-ignore-table" id=3D"=
+m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586yui_3=
+_16_0_ym19_1_1500995456007_4959" style=3D"max-width:400px" cellspacing=3D"0=
+" cellpadding=3D"0" border=3D"0"><tbody id=3D"m_-8868577783836231651yiv6277=
+512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_49=
+58"><tr id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1=
+184908586yui_3_16_0_ym19_1_1500995456007_4957"><td colspan=3D"1" rowspan=3D=
+"1" id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv11849=
+08586yui_3_16_0_ym19_1_1500995456007_4956" width=3D"400">
+                                      <table class=3D"m_-886857778383623165=
+1yiv6277512426m_-5071016804456461269yiv1184908586card m_-886857778383623165=
+1yiv6277512426m_-5071016804456461269yiv1184908586yahoo-ignore-table" id=3D"=
+m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586yui_3=
+_16_0_ym19_1_1500995456007_4955" style=3D"max-width:400px" width=3D"100%" c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tbody id=3D"m_-88685777838=
+36231651yiv6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1=
+500995456007_4954"><tr id=3D"m_-8868577783836231651yiv6277512426m_-50710168=
+04456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4953"><td colspan=
+=3D"1" rowspan=3D"1" valign=3D"top" class=3D"m_-8868577783836231651yiv62775=
+12426m_-5071016804456461269yiv1184908586card-primary-image-cell" id=3D"m_-8=
+868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586yui_3_16_=
+0_ym19_1_1500995456007_4952" style=3D"background:#000 no-repeat center cent=
+er;background-size:cover;min-height:200px" bgcolor=3D"#000000" background=
+=3D"https://s.yimg.com/vv//api/res/1.2/LjbDtqQLnueaymTIPjcwDg--/YXBwaWQ9bWF=
+pbDtmaT1maWxsO2g9MjAwO3c9NDAw/https://static.wixstatic.com/media/076cbb_36b=
+c20ca230f2a06aec78fa5b35b2a3b.png.cf.jpg">
+                                              <table class=3D"m_-8868577783=
+836231651yiv6277512426m_-5071016804456461269yiv1184908586yahoo-ignore-table=
+" id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908=
+586yui_3_16_0_ym19_1_1500995456007_4951" style=3D"width:100%" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0"><tbody id=3D"m_-8868577783836231651yi=
+v6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_15009954560=
+07_4950"><tr id=3D"m_-8868577783836231651yiv6277512426m_-507101680445646126=
+9yiv1184908586yui_3_16_0_ym19_1_1500995456007_4949"><td colspan=3D"1" rowsp=
+an=3D"1" valign=3D"top" id=3D"m_-8868577783836231651yiv6277512426m_-5071016=
+804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4948" style=3D"bac=
+kground:transparent repeat left top;min-height:200px" bgcolor=3D"transparen=
+t" background=3D"https://s.yimg.com/nq/storm/assets/enhancrV2/12/overlay-ti=
+le.png">
+                                                      <table class=3D"m_-88=
+68577783836231651yiv6277512426m_-5071016804456461269yiv1184908586yahoo-igno=
+re-table" id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yi=
+v1184908586yui_3_16_0_ym19_1_1500995456007_4947" style=3D"width:100%;min-he=
+ight:185px;min-height:185px" height=3D"185"><tbody id=3D"m_-886857778383623=
+1651yiv6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_15009=
+95456007_4946"><tr id=3D"m_-8868577783836231651yiv6277512426m_-507101680445=
+6461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4945"><td colspan=3D"1"=
+ rowspan=3D"1" class=3D"m_-8868577783836231651yiv6277512426m_-5071016804456=
+461269yiv1184908586card-richInfo2" id=3D"m_-8868577783836231651yiv627751242=
+6m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_5823" s=
+tyle=3D"text-align:left;text-align:left;padding:15px 0 0 15px;vertical-alig=
+n:top">
+                                                          <br clear=3D"none=
+">
+                                                          </td><td colspan=
+=3D"1" rowspan=3D"1" class=3D"m_-8868577783836231651yiv6277512426m_-5071016=
+804456461269yiv1184908586card-actions" id=3D"m_-8868577783836231651yiv62775=
+12426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_494=
+4" style=3D"text-align:right;padding:15px 15px 0 0;vertical-align:top">
+                                                          <br clear=3D"none=
+">
+                                                          </td></tr></tbody=
+></table>
+                                                    </td></tr></tbody></tab=
+le>
+                                            </td></tr><tr><td colspan=3D"1"=
+ rowspan=3D"1">
+                                              <table align=3D"center" class=
+=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586c=
+ard-info m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv118490=
+8586yahoo-ignore-table" style=3D"background:#fff;width:95%;max-width:380px;=
+border:1px solid #e0e4e9;border-bottom:3px solid #000000;margin-left:auto;m=
+argin-right:auto" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tbody><=
+tr><td colspan=3D"1" rowspan=3D"1" style=3D"background-color:#ffffff;paddin=
+g:16px 0 16px 12px;vertical-align:top">
+                                                      <br clear=3D"none">
+                                                    </td><td colspan=3D"1" =
+rowspan=3D"1" style=3D"vertical-align:middle;padding:16px 12px;width:99%">
+                                                      <h2 class=3D"m_-88685=
+77783836231651yiv6277512426m_-5071016804456461269yiv1184908586card-title" s=
+tyle=3D"font-size:16px;line-height:19px;margin:0 0 4px 0;font-family:&#39;H=
+elvetica                                                         Neue&#39;,=
+Helvetica,Arial,sans-serif">crookedrunbrewing</h2>
+                                                    </td><td colspan=3D"1" =
+rowspan=3D"1" style=3D"text-align:right;padding:16px 12px 16px 0"> <br clea=
+r=3D"none">
+                                                    </td></tr></tbody></tab=
+le>
+                                            </td></tr></tbody></table>
+                                    </td></tr></tbody></table>
+                            </a></div>
+                          <div id=3D"m_-8868577783836231651yiv6277512426m_-=
+5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4984"><br c=
+lear=3D"none">
+                          </div>
+                          <div dir=3D"ltr" id=3D"m_-8868577783836231651yiv6=
+277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007=
+_4994"><a rel=3D"nofollow" shape=3D"rect" class=3D"m_-8868577783836231651yi=
+v6277512426m_-5071016804456461269yiv1184908586enhancr2_380dffb6-9c9b-e36f-a=
+b50-4841aa8c5b40" id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456=
+461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4993" href=3D"http://www=
+.goombabrewery.com/whatsontap/" target=3D"_blank">What&#39;s on Tap?</a></d=
+iv>
+                          <div id=3D"m_-8868577783836231651yiv6277512426m_-=
+5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_5004"><br c=
+lear=3D"none">
+                          </div>
+                          <div class=3D"m_-8868577783836231651yiv6277512426=
+m_-5071016804456461269yiv1184908586yahoo-link-enhancr-card m_-8868577783836=
+231651yiv6277512426m_-5071016804456461269yiv1184908586yahoo-link-enhancr-no=
+t-allow-cover m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1=
+184908586ymail-preserve-class m_-8868577783836231651yiv6277512426m_-5071016=
+804456461269yiv1184908586ymail-preserve-style m_-8868577783836231651yiv6277=
+512426m_-5071016804456461269yiv1184908586img-overlay-selected" dir=3D"ltr" =
+id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv118490858=
+6enhancr2_380dffb6-9c9b-e36f-ab50-4841aa8c5b40" style=3D"max-width:400px;fo=
+nt-family:&#39;Helvetica                             Neue&#39;,Helvetica,Ar=
+ial,sans-serif"> <a rel=3D"nofollow" shape=3D"rect" class=3D"m_-88685777838=
+36231651yiv6277512426m_-5071016804456461269yiv1184908586yahoo-enhancr-cardl=
+ink" id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184=
+908586yui_3_16_0_ym19_1_1500995456007_5013" href=3D"http://www.goombabrewer=
+y.com/whatsontap/" style=3D"text-decoration:none;color:#000" target=3D"_bla=
+nk">
+                              <table class=3D"m_-8868577783836231651yiv6277=
+512426m_-5071016804456461269yiv1184908586card-wrapper" id=3D"m_-88685777838=
+36231651yiv6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1=
+500995456007_5012" style=3D"max-width:400px" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0"><tbody id=3D"m_-8868577783836231651yiv6277512426m_-5071=
+016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_5011"><tr id=3D=
+"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586yui_=
+3_16_0_ym19_1_1500995456007_5010"><td colspan=3D"1" rowspan=3D"1" id=3D"m_-=
+8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586yui_3_16=
+_0_ym19_1_1500995456007_5009" width=3D"400">
+                                      <table class=3D"m_-886857778383623165=
+1yiv6277512426m_-5071016804456461269yiv1184908586card-info" id=3D"m_-886857=
+7783836231651yiv6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym1=
+9_1_1500995456007_5008" style=3D"background:#fff;max-width:400px;border:1px=
+ solid #e0e4e9;border-bottom:3px solid #000000" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0"><tbody id=3D"m_-8868577783836231651yi=
+v6277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_15009954560=
+07_5007"><tr id=3D"m_-8868577783836231651yiv6277512426m_-507101680445646126=
+9yiv1184908586yui_3_16_0_ym19_1_1500995456007_5006"><td colspan=3D"1" rowsp=
+an=3D"1" id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv=
+1184908586yui_3_16_0_ym19_1_1500995456007_5826" style=3D"vertical-align:top=
+;padding:16px 0 16px 12px"> <br clear=3D"none">
+                                            </td><td colspan=3D"1" rowspan=
+=3D"1" id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv11=
+84908586yui_3_16_0_ym19_1_1500995456007_5005" style=3D"vertical-align:middl=
+e;padding:16px 12px;width:99%">
+                                              <h2 class=3D"m_-8868577783836=
+231651yiv6277512426m_-5071016804456461269yiv1184908586card-title" style=3D"=
+margin:0 0 4px 0;font-size:16px;font-family:&#39;Helvetica                 =
+                                Neue&#39;,Helvetica,Arial,sans-serif">What&=
+#39;s on
+                                                Tap?</h2>
+                                              <div class=3D"m_-886857778383=
+6231651yiv6277512426m_-5071016804456461269yiv1184908586card-description" st=
+yle=3D"font-size:11px;line-height:15px;color:#999">What&#39;s on tap at
+                                                Quattro Goomba&#39;s Brewer=
+y</div>
+                                            </td><td colspan=3D"1" rowspan=
+=3D"1" class=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yi=
+v1184908586card-share-container"><br clear=3D"none">
+                                            </td></tr></tbody></table>
+                                    </td></tr></tbody></table>
+                            </a></div>
+                          <div id=3D"m_-8868577783836231651yiv6277512426m_-=
+5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_5026"><br c=
+lear=3D"none">
+                          </div>
+                          <div dir=3D"ltr" id=3D"m_-8868577783836231651yiv6=
+277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007=
+_5026"><a rel=3D"nofollow" shape=3D"rect" class=3D"m_-8868577783836231651yi=
+v6277512426m_-5071016804456461269yiv1184908586enhancr2_eda75603-783b-f8dc-6=
+d0e-1c9b81a918de" id=3D"m_-8868577783836231651yiv6277512426m_-5071016804456=
+461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_5745" href=3D"http://www=
+.lostrhino.com/beer.html" target=3D"_blank">Beer</a><br clear=3D"none">
+                          </div>
+                          <div dir=3D"ltr" id=3D"m_-8868577783836231651yiv6=
+277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007=
+_5026"><br clear=3D"none">
+                          </div>
+                          <div><br clear=3D"none">
+                          </div>
+                          <div class=3D"m_-8868577783836231651yiv6277512426=
+m_-5071016804456461269yiv1184908586yahoo-link-enhancr-card m_-8868577783836=
+231651yiv6277512426m_-5071016804456461269yiv1184908586ymail-preserve-class =
+m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586ymail=
+-preserve-style" dir=3D"ltr" id=3D"m_-8868577783836231651yiv6277512426m_-50=
+71016804456461269yiv1184908586enhancr2_eda75603-783b-f8dc-6d0e-1c9b81a918de=
+" style=3D"max-width:400px;font-family:&#39;Helvetica                      =
+       Neue&#39;,Helvetica,Arial,sans-serif"> <a rel=3D"nofollow" shape=3D"=
+rect" class=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv=
+1184908586yahoo-enhancr-cardlink" href=3D"http://www.lostrhino.com/beer.htm=
+l" style=3D"text-decoration:none;color:#000" target=3D"_blank">
+                              <table class=3D"m_-8868577783836231651yiv6277=
+512426m_-5071016804456461269yiv1184908586card-wrapper m_-886857778383623165=
+1yiv6277512426m_-5071016804456461269yiv1184908586yahoo-ignore-table" style=
+=3D"max-width:400px" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tbod=
+y><tr><td colspan=3D"1" rowspan=3D"1" width=3D"400">
+                                      <table class=3D"m_-886857778383623165=
+1yiv6277512426m_-5071016804456461269yiv1184908586card m_-886857778383623165=
+1yiv6277512426m_-5071016804456461269yiv1184908586yahoo-ignore-table" style=
+=3D"max-width:400px" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bor=
+der=3D"0"><tbody><tr><td colspan=3D"1" rowspan=3D"1" valign=3D"top" class=
+=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586c=
+ard-primary-image-cell" style=3D"background:#000 no-repeat center center;ba=
+ckground-size:cover;min-height:200px" bgcolor=3D"#000000" background=3D"htt=
+ps://s.yimg.com/vv//api/res/1.2/Q3BhdiH3dh0f319Sf2RqAg--/YXBwaWQ9bWFpbDtmaT=
+1maWxsO2g9MjAwO3c9NDAw/http://www.lostrhino.com/uploads/3/0/0/5/30050107/ye=
+arround-beer-title_orig.png.cf.jpg">
+                                              <table class=3D"m_-8868577783=
+836231651yiv6277512426m_-5071016804456461269yiv1184908586yahoo-ignore-table=
+" style=3D"width:100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tb=
+ody><tr><td colspan=3D"1" rowspan=3D"1" valign=3D"top" style=3D"background:=
+transparent repeat left top;min-height:200px" bgcolor=3D"transparent" backg=
+round=3D"https://s.yimg.com/nq/storm/assets/enhancrV2/12/overlay-tile.png">
+                                                      <table class=3D"m_-88=
+68577783836231651yiv6277512426m_-5071016804456461269yiv1184908586yahoo-igno=
+re-table" style=3D"width:100%;min-height:185px;min-height:185px" height=3D"=
+185"><tbody><tr><td colspan=3D"1" rowspan=3D"1" class=3D"m_-886857778383623=
+1651yiv6277512426m_-5071016804456461269yiv1184908586card-richInfo2" style=
+=3D"text-align:left;text-align:left;padding:15px 0 0 15px;vertical-align:to=
+p">
+                                                          <br clear=3D"none=
+">
+                                                          </td><td colspan=
+=3D"1" rowspan=3D"1" class=3D"m_-8868577783836231651yiv6277512426m_-5071016=
+804456461269yiv1184908586card-actions" style=3D"text-align:right;padding:15=
+px 15px 0 0;vertical-align:top"> <br clear=3D"none">
+                                                          </td></tr></tbody=
+></table>
+                                                    </td></tr></tbody></tab=
+le>
+                                            </td></tr><tr><td colspan=3D"1"=
+ rowspan=3D"1">
+                                              <table align=3D"center" class=
+=3D"m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv1184908586c=
+ard-info m_-8868577783836231651yiv6277512426m_-5071016804456461269yiv118490=
+8586yahoo-ignore-table" style=3D"background:#fff;width:95%;max-width:380px;=
+border:1px solid #e0e4e9;border-bottom:3px solid #000000;margin-left:auto;m=
+argin-right:auto" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tbody><=
+tr><td colspan=3D"1" rowspan=3D"1" style=3D"background-color:#ffffff;paddin=
+g:16px 0 16px 12px;vertical-align:top">
+                                                      <br clear=3D"none">
+                                                    </td><td colspan=3D"1" =
+rowspan=3D"1" style=3D"vertical-align:middle;padding:16px 12px;width:99%">
+                                                      <h2 class=3D"m_-88685=
+77783836231651yiv6277512426m_-5071016804456461269yiv1184908586card-title" s=
+tyle=3D"font-size:16px;line-height:19px;margin:0 0 4px 0;font-family:&#39;H=
+elvetica                                                         Neue&#39;,=
+Helvetica,Arial,sans-serif">Beer</h2>
+                                                      <div class=3D"m_-8868=
+577783836231651yiv6277512426m_-5071016804456461269yiv1184908586card-descrip=
+tion" style=3D"font-size:11px;line-height:15px;color:#999">HOME</div>
+                                                    </td><td colspan=3D"1" =
+rowspan=3D"1" style=3D"text-align:right;padding:16px 12px 16px 0"> <br clea=
+r=3D"none">
+                                                    </td></tr></tbody></tab=
+le>
+                                            </td></tr></tbody></table>
+                                    </td></tr></tbody></table>
+                            </a></div>
+                          <div><br clear=3D"none">
+                          </div>
+                          <div dir=3D"ltr" id=3D"m_-8868577783836231651yiv6=
+277512426m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007=
+_4862"><br clear=3D"none">
+                          </div>
+                          <div id=3D"m_-8868577783836231651yiv6277512426m_-=
+5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4860"><br c=
+lear=3D"none">
+                          </div>
+                          <div id=3D"m_-8868577783836231651yiv6277512426m_-=
+5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4861"><br c=
+lear=3D"none">
+                          </div>
+                        </div>
+                      </blockquote>
+                    </div>
+                    <br clear=3D"none">
+                    <div id=3D"m_-8868577783836231651yiv6277512426m_-507101=
+6804456461269yiv1184908586DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2">
+                      <br clear=3D"none">
+                      <br clear=3D"none">
+                      <hr style=3D"border:none;color:#909090;background-col=
+or:#b0b0b0;min-height:1px;width:99%">
+                      <table style=3D"border-collapse:collapse;border:none"=
+><tbody><tr><td colspan=3D"1" rowspan=3D"1" style=3D"border:none;padding:0p=
+x 15px 0px 8px"> <a rel=3D"nofollow" shape=3D"rect" href=3D"http://www.avg.=
+com/internet-security" target=3D"_blank"> <img src=3D"http://static.avast.c=
+om/emails/avg-mail-stamp.png" alt=3D"AVG logo" border=3D"0"> </a> </td><td =
+colspan=3D"1" rowspan=3D"1">
+                              <div style=3D"color:#3d4d5a"> This email
+                                has been checked for viruses by AVG
+                                antivirus software. <br clear=3D"none">
+                                <a rel=3D"nofollow" shape=3D"rect" href=3D"=
+http://www.avg.com/internet-security" target=3D"_blank">www.avg.com</a>
+                              </div>
+                            </td></tr></tbody></table>
+                      <br clear=3D"none">
+                      <a rel=3D"nofollow" shape=3D"rect" href=3D"https://mg=
+.mail.yahoo.com/neo/launch?.rand=3D5adgu3me64mgj#DAB4FAD8-2DD7-40BB-A1B8-4E=
+2AA1F9FDF2" target=3D"_blank"> </a></div>
+                  </div>
+                </div>
+                <br clear=3D"none">
+                <br clear=3D"none">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote></div>
+    <br clear=3D"none">
+  </div></div><br clear=3D"none"><br clear=3D"none"></div>  </div> </div>  =
+</div></div></div></div></div><br clear=3D"none"><br clear=3D"none"></div> =
+ </div> </div>  </div></div></div></div></div></blockquote></div><br clear=
+=3D"none"></div></div></div></div><br><br></div>  </div> </div>  </div></di=
+v></div></div></div></blockquote></div><br></div>
+
+--001a114224467da63e05563f4e64--
+From - Tue Aug  8 11:21:44 2017
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+MIME-Version: 1.0
+Received: by 10.129.56.6 with HTTP; Tue, 8 Aug 2017 07:57:00 -0700 (PDT)
+In-Reply-To: <982298886.4015602.1501597943392@mail.yahoo.com>
+References: <977877121.503921.1500996663695.ref@mail.yahoo.com>
+	<977877121.503921.1500996663695@mail.yahoo.com>
+	<f019f1f6-b46b-c158-f230-c7daeba4e37d@gmail.com>
+	<596189589.522764.1500997278476@mail.yahoo.com>
+	<2527cb76-0909-dae9-cf9f-e6ecb7f1596b@gmail.com>
+	<1543384845.3987279.1501597509104@mail.yahoo.com>
+	<982298886.4015602.1501597943392@mail.yahoo.com>
+Date: Tue, 8 Aug 2017 10:57:00 -0400
+Delivered-To: rockhammerfister@gmail.com
+Message-ID: <CAB0Qv+MQQAoDPC-gZbjrpaw0kt73vodLkGWttpA-c2kHDFbyfQ@mail.gmail.com>
+Subject: Re: Beer links
+From: Rock Hammerfist <rockhammerfister@gmail.com>
+To: Brock Rockington <brockrockington@yahoo.com>
+Content-Type: multipart/alternative; boundary="f403045e8aaee9ef2205563f2cfb"
+
+--f403045e8aaee9ef2205563f2cfb
+Content-Type: text/plain; charset="UTF-8"
+
+Sorry about the delay, I had to handle some family stuff, I shot you a text
+message. Maybe we can try and link up again this weekend and try out
+YankStreet Brewing?
+
+-rock
+
+On Tue, Aug 1, 2017 at 10:32 AM, Brock Rockington <brockrockington@yahoo.com
+> wrote:
+
+> Oh and here's their beer menu.
+>
+> http://yankstreetbrewing.com/BeerMenu.docx
+>
+> -brock
+>
+>
+> On Tuesday, August 1, 2017 10:25 AM, Brock Rockington <
+> brockrockington@yahoo.com> wrote:
+>
+>
+> Hey Rocko,
+>
+> I found this place called Yank Street Brewing. The menu looks awesome,
+> they have some nice looking IPAs. Check it out, wanna hit it up on Saturday?
+>
+> http://yankstreetbrewing.com
+>
+> -brock
+>
+>
+> On Monday, July 31, 2017 3:23 PM, Rock Hammerfist <
+> rockhammerfister@gmail.com> wrote:
+>
+>
+> That was awesome! We should go to some new places this weekend. Did you
+> find any other good microbrews when you were researching last week? Glad
+> there is Uber!
+>
+> On 7/25/2017 11:41 AM, Brock Rockington wrote:
+>
+> If you wanna do a tour, let's check these out too.
+>
+> Ocelot Brewing Co. <http://ocelotbrewing.com/#beermenu>
+>
+>
+> Ocelot Brewing Co.
+> <http://ocelotbrewing.com/#beermenu>
+>
+> http://www.caboosebrewing.com/drinks/beerlist.exe
+> <http://www.caboosebrewing.com/drinks/>
+>
+>
+>
+>
+> Drinks
+> Great beverages are the cornerstone of Caboose. We craft each of our beers
+> in our 15 barrel brewhouse and serv...
+>
+> <http://www.caboosebrewing.com/drinks/>
+>
+>
+>
+> On Tuesday, July 25, 2017 11:37 AM, Rock Hammerfist
+> <rockhammerfister@gmail.com> <rockhammerfister@gmail.com> wrote:
+>
+>
+> Yeah, I heard Quattro Goomba is a winery AND a brewery. Let's check that
+> one out. I'm gonna search for some others too. Maybe we can make a tour of
+> it.
+>
+> On 7/25/2017 11:31 AM, Brock Rockington wrote:
+>
+> Hey Rock,
+>
+> Check out these craft brew places we should try. Wanna try one out on
+> Saturday? Some of them are having events...let me know.
+>
+> crookedrunbrewing <http://www.crookedrunbrewing.com/events>
+>
+>
+>
+>
+> crookedrunbrewing
+> <http://www.crookedrunbrewing.com/events>
+>
+> What's on Tap? <http://www.goombabrewery.com/whatsontap/>
+>
+>
+> What's on Tap?
+> What's on tap at Quattro Goomba's Brewery
+>
+> <http://www.goombabrewery.com/whatsontap/>
+>
+> Beer <http://www.lostrhino.com/beer.html>
+>
+>
+>
+>
+>
+> Beer
+> HOME
+>
+> <http://www.lostrhino.com/beer.html>
+>
+>
+>
+>
+>
+>
+>
+> ------------------------------
+> [image: AVG logo] <http://www.avg.com/internet-security>
+> This email has been checked for viruses by AVG antivirus software.
+> www.avg.com <http://www.avg.com/internet-security>
+>
+>
+> <https://mg.mail.yahoo.com/neo/launch?.rand=5adgu3me64mgj#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2>
+>
+>
+>
+>
+>
+>
+>
+>
+
+--f403045e8aaee9ef2205563f2cfb
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Sorry about the delay, I had to handle some family stuff, =
+I shot you a text message. Maybe we can try and link up again this weekend =
+and try out YankStreet Brewing?=C2=A0<div><br></div><div>-rock</div></div><=
+div class=3D"gmail_extra"><br><div class=3D"gmail_quote">On Tue, Aug 1, 201=
+7 at 10:32 AM, Brock Rockington <span dir=3D"ltr">&lt;<a href=3D"mailto:bro=
+ckrockington@yahoo.com" target=3D"_blank">brockrockington@yahoo.com</a>&gt;=
+</span> wrote:<br><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .=
+8ex;border-left:1px #ccc solid;padding-left:1ex"><div><div style=3D"color:#=
+000;background-color:#fff;font-family:=E6=A8=99=E6=A5=B7=E9=AB=94,dfkai-sb;=
+font-size:16px"><div id=3D"m_-5071016804456461269yui_3_16_0_ym19_1_15015750=
+44319_12100"><span>Oh and here&#39;s their beer menu.</span></div><div id=
+=3D"m_-5071016804456461269yui_3_16_0_ym19_1_1501575044319_12100"><br></div>=
+<div id=3D"m_-5071016804456461269yui_3_16_0_ym19_1_1501575044319_12100"><a =
+href=3D"http://yankstreetbrewing.com/BeerMenu.docx" target=3D"_blank">http:=
+//yankstreetbrewing.com/<wbr>BeerMenu.docx</a></div><span class=3D"HOEnZb">=
+<font color=3D"#888888"><div id=3D"m_-5071016804456461269yui_3_16_0_ym19_1_=
+1501575044319_12100"><br></div><div id=3D"m_-5071016804456461269yui_3_16_0_=
+ym19_1_1501575044319_12100">-brock</div></font></span><div><div class=3D"h5=
+"> <div class=3D"m_-5071016804456461269qtdSeparateBR"><br><br></div><div cl=
+ass=3D"m_-5071016804456461269yahoo_quoted" style=3D"display:block"> <div st=
+yle=3D"font-family:=E6=A8=99=E6=A5=B7=E9=AB=94,dfkai-sb;font-size:16px"> <d=
+iv style=3D"font-family:HelveticaNeue,Helvetica Neue,Helvetica,Arial,Lucida=
+ Grande,sans-serif;font-size:16px"> <div dir=3D"ltr"><font size=3D"2" face=
+=3D"Arial"> On Tuesday, August 1, 2017 10:25 AM, Brock Rockington &lt;<a hr=
+ef=3D"mailto:brockrockington@yahoo.com" target=3D"_blank">brockrockington@y=
+ahoo.com</a>&gt; wrote:<br></font></div>  <br><br> <div class=3D"m_-5071016=
+804456461269y_msg_container"><div id=3D"m_-5071016804456461269yiv1184908586=
+"><div><div style=3D"color:#000;background-color:#fff;font-family:=E6=A8=99=
+=E6=A5=B7=E9=AB=94,dfkai-sb;font-size:16px"><div id=3D"m_-50710168044564612=
+69yiv1184908586yui_3_16_0_ym19_1_1501575044319_8387"><span id=3D"m_-5071016=
+804456461269yiv1184908586yui_3_16_0_ym19_1_1501575044319_8386">Hey Rocko,=
+=C2=A0</span></div><div id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0=
+_ym19_1_1501575044319_9228"><span><br clear=3D"none"></span></div><div dir=
+=3D"ltr" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1501575=
+044319_9201"><span id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19=
+_1_1501575044319_9200">I found this place called Yank Street Brewing. The m=
+enu looks awesome, they have some nice looking IPAs. Check it out, wanna hi=
+t it up on Saturday?</span></div><div dir=3D"ltr" id=3D"m_-5071016804456461=
+269yiv1184908586yui_3_16_0_ym19_1_1501575044319_9198"><span><br clear=3D"no=
+ne"></span></div><div dir=3D"ltr" id=3D"m_-5071016804456461269yiv1184908586=
+yui_3_16_0_ym19_1_1501575044319_9198"><span id=3D"m_-5071016804456461269yiv=
+1184908586yui_3_16_0_ym19_1_1501575044319_9245"><a href=3D"http://yankstree=
+tbrewing.com" target=3D"_blank">http://yankstreetbrewing.com</a></span></di=
+v><div dir=3D"ltr" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19=
+_1_1501575044319_9198"><span><br clear=3D"none"></span></div><div dir=3D"lt=
+r" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1501575044319=
+_9197"><span>-brock</span></div> <div class=3D"m_-5071016804456461269yiv118=
+4908586qtdSeparateBR"><br clear=3D"none"><br clear=3D"none"></div><div clas=
+s=3D"m_-5071016804456461269yiv1184908586yqt7204478591" id=3D"m_-50710168044=
+56461269yiv1184908586yqt30169"><div class=3D"m_-5071016804456461269yiv11849=
+08586yahoo_quoted" style=3D"display:block"> <div style=3D"font-family:=E6=
+=A8=99=E6=A5=B7=E9=AB=94,dfkai-sb;font-size:16px"> <div style=3D"font-famil=
+y:HelveticaNeue,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;fon=
+t-size:16px"> <div dir=3D"ltr"><font size=3D"2" face=3D"Arial"> On Monday, =
+July 31, 2017 3:23 PM, Rock Hammerfist &lt;<a href=3D"mailto:rockhammerfist=
+er@gmail.com" target=3D"_blank">rockhammerfister@gmail.com</a>&gt; wrote:<b=
+r clear=3D"none"></font></div>  <br clear=3D"none"><br clear=3D"none"> <div=
+ class=3D"m_-5071016804456461269yiv1184908586y_msg_container"><div id=3D"m_=
+-5071016804456461269yiv1184908586"><div>
+    <div>That was awesome! We should go to some new places this weekend.
+      Did you find any other good microbrews when you were researching
+      last week? Glad there is Uber!<br clear=3D"none">
+    </div>
+    <br clear=3D"none">
+    <div class=3D"m_-5071016804456461269yiv1184908586yqt3238986330" id=3D"m=
+_-5071016804456461269yiv1184908586yqt33521"><div class=3D"m_-50710168044564=
+61269yiv1184908586moz-cite-prefix">On 7/25/2017 11:41 AM, Brock Rockington
+      wrote:<br clear=3D"none">
+    </div>
+    <blockquote type=3D"cite">
+      <div style=3D"color:#000;background-color:#fff;font-family:=E6=A8=99=
+=E6=A5=B7=E9=AB=94,dfkai-sb;font-size:16px">
+        <div id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_150=
+0995456007_11456"><span id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0=
+_ym19_1_1500995456007_11525">If you wanna do a
+            tour, let&#39;s check these out too.</span></div>
+        <div id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_150=
+0995456007_11240"><span><br clear=3D"none">
+          </span></div>
+        <div dir=3D"ltr" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_=
+0_ym19_1_1500995456007_11212"><span id=3D"m_-5071016804456461269yiv11849085=
+86yui_3_16_0_ym19_1_1500995456007_11210"><a rel=3D"nofollow" shape=3D"rect"=
+ class=3D"m_-5071016804456461269yiv1184908586enhancr2_1826fd37-7965-71db-a0=
+90-d1ed15e9e875" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1=
+_1500995456007_11209" href=3D"http://ocelotbrewing.com/#beermenu" target=3D=
+"_blank">Ocelot Brewing Co.</a><br clear=3D"none">
+          </span></div>
+        <div id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_150=
+0995456007_11239"><br clear=3D"none">
+        </div>
+        <div class=3D"m_-5071016804456461269yiv1184908586yahoo-link-enhancr=
+-card m_-5071016804456461269yiv1184908586yahoo-link-enhancr-not-allow-cover=
+ m_-5071016804456461269yiv1184908586ymail-preserve-class m_-507101680445646=
+1269yiv1184908586ymail-preserve-style" dir=3D"ltr" id=3D"m_-507101680445646=
+1269yiv1184908586enhancr2_1826fd37-7965-71db-a090-d1ed15e9e875" style=3D"ma=
+x-width:400px;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-ser=
+if"> <a rel=3D"nofollow" shape=3D"rect" class=3D"m_-5071016804456461269yiv1=
+184908586yahoo-enhancr-cardlink" id=3D"m_-5071016804456461269yiv1184908586y=
+ui_3_16_0_ym19_1_1500995456007_11228" href=3D"http://ocelotbrewing.com/#bee=
+rmenu" style=3D"text-decoration:none;color:#000" target=3D"_blank">
+            <table class=3D"m_-5071016804456461269yiv1184908586card-wrapper=
+" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_=
+11227" style=3D"max-width:400px" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0"><tbody id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_15=
+00995456007_11226"><tr id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_=
+ym19_1_1500995456007_11225"><td colspan=3D"1" rowspan=3D"1" id=3D"m_-507101=
+6804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_11224" width=3D"4=
+00">
+                    <table class=3D"m_-5071016804456461269yiv1184908586card=
+-info" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_150099545=
+6007_11223" style=3D"background:#fff;max-width:400px;border:1px solid #e0e4=
+e9;border-bottom:3px solid #000000" width=3D"100%" cellspacing=3D"0" cellpa=
+dding=3D"0" border=3D"0"><tbody id=3D"m_-5071016804456461269yiv1184908586yu=
+i_3_16_0_ym19_1_1500995456007_11222"><tr id=3D"m_-5071016804456461269yiv118=
+4908586yui_3_16_0_ym19_1_1500995456007_11221"><td colspan=3D"1" rowspan=3D"=
+1" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007=
+_11523" style=3D"vertical-align:top;padding:16px 0 16px 12px">
+                            <br clear=3D"none">
+                          </td><td colspan=3D"1" rowspan=3D"1" id=3D"m_-507=
+1016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_11220" style=
+=3D"vertical-align:middle;padding:16px 12px;width:99%">
+                            <h2 class=3D"m_-5071016804456461269yiv118490858=
+6card-title" style=3D"margin:0 0 4px 0;font-size:16px;font-family:&#39;Helv=
+etica                               Neue&#39;,Helvetica,Arial,sans-serif">O=
+celot
+                              Brewing Co.</h2>
+                          </td><td colspan=3D"1" rowspan=3D"1" class=3D"m_-=
+5071016804456461269yiv1184908586card-share-container"><br clear=3D"none">
+                          </td></tr></tbody></table>
+                  </td></tr></tbody></table>
+          </a></div>
+        <div id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_150=
+0995456007_11333"><br clear=3D"none" id=3D"m_-5071016804456461269yiv1184908=
+586yui_3_16_0_ym19_1_1500995456007_11467">
+        </div>
+        <div dir=3D"ltr" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_=
+0_ym19_1_1500995456007_11326"><a rel=3D"nofollow" shape=3D"rect" id=3D"m_-5=
+071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_11465" href=
+=3D"http://www.caboosebrewing.com/drinks/" target=3D"_blank">http://www.cab=
+oosebrewing.com/<wbr>drinks/beerlist.exe</a><br clear=3D"none">
+        </div>
+        <div id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_150=
+0995456007_11463"><br clear=3D"none">
+        </div>
+        <div class=3D"m_-5071016804456461269yiv1184908586yahoo-link-enhancr=
+-card m_-5071016804456461269yiv1184908586ymail-preserve-class m_-5071016804=
+456461269yiv1184908586ymail-preserve-style" dir=3D"ltr" id=3D"m_-5071016804=
+456461269yiv1184908586enhancr2_1a6eeaca-9967-2d6d-1327-e6609e39b7d7" style=
+=3D"max-width:400px;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sa=
+ns-serif"> <a rel=3D"nofollow" shape=3D"rect" class=3D"m_-50710168044564612=
+69yiv1184908586yahoo-enhancr-cardlink" href=3D"http://www.caboosebrewing.co=
+m/drinks/" style=3D"text-decoration:none;color:#000" target=3D"_blank">
+            <table class=3D"m_-5071016804456461269yiv1184908586card-wrapper=
+ m_-5071016804456461269yiv1184908586yahoo-ignore-table" style=3D"max-width:=
+400px" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tbody><tr><td cols=
+pan=3D"1" rowspan=3D"1" width=3D"400">
+                    <table class=3D"m_-5071016804456461269yiv1184908586card=
+ m_-5071016804456461269yiv1184908586yahoo-ignore-table" style=3D"max-width:=
+400px" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tbo=
+dy><tr><td colspan=3D"1" rowspan=3D"1" valign=3D"top" class=3D"m_-507101680=
+4456461269yiv1184908586card-primary-image-cell" style=3D"background:#000 ur=
+l(&#39;https://ci6.googleusercontent.com/proxy/IwJ96b1NhM80ume_EV9EJcx1tFRo=
+zJCcpcARTRFRCMi2Thqn4yzlqamRPpxLGzHSsp4oHIHzuGQfvvxfvLaLhvHtKcoXzplHfHiDvkB=
+VIwvFKRLtd2VI4HBmN3tRi5eeSaA5yHelqe5xyq7Na2W2uKHfrqUUXfoarR2N7o-Nhi2DGCrXh-=
+Xluuz8zZoOifYD9sYmDhP4qYrGUgH2Y9tdLEBe6C__IsA2GXFkPF4M_zxjoSje7TKU2dj5uPLOI=
+OOQKc4Glb6CsI_W03atDaCN8SULgLyS4I5PANrU1JhwgaCcwSWbV1JwpeKYTKjwP87EEWZ1uuEs=
+SoKBseC94qhxEFZnbpklIIM_IQkrIMddA2JbcfMX09p5=3Ds0-d-e1-ft#https://s.yimg.co=
+m/vv//api/res/1.2/rqYrRGQLYjyIzpSfER5rNA--/YXBwaWQ9bWFpbDtmaT1maWxsO2g9MjAw=
+O3c9NDAw/http://static1.squarespace.com/static/54ad55e4e4b07c2f08587c33/t/5=
+963d9ac1e5b6c2143675cb2/1499716023234/Black+Vertical+Caboose+Logo.png?forma=
+t=3D1000w.cf.jpg&#39;) no-repeat center center;background-size:cover;min-he=
+ight:200px" bgcolor=3D"#000000" background=3D"https://s.yimg.com/vv//api/re=
+s/1.2/rqYrRGQLYjyIzpSfER5rNA--/YXBwaWQ9bWFpbDtmaT1maWxsO2g9MjAwO3c9NDAw/htt=
+p://static1.squarespace.com/static/54ad55e4e4b07c2f08587c33/t/5963d9ac1e5b6=
+c2143675cb2/1499716023234/Black+Vertical+Caboose+Logo.png?format=3D1000w.cf=
+.jpg">
+                           =20
+                            <table class=3D"m_-5071016804456461269yiv118490=
+8586yahoo-ignore-table" style=3D"width:100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0"><tbody><tr><td colspan=3D"1" rowspan=3D"1" valign=3D"to=
+p" style=3D"background:transparent url(&#39;https://ci6.googleusercontent.c=
+om/proxy/Or0PpNz8Q2N-T77lb2rdWKcTmD4Aucmk2Ee_LS8DyP6g6BDF3rwx4OyZl6lsUYsZqw=
+8AQBiEM0n0IXQQ0XX4vUAoRYgzG6vu_JFg3P_OaiyHSXs0y-U=3Ds0-d-e1-ft#https://s.yi=
+mg.com/nq/storm/assets/enhancrV2/12/overlay-tile.png&#39;) repeat left top;=
+min-height:200px" bgcolor=3D"transparent" background=3D"https://s.yimg.com/=
+nq/storm/assets/enhancrV2/12/overlay-tile.png">
+                                   =20
+                                    <table class=3D"m_-5071016804456461269y=
+iv1184908586yahoo-ignore-table" style=3D"width:100%;min-height:185px;min-he=
+ight:185px" height=3D"185"><tbody><tr><td colspan=3D"1" rowspan=3D"1" class=
+=3D"m_-5071016804456461269yiv1184908586card-richInfo2" style=3D"text-align:=
+left;text-align:left;padding:15px 0 0 15px;vertical-align:top"> <br clear=
+=3D"none">
+                                          </td><td colspan=3D"1" rowspan=3D=
+"1" class=3D"m_-5071016804456461269yiv1184908586card-actions" style=3D"text=
+-align:right;padding:15px 15px 0 0;vertical-align:top"> <br clear=3D"none">
+                                          </td></tr></tbody></table>
+                                   =20
+                                  </td></tr></tbody></table>
+                          </td></tr><tr><td colspan=3D"1" rowspan=3D"1">
+                            <table align=3D"center" class=3D"m_-50710168044=
+56461269yiv1184908586card-info m_-5071016804456461269yiv1184908586yahoo-ign=
+ore-table" style=3D"background:#fff;width:95%;max-width:380px;border:1px so=
+lid #e0e4e9;border-bottom:3px solid #000000;margin-left:auto;margin-right:a=
+uto" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tbody><tr><td colspa=
+n=3D"1" rowspan=3D"1" style=3D"background-color:#ffffff;padding:16px 0 16px=
+ 12px;vertical-align:top"> <br clear=3D"none">
+                                  </td><td colspan=3D"1" rowspan=3D"1" styl=
+e=3D"vertical-align:middle;padding:16px 12px;width:99%">
+                                    <h2 class=3D"m_-5071016804456461269yiv1=
+184908586card-title" style=3D"font-size:16px;line-height:19px;margin:0 0 4p=
+x 0;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif">Drinks=
+</h2>
+                                    <div class=3D"m_-5071016804456461269yiv=
+1184908586card-description" style=3D"font-size:11px;line-height:15px;color:=
+#999">Great
+                                      beverages are the cornerstone of
+                                      Caboose. We craft each of our
+                                      beers in our 15 barrel brewhouse
+                                      and serv...</div>
+                                  </td><td colspan=3D"1" rowspan=3D"1" styl=
+e=3D"text-align:right;padding:16px 12px 16px 0"> <br clear=3D"none">
+                                  </td></tr></tbody></table>
+                          </td></tr></tbody></table>
+                  </td></tr></tbody></table>
+          </a></div>
+        <div><br clear=3D"none">
+        </div>
+        <div class=3D"m_-5071016804456461269yiv1184908586qtdSeparateBR"><br=
+ clear=3D"none">
+          <br clear=3D"none">
+        </div>
+        <div class=3D"m_-5071016804456461269yiv1184908586yahoo_quoted" styl=
+e=3D"display:block">
+          <div style=3D"font-family:=E6=A8=99=E6=A5=B7=E9=AB=94,dfkai-sb;fo=
+nt-size:16px">
+            <div style=3D"font-family:HelveticaNeue,Helvetica Neue,Helvetic=
+a,Arial,Lucida Grande,sans-serif;font-size:16px">
+              <div dir=3D"ltr"><font face=3D"Arial" size=3D"2"> On Tuesday,
+                  July 25, 2017 11:37 AM, Rock Hammerfist
+                  <a rel=3D"nofollow" shape=3D"rect" class=3D"m_-5071016804=
+456461269yiv1184908586moz-txt-link-rfc2396E" href=3D"mailto:rockhammerfiste=
+r@gmail.com" target=3D"_blank">&lt;rockhammerfister@gmail.com&gt;</a> wrote=
+:<br clear=3D"none">
+                </font></div>
+              <br clear=3D"none">
+              <br clear=3D"none">
+              <div class=3D"m_-5071016804456461269yiv1184908586y_msg_contai=
+ner">
+                <div id=3D"m_-5071016804456461269yiv1184908586">
+                  <div>
+                    <div>Yeah, I heard Quattro Goomba is a winery AND a
+                      brewery. Let&#39;s check that one out. I&#39;m gonna
+                      search for some others too. Maybe we can make a
+                      tour of it.<br clear=3D"none">
+                    </div>
+                    <br clear=3D"none">
+                    <div class=3D"m_-5071016804456461269yiv1184908586yqt688=
+2388476" id=3D"m_-5071016804456461269yiv1184908586yqt04772">
+                      <div class=3D"m_-5071016804456461269yiv1184908586moz-=
+cite-prefix">On
+                        7/25/2017 11:31 AM, Brock Rockington wrote:<br clea=
+r=3D"none">
+                      </div>
+                      <blockquote type=3D"cite">
+                        <div style=3D"color:#000;background-color:#fff;font=
+-family:=E6=A8=99=E6=A5=B7=E9=AB=94,dfkai-sb;font-size:16px">
+                          <div id=3D"m_-5071016804456461269yiv1184908586yui=
+_3_16_0_ym19_1_1500995456007_4872">Hey
+                            Rock,=C2=A0</div>
+                          <div id=3D"m_-5071016804456461269yiv1184908586yui=
+_3_16_0_ym19_1_1500995456007_4871"><br clear=3D"none">
+                          </div>
+                          <div id=3D"m_-5071016804456461269yiv1184908586yui=
+_3_16_0_ym19_1_1500995456007_4862">Check
+                            out these craft brew places we should try.
+                            Wanna try one out on Saturday? Some of them
+                            are having events...let me know.</div>
+                          <div id=3D"m_-5071016804456461269yiv1184908586yui=
+_3_16_0_ym19_1_1500995456007_4862"><br clear=3D"none">
+                          </div>
+                          <div dir=3D"ltr" id=3D"m_-5071016804456461269yiv1=
+184908586yui_3_16_0_ym19_1_1500995456007_4862"><a rel=3D"nofollow" shape=3D=
+"rect" class=3D"m_-5071016804456461269yiv1184908586enhancr2_3730e64b-50ff-6=
+427-628e-905485d2b56a" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_=
+ym19_1_1500995456007_4904" href=3D"http://www.crookedrunbrewing.com/events"=
+ target=3D"_blank">crookedrunbrewing</a><br clear=3D"none">
+                          </div>
+                          <div id=3D"m_-5071016804456461269yiv1184908586yui=
+_3_16_0_ym19_1_1500995456007_4911"><br clear=3D"none">
+                          </div>
+                          <div class=3D"m_-5071016804456461269yiv1184908586=
+yahoo-link-enhancr-card m_-5071016804456461269yiv1184908586ymail-preserve-c=
+lass m_-5071016804456461269yiv1184908586ymail-preserve-style" dir=3D"ltr" i=
+d=3D"m_-5071016804456461269yiv1184908586enhancr2_3730e64b-50ff-6427-628e-90=
+5485d2b56a" style=3D"max-width:400px;font-family:&#39;Helvetica            =
+                 Neue&#39;,Helvetica,Arial,sans-serif"> <a rel=3D"nofollow"=
+ shape=3D"rect" class=3D"m_-5071016804456461269yiv1184908586yahoo-enhancr-c=
+ardlink" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995=
+456007_4960" href=3D"http://www.crookedrunbrewing.com/events" style=3D"text=
+-decoration:none;color:#000" target=3D"_blank">
+                              <table class=3D"m_-5071016804456461269yiv1184=
+908586card-wrapper m_-5071016804456461269yiv1184908586yahoo-ignore-table" i=
+d=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_495=
+9" style=3D"max-width:400px" cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0"><tbody id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_150099=
+5456007_4958"><tr id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_=
+1_1500995456007_4957"><td colspan=3D"1" rowspan=3D"1" id=3D"m_-507101680445=
+6461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4956" width=3D"400">
+                                      <table class=3D"m_-507101680445646126=
+9yiv1184908586card m_-5071016804456461269yiv1184908586yahoo-ignore-table" i=
+d=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_495=
+5" style=3D"max-width:400px" width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0"><tbody id=3D"m_-5071016804456461269yiv1184908586yui_3_1=
+6_0_ym19_1_1500995456007_4954"><tr id=3D"m_-5071016804456461269yiv118490858=
+6yui_3_16_0_ym19_1_1500995456007_4953"><td colspan=3D"1" rowspan=3D"1" vali=
+gn=3D"top" class=3D"m_-5071016804456461269yiv1184908586card-primary-image-c=
+ell" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_15009954560=
+07_4952" style=3D"background:#000 url(&#39;https://ci5.googleusercontent.co=
+m/proxy/HUfdc2evEewompqxYPn_VkrIRURanwcWxGytCCRDvrlZmStiG4JtOp3l3mSRGLok0EP=
+cmzdkD9rNvEdTaB7VyXGLwY8S5vCOUnnbudP1HuCYf2OdNsuFaVWy_llXVzUYe1F5MpUnj9Ec0D=
+mL2gDDtnlHiSfxU--11ZL80cMYEUiqIgFcANLbiw3UKLXMxrxN69k7iSCK-nCQ92HGWHpy7D4I3=
+b8tlte3lA30cQoyUFZffU-_Qg1imV5lZ5MSwMB7DbzUH8vxokhcUQwTohHQ3z0=3Ds0-d-e1-ft=
+#https://s.yimg.com/vv//api/res/1.2/LjbDtqQLnueaymTIPjcwDg--/YXBwaWQ9bWFpbD=
+tmaT1maWxsO2g9MjAwO3c9NDAw/https://static.wixstatic.com/media/076cbb_36bc20=
+ca230f2a06aec78fa5b35b2a3b.png.cf.jpg&#39;) no-repeat center center;backgro=
+und-size:cover;min-height:200px" bgcolor=3D"#000000" background=3D"https://=
+s.yimg.com/vv//api/res/1.2/LjbDtqQLnueaymTIPjcwDg--/YXBwaWQ9bWFpbDtmaT1maWx=
+sO2g9MjAwO3c9NDAw/https://static.wixstatic.com/media/076cbb_36bc20ca230f2a0=
+6aec78fa5b35b2a3b.png.cf.jpg">
+                                              <table class=3D"m_-5071016804=
+456461269yiv1184908586yahoo-ignore-table" id=3D"m_-5071016804456461269yiv11=
+84908586yui_3_16_0_ym19_1_1500995456007_4951" style=3D"width:100%" cellspac=
+ing=3D"0" cellpadding=3D"0" border=3D"0"><tbody id=3D"m_-507101680445646126=
+9yiv1184908586yui_3_16_0_ym19_1_1500995456007_4950"><tr id=3D"m_-5071016804=
+456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4949"><td colspan=3D"=
+1" rowspan=3D"1" valign=3D"top" id=3D"m_-5071016804456461269yiv1184908586yu=
+i_3_16_0_ym19_1_1500995456007_4948" style=3D"background:transparent url(&#3=
+9;https://ci6.googleusercontent.com/proxy/Or0PpNz8Q2N-T77lb2rdWKcTmD4Aucmk2=
+Ee_LS8DyP6g6BDF3rwx4OyZl6lsUYsZqw8AQBiEM0n0IXQQ0XX4vUAoRYgzG6vu_JFg3P_OaiyH=
+SXs0y-U=3Ds0-d-e1-ft#https://s.yimg.com/nq/storm/assets/enhancrV2/12/overla=
+y-tile.png&#39;) repeat left top;min-height:200px" bgcolor=3D"transparent" =
+background=3D"https://s.yimg.com/nq/storm/assets/enhancrV2/12/overlay-tile.=
+png">
+                                                      <table class=3D"m_-50=
+71016804456461269yiv1184908586yahoo-ignore-table" id=3D"m_-5071016804456461=
+269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4947" style=3D"width:100%;m=
+in-height:185px;min-height:185px" height=3D"185"><tbody id=3D"m_-5071016804=
+456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4946"><tr id=3D"m_-50=
+71016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_4945"><td col=
+span=3D"1" rowspan=3D"1" class=3D"m_-5071016804456461269yiv1184908586card-r=
+ichInfo2" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_150099=
+5456007_5823" style=3D"text-align:left;text-align:left;padding:15px 0 0 15p=
+x;vertical-align:top">
+                                                          <br clear=3D"none=
+">
+                                                          </td><td colspan=
+=3D"1" rowspan=3D"1" class=3D"m_-5071016804456461269yiv1184908586card-actio=
+ns" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_150099545600=
+7_4944" style=3D"text-align:right;padding:15px 15px 0 0;vertical-align:top"=
+>
+                                                          <br clear=3D"none=
+">
+                                                          </td></tr></tbody=
+></table>
+                                                    </td></tr></tbody></tab=
+le>
+                                            </td></tr><tr><td colspan=3D"1"=
+ rowspan=3D"1">
+                                              <table align=3D"center" class=
+=3D"m_-5071016804456461269yiv1184908586card-info m_-5071016804456461269yiv1=
+184908586yahoo-ignore-table" style=3D"background:#fff;width:95%;max-width:3=
+80px;border:1px solid #e0e4e9;border-bottom:3px solid #000000;margin-left:a=
+uto;margin-right:auto" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tb=
+ody><tr><td colspan=3D"1" rowspan=3D"1" style=3D"background-color:#ffffff;p=
+adding:16px 0 16px 12px;vertical-align:top">
+                                                      <br clear=3D"none">
+                                                    </td><td colspan=3D"1" =
+rowspan=3D"1" style=3D"vertical-align:middle;padding:16px 12px;width:99%">
+                                                      <h2 class=3D"m_-50710=
+16804456461269yiv1184908586card-title" style=3D"font-size:16px;line-height:=
+19px;margin:0 0 4px 0;font-family:&#39;Helvetica                           =
+                              Neue&#39;,Helvetica,Arial,sans-serif">crooked=
+runbrewing</h2>
+                                                    </td><td colspan=3D"1" =
+rowspan=3D"1" style=3D"text-align:right;padding:16px 12px 16px 0"> <br clea=
+r=3D"none">
+                                                    </td></tr></tbody></tab=
+le>
+                                            </td></tr></tbody></table>
+                                    </td></tr></tbody></table>
+                            </a></div>
+                          <div id=3D"m_-5071016804456461269yiv1184908586yui=
+_3_16_0_ym19_1_1500995456007_4984"><br clear=3D"none">
+                          </div>
+                          <div dir=3D"ltr" id=3D"m_-5071016804456461269yiv1=
+184908586yui_3_16_0_ym19_1_1500995456007_4994"><a rel=3D"nofollow" shape=3D=
+"rect" class=3D"m_-5071016804456461269yiv1184908586enhancr2_380dffb6-9c9b-e=
+36f-ab50-4841aa8c5b40" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_=
+ym19_1_1500995456007_4993" href=3D"http://www.goombabrewery.com/whatsontap/=
+" target=3D"_blank">What&#39;s on Tap?</a></div>
+                          <div id=3D"m_-5071016804456461269yiv1184908586yui=
+_3_16_0_ym19_1_1500995456007_5004"><br clear=3D"none">
+                          </div>
+                          <div class=3D"m_-5071016804456461269yiv1184908586=
+yahoo-link-enhancr-card m_-5071016804456461269yiv1184908586yahoo-link-enhan=
+cr-not-allow-cover m_-5071016804456461269yiv1184908586ymail-preserve-class =
+m_-5071016804456461269yiv1184908586ymail-preserve-style m_-5071016804456461=
+269yiv1184908586img-overlay-selected" dir=3D"ltr" id=3D"m_-5071016804456461=
+269yiv1184908586enhancr2_380dffb6-9c9b-e36f-ab50-4841aa8c5b40" style=3D"max=
+-width:400px;font-family:&#39;Helvetica                             Neue&#3=
+9;,Helvetica,Arial,sans-serif"> <a rel=3D"nofollow" shape=3D"rect" class=3D=
+"m_-5071016804456461269yiv1184908586yahoo-enhancr-cardlink" id=3D"m_-507101=
+6804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_5013" href=3D"htt=
+p://www.goombabrewery.com/whatsontap/" style=3D"text-decoration:none;color:=
+#000" target=3D"_blank">
+                              <table class=3D"m_-5071016804456461269yiv1184=
+908586card-wrapper" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym1=
+9_1_1500995456007_5012" style=3D"max-width:400px" cellspacing=3D"0" cellpad=
+ding=3D"0" border=3D"0"><tbody id=3D"m_-5071016804456461269yiv1184908586yui=
+_3_16_0_ym19_1_1500995456007_5011"><tr id=3D"m_-5071016804456461269yiv11849=
+08586yui_3_16_0_ym19_1_1500995456007_5010"><td colspan=3D"1" rowspan=3D"1" =
+id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_50=
+09" width=3D"400">
+                                      <table class=3D"m_-507101680445646126=
+9yiv1184908586card-info" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_=
+0_ym19_1_1500995456007_5008" style=3D"background:#fff;max-width:400px;borde=
+r:1px solid #e0e4e9;border-bottom:3px solid #000000" width=3D"100%" cellspa=
+cing=3D"0" cellpadding=3D"0" border=3D"0"><tbody id=3D"m_-50710168044564612=
+69yiv1184908586yui_3_16_0_ym19_1_1500995456007_5007"><tr id=3D"m_-507101680=
+4456461269yiv1184908586yui_3_16_0_ym19_1_1500995456007_5006"><td colspan=3D=
+"1" rowspan=3D"1" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_=
+1_1500995456007_5826" style=3D"vertical-align:top;padding:16px 0 16px 12px"=
+> <br clear=3D"none">
+                                            </td><td colspan=3D"1" rowspan=
+=3D"1" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_ym19_1_150099545=
+6007_5005" style=3D"vertical-align:middle;padding:16px 12px;width:99%">
+                                              <h2 class=3D"m_-5071016804456=
+461269yiv1184908586card-title" style=3D"margin:0 0 4px 0;font-size:16px;fon=
+t-family:&#39;Helvetica                                                 Neu=
+e&#39;,Helvetica,Arial,sans-serif">What&#39;s on
+                                                Tap?</h2>
+                                              <div class=3D"m_-507101680445=
+6461269yiv1184908586card-description" style=3D"font-size:11px;line-height:1=
+5px;color:#999">What&#39;s on tap at
+                                                Quattro Goomba&#39;s Brewer=
+y</div>
+                                            </td><td colspan=3D"1" rowspan=
+=3D"1" class=3D"m_-5071016804456461269yiv1184908586card-share-container"><b=
+r clear=3D"none">
+                                            </td></tr></tbody></table>
+                                    </td></tr></tbody></table>
+                            </a></div>
+                          <div id=3D"m_-5071016804456461269yiv1184908586yui=
+_3_16_0_ym19_1_1500995456007_5026"><br clear=3D"none">
+                          </div>
+                          <div dir=3D"ltr" id=3D"m_-5071016804456461269yiv1=
+184908586yui_3_16_0_ym19_1_1500995456007_5026"><a rel=3D"nofollow" shape=3D=
+"rect" class=3D"m_-5071016804456461269yiv1184908586enhancr2_eda75603-783b-f=
+8dc-6d0e-1c9b81a918de" id=3D"m_-5071016804456461269yiv1184908586yui_3_16_0_=
+ym19_1_1500995456007_5745" href=3D"http://www.lostrhino.com/beer.html" targ=
+et=3D"_blank">Beer</a><br clear=3D"none">
+                          </div>
+                          <div dir=3D"ltr" id=3D"m_-5071016804456461269yiv1=
+184908586yui_3_16_0_ym19_1_1500995456007_5026"><br clear=3D"none">
+                          </div>
+                          <div><br clear=3D"none">
+                          </div>
+                          <div class=3D"m_-5071016804456461269yiv1184908586=
+yahoo-link-enhancr-card m_-5071016804456461269yiv1184908586ymail-preserve-c=
+lass m_-5071016804456461269yiv1184908586ymail-preserve-style" dir=3D"ltr" i=
+d=3D"m_-5071016804456461269yiv1184908586enhancr2_eda75603-783b-f8dc-6d0e-1c=
+9b81a918de" style=3D"max-width:400px;font-family:&#39;Helvetica            =
+                 Neue&#39;,Helvetica,Arial,sans-serif"> <a rel=3D"nofollow"=
+ shape=3D"rect" class=3D"m_-5071016804456461269yiv1184908586yahoo-enhancr-c=
+ardlink" href=3D"http://www.lostrhino.com/beer.html" style=3D"text-decorati=
+on:none;color:#000" target=3D"_blank">
+                              <table class=3D"m_-5071016804456461269yiv1184=
+908586card-wrapper m_-5071016804456461269yiv1184908586yahoo-ignore-table" s=
+tyle=3D"max-width:400px" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><=
+tbody><tr><td colspan=3D"1" rowspan=3D"1" width=3D"400">
+                                      <table class=3D"m_-507101680445646126=
+9yiv1184908586card m_-5071016804456461269yiv1184908586yahoo-ignore-table" s=
+tyle=3D"max-width:400px" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0"=
+ border=3D"0"><tbody><tr><td colspan=3D"1" rowspan=3D"1" valign=3D"top" cla=
+ss=3D"m_-5071016804456461269yiv1184908586card-primary-image-cell" style=3D"=
+background:#000 url(&#39;https://ci3.googleusercontent.com/proxy/B6-Ux_yVFT=
+EMGbknM9ZJWLiyzybOo876WaJwSFuOPl5ILNoGeHQljt4PcJRFZmv8ygLuJvPHE2o7IYZ1UHy3d=
+5jky2caU-BDdQec5vrocSGqxsLGbiDUEZ0zQDRaWdZhJtct367wVIi7Rn3IwsDT32cd2ScpFZaX=
+OdLzFk4nPJmfsYnjEnyZpBUhT0WLIXmU35ukfX1WLX-vXBuUeExovRpK2rT13za1duWZULAtoXS=
+dmuE-ERHgqu2VeScmZy5gf2UeEjOV9n9hR3i5m-XozonL=3Ds0-d-e1-ft#https://s.yimg.c=
+om/vv//api/res/1.2/Q3BhdiH3dh0f319Sf2RqAg--/YXBwaWQ9bWFpbDtmaT1maWxsO2g9MjA=
+wO3c9NDAw/http://www.lostrhino.com/uploads/3/0/0/5/30050107/yearround-beer-=
+title_orig.png.cf.jpg&#39;) no-repeat center center;background-size:cover;m=
+in-height:200px" bgcolor=3D"#000000" background=3D"https://s.yimg.com/vv//a=
+pi/res/1.2/Q3BhdiH3dh0f319Sf2RqAg--/YXBwaWQ9bWFpbDtmaT1maWxsO2g9MjAwO3c9NDA=
+w/http://www.lostrhino.com/uploads/3/0/0/5/30050107/yearround-beer-title_or=
+ig.png.cf.jpg">
+                                              <table class=3D"m_-5071016804=
+456461269yiv1184908586yahoo-ignore-table" style=3D"width:100%" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0"><tbody><tr><td colspan=3D"1" rowspan=
+=3D"1" valign=3D"top" style=3D"background:transparent url(&#39;https://ci6.=
+googleusercontent.com/proxy/Or0PpNz8Q2N-T77lb2rdWKcTmD4Aucmk2Ee_LS8DyP6g6BD=
+F3rwx4OyZl6lsUYsZqw8AQBiEM0n0IXQQ0XX4vUAoRYgzG6vu_JFg3P_OaiyHSXs0y-U=3Ds0-d=
+-e1-ft#https://s.yimg.com/nq/storm/assets/enhancrV2/12/overlay-tile.png&#39=
+;) repeat left top;min-height:200px" bgcolor=3D"transparent" background=3D"=
+https://s.yimg.com/nq/storm/assets/enhancrV2/12/overlay-tile.png">
+                                                      <table class=3D"m_-50=
+71016804456461269yiv1184908586yahoo-ignore-table" style=3D"width:100%;min-h=
+eight:185px;min-height:185px" height=3D"185"><tbody><tr><td colspan=3D"1" r=
+owspan=3D"1" class=3D"m_-5071016804456461269yiv1184908586card-richInfo2" st=
+yle=3D"text-align:left;text-align:left;padding:15px 0 0 15px;vertical-align=
+:top">
+                                                          <br clear=3D"none=
+">
+                                                          </td><td colspan=
+=3D"1" rowspan=3D"1" class=3D"m_-5071016804456461269yiv1184908586card-actio=
+ns" style=3D"text-align:right;padding:15px 15px 0 0;vertical-align:top"> <b=
+r clear=3D"none">
+                                                          </td></tr></tbody=
+></table>
+                                                    </td></tr></tbody></tab=
+le>
+                                            </td></tr><tr><td colspan=3D"1"=
+ rowspan=3D"1">
+                                              <table align=3D"center" class=
+=3D"m_-5071016804456461269yiv1184908586card-info m_-5071016804456461269yiv1=
+184908586yahoo-ignore-table" style=3D"background:#fff;width:95%;max-width:3=
+80px;border:1px solid #e0e4e9;border-bottom:3px solid #000000;margin-left:a=
+uto;margin-right:auto" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tb=
+ody><tr><td colspan=3D"1" rowspan=3D"1" style=3D"background-color:#ffffff;p=
+adding:16px 0 16px 12px;vertical-align:top">
+                                                      <br clear=3D"none">
+                                                    </td><td colspan=3D"1" =
+rowspan=3D"1" style=3D"vertical-align:middle;padding:16px 12px;width:99%">
+                                                      <h2 class=3D"m_-50710=
+16804456461269yiv1184908586card-title" style=3D"font-size:16px;line-height:=
+19px;margin:0 0 4px 0;font-family:&#39;Helvetica                           =
+                              Neue&#39;,Helvetica,Arial,sans-serif">Beer</h=
+2>
+                                                      <div class=3D"m_-5071=
+016804456461269yiv1184908586card-description" style=3D"font-size:11px;line-=
+height:15px;color:#999">HOME</div>
+                                                    </td><td colspan=3D"1" =
+rowspan=3D"1" style=3D"text-align:right;padding:16px 12px 16px 0"> <br clea=
+r=3D"none">
+                                                    </td></tr></tbody></tab=
+le>
+                                            </td></tr></tbody></table>
+                                    </td></tr></tbody></table>
+                            </a></div>
+                          <div><br clear=3D"none">
+                          </div>
+                          <div dir=3D"ltr" id=3D"m_-5071016804456461269yiv1=
+184908586yui_3_16_0_ym19_1_1500995456007_4862"><br clear=3D"none">
+                          </div>
+                          <div id=3D"m_-5071016804456461269yiv1184908586yui=
+_3_16_0_ym19_1_1500995456007_4860"><br clear=3D"none">
+                          </div>
+                          <div id=3D"m_-5071016804456461269yiv1184908586yui=
+_3_16_0_ym19_1_1500995456007_4861"><br clear=3D"none">
+                          </div>
+                        </div>
+                      </blockquote>
+                    </div>
+                    <br clear=3D"none">
+                    <div id=3D"m_-5071016804456461269yiv1184908586DAB4FAD8-=
+2DD7-40BB-A1B8-4E2AA1F9FDF2">
+                      <br clear=3D"none">
+                      <br clear=3D"none">
+                      <hr style=3D"border:none;color:#909090;background-col=
+or:#b0b0b0;min-height:1px;width:99%">
+                      <table style=3D"border-collapse:collapse;border:none"=
+><tbody><tr><td colspan=3D"1" rowspan=3D"1" style=3D"border:none;padding:0p=
+x 15px 0px 8px"> <a rel=3D"nofollow" shape=3D"rect" href=3D"http://www.avg.=
+com/internet-security" target=3D"_blank"> <img src=3D"http://static.avast.c=
+om/emails/avg-mail-stamp.png" alt=3D"AVG logo" border=3D"0"> </a> </td><td =
+colspan=3D"1" rowspan=3D"1">
+                              <div style=3D"color:#3d4d5a"> This email
+                                has been checked for viruses by AVG
+                                antivirus software. <br clear=3D"none">
+                                <a rel=3D"nofollow" shape=3D"rect" href=3D"=
+http://www.avg.com/internet-security" target=3D"_blank">www.avg.com</a>
+                              </div>
+                            </td></tr></tbody></table>
+                      <br clear=3D"none">
+                      <a rel=3D"nofollow" shape=3D"rect" href=3D"https://mg=
+.mail.yahoo.com/neo/launch?.rand=3D5adgu3me64mgj#DAB4FAD8-2DD7-40BB-A1B8-4E=
+2AA1F9FDF2" target=3D"_blank"> </a></div>
+                  </div>
+                </div>
+                <br clear=3D"none">
+                <br clear=3D"none">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote></div>
+    <br clear=3D"none">
+  </div></div><br clear=3D"none"><br clear=3D"none"></div>  </div> </div>  =
+</div></div></div></div></div><br><br></div>  </div> </div>  </div></div></=
+div></div></div></blockquote></div><br></div>
+
+--f403045e8aaee9ef2205563f2cfb--

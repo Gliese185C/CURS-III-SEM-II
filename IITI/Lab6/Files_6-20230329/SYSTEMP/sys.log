@@ -1,0 +1,215 @@
+Wed Mar 29 23:51:27 2023: Log opened.
+Wed Mar 29 23:51:27 2023: File: C:\Users\User\Desktop\CURS III SEM II\IITI\Lab6\Files_6-20230329\SYSTEM
+Wed Mar 29 23:51:27 2023: Environment set up.
+Wed Mar 29 23:51:27 2023: Parsed Plugins file system
+Wed Mar 29 23:51:27 2023: Launching appcertdlls v.20120817
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: appcertdlls complete.
+Wed Mar 29 23:51:27 2023: Launching appcompatcache v.20160528
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: appcompatcache complete.
+Wed Mar 29 23:51:27 2023: Launching appcompatcache_tln v.20160528
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: appcompatcache_tln complete.
+Wed Mar 29 23:51:27 2023: Launching auditfail v.20081212
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: auditfail complete.
+Wed Mar 29 23:51:27 2023: Launching backuprestore v.20130904
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: backuprestore complete.
+Wed Mar 29 23:51:27 2023: Launching bthport v.20170129
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: bthport complete.
+Wed Mar 29 23:51:27 2023: Launching comfoo v.20131007
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: comfoo complete.
+Wed Mar 29 23:51:27 2023: Launching compname v.20090727
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: compname complete.
+Wed Mar 29 23:51:27 2023: Launching crashcontrol v.20131210
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: crashcontrol complete.
+Wed Mar 29 23:51:27 2023: Launching ddm v.20081129
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: ddm complete.
+Wed Mar 29 23:51:27 2023: Launching devclass v.20130630
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: devclass complete.
+Wed Mar 29 23:51:27 2023: Launching diag_sr v.20120515
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: diag_sr complete.
+Wed Mar 29 23:51:27 2023: Launching disablelastaccess v.20090118
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: disablelastaccess complete.
+Wed Mar 29 23:51:27 2023: Launching dllsearch v.20100824
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: dllsearch complete.
+Wed Mar 29 23:51:27 2023: Launching dnschanger v.20120203
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: dnschanger complete.
+Wed Mar 29 23:51:27 2023: Launching eventlog v.20090112
+Wed Mar 29 23:51:27 2023: 0 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: eventlog complete.
+Wed Mar 29 23:51:27 2023: Launching eventlogs v.20081219
+Wed Mar 29 23:51:27 2023: Error in eventlogs: Can't call method "get_data" on an undefined value at C:\Users\User\Desktop\CURS III SEM II\IITI\Lab6\Instrumente and materiale de lucru_6-20230329\RegRipper2.8-master\RegRipper2.8/plugins\eventlogs.pl line 60.
+
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: eventlogs complete.
+Wed Mar 29 23:51:27 2023: Launching fw_config v.20080328
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: fw_config complete.
+Wed Mar 29 23:51:27 2023: Launching hibernate v.20081216
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: hibernate complete.
+Wed Mar 29 23:51:27 2023: Launching ide v.20080418
+Wed Mar 29 23:51:27 2023: ControlSet001\Enum\IDE not found.
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: ide complete.
+Wed Mar 29 23:51:27 2023: Launching imagedev v.20140104
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: imagedev complete.
+Wed Mar 29 23:51:27 2023: Launching kbdcrash v.20081212
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: kbdcrash complete.
+Wed Mar 29 23:51:27 2023: Launching legacy v.20120524
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: legacy complete.
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: legacy_tln complete.
+Wed Mar 29 23:51:27 2023: Launching lsa_packages v.20140730
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: lsa_packages complete.
+Wed Mar 29 23:51:27 2023: Launching mountdev v.20130530
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: mountdev complete.
+Wed Mar 29 23:51:27 2023: Launching mountdev2 v.20140721
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: mountdev2 complete.
+Wed Mar 29 23:51:27 2023: Launching netsvcs v.20130905
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: netsvcs complete.
+Wed Mar 29 23:51:27 2023: Launching network v.20080324
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: network complete.
+Wed Mar 29 23:51:27 2023: Launching nic v.20100401
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: nic complete.
+Wed Mar 29 23:51:27 2023: Launching nic2 v.20150812
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: nic2 complete.
+Wed Mar 29 23:51:27 2023: Launching nic_mst2 v.20080324
+Wed Mar 29 23:51:27 2023: No active network interface cards were found.
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: nic_mst2 complete.
+Wed Mar 29 23:51:27 2023: Launching nolmhash v.20100712
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: nolmhash complete.
+Wed Mar 29 23:51:27 2023: Launching pagefile v.20140505
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: pagefile complete.
+Wed Mar 29 23:51:27 2023: Launching pending v.20130711
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: pending complete.
+Wed Mar 29 23:51:27 2023: Launching phdet v.20120817
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: phdet complete.
+Wed Mar 29 23:51:27 2023: Launching prefetch v.20160506
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: prefetch complete.
+Wed Mar 29 23:51:27 2023: Launching processor_architecture v.20140505
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: processor_architecture complete.
+Wed Mar 29 23:51:27 2023: Launching productpolicy v.20091116
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: productpolicy complete.
+Wed Mar 29 23:51:27 2023: Launching producttype v.20100325
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: producttype complete.
+Wed Mar 29 23:51:27 2023: Launching rdpnla v.20151203
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: rdpnla complete.
+Wed Mar 29 23:51:27 2023: Launching rdpport v.20100713
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: rdpport complete.
+Wed Mar 29 23:51:27 2023: Launching regin v.20141124
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: regin complete.
+Wed Mar 29 23:51:27 2023: Launching remoteaccess v.20160906
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: remoteaccess complete.
+Wed Mar 29 23:51:27 2023: Launching routes v.20100817
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: routes complete.
+Wed Mar 29 23:51:27 2023: Launching safeboot v.20081216
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: safeboot complete.
+Wed Mar 29 23:51:27 2023: Launching securityproviders v.20120312
+Wed Mar 29 23:51:27 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:27 2023: securityproviders complete.
+Wed Mar 29 23:51:27 2023: Launching services v.20080507
+Wed Mar 29 23:51:28 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:28 2023: services complete.
+Wed Mar 29 23:51:28 2023: Launching shares v.20140730
+Wed Mar 29 23:51:28 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:28 2023: shares complete.
+Wed Mar 29 23:51:28 2023: Launching shimcache v.20160528
+Wed Mar 29 23:51:28 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:28 2023: shimcache complete.
+Wed Mar 29 23:51:28 2023: Launching shimcache_tln v.20160528
+Wed Mar 29 23:51:28 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:28 2023: shimcache_tln complete.
+Wed Mar 29 23:51:28 2023: Launching shutdown v.20080324
+Wed Mar 29 23:51:28 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:28 2023: shutdown complete.
+Wed Mar 29 23:51:28 2023: Launching shutdowncount v.20080709
+Wed Mar 29 23:51:28 2023: ControlSet001\Control\Watchdog\Display not found.
+Wed Mar 29 23:51:28 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:28 2023: shutdowncount complete.
+Wed Mar 29 23:51:28 2023: Launching stillimage v.20100222
+Wed Mar 29 23:51:28 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:28 2023: stillimage complete.
+Wed Mar 29 23:51:28 2023: Launching svc v.20131010
+Wed Mar 29 23:51:29 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:29 2023: svc complete.
+Wed Mar 29 23:51:29 2023: Launching svcdll v.20130603
+Wed Mar 29 23:51:29 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:29 2023: svcdll complete.
+Wed Mar 29 23:51:29 2023: Launching svc_plus v.20120625
+Wed Mar 29 23:51:30 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:30 2023: svc_plus complete.
+Wed Mar 29 23:51:30 2023: Launching svc_tln v.20130911
+Wed Mar 29 23:51:30 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:30 2023: svc_tln complete.
+Wed Mar 29 23:51:30 2023: Launching systemindex v.20120716
+Wed Mar 29 23:51:30 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:30 2023: systemindex complete.
+Wed Mar 29 23:51:30 2023: Launching termcert v.20110316
+Wed Mar 29 23:51:30 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:30 2023: termcert complete.
+Wed Mar 29 23:51:30 2023: Launching termserv v.20160224
+Wed Mar 29 23:51:30 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:30 2023: termserv complete.
+Wed Mar 29 23:51:30 2023: Launching timezone v.20160318
+Wed Mar 29 23:51:30 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:30 2023: timezone complete.
+Wed Mar 29 23:51:30 2023: Launching usb v.20141111
+Wed Mar 29 23:51:30 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:30 2023: usb complete.
+Wed Mar 29 23:51:30 2023: Launching usbdevices v.20140416
+Wed Mar 29 23:51:30 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:30 2023: usbdevices complete.
+Wed Mar 29 23:51:30 2023: Launching usbstor v.20141111
+Wed Mar 29 23:51:30 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:30 2023: usbstor complete.
+Wed Mar 29 23:51:30 2023: Launching usbstor2 v.20080825
+Wed Mar 29 23:51:30 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:30 2023: usbstor2 complete.
+Wed Mar 29 23:51:30 2023: Launching usbstor3 v.20100312
+Wed Mar 29 23:51:30 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:30 2023: usbstor3 complete.
+Wed Mar 29 23:51:30 2023: Launching wpdbusenum v.20141111
+Wed Mar 29 23:51:30 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:30 2023: wpdbusenum complete.
+Wed Mar 29 23:51:31 2023: Launching xpedition v.20120722
+Wed Mar 29 23:51:31 2023: 1 plugins completed with errors.
+Wed Mar 29 23:51:31 2023: xpedition complete.

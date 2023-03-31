@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?><diagrules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" schemaversion="2">
+  <UIF uifversion="0">
+    <uifmanifestxml/>
+  </UIF>
+  <scenarios>
+    <scenario schemaversion="2" scenarioid="{ac1e3170-7e6f-4c43-83cd-04ee55c28882}" scenarioname="Edge_Favorites_RedstonePort_TestA_Withdraw" maxcancelreports="-1" maxcompletionescalations="-1" mintimebetweencompletionescalationsms="1000" scenariolifespanindays="730">
+      <triggers>
+        <trigger triggername="Microsoft.Windows.App.Browser.FavoritePaneItemClicked">
+          <etwtrigger>
+            <provider>{0bca4784-8257-51a0-d9ec-24fe1fe4c90d}</provider>
+            <keywords>0x2000000000000</keywords>
+          </etwtrigger>
+        </trigger>
+      </triggers>
+      <escalation uploadcab="0">
+        <action actionname="Soft Landing Action">
+          <softlandingaction>
+            <campaignid>394b7b36-41b9-4032-9875-c0240ca5a7f5</campaignid>
+            <ruletype>3</ruletype>
+          </softlandingaction>
+        </action>
+      </escalation>
+      <filters>
+        <filter appliesto="scenario" filtername="Test Systems False">
+          <registryfilter>
+            <hive>HKEY_LOCAL_MACHINE</hive>
+            <keyname>SOFTWARE\Microsoft\SQMClient</keyname>
+            <valuename>IsTest</valuename>
+            <valuetype>REG_NONE</valuetype>
+            <value/>
+            <operation>notexists</operation>
+          </registryfilter>
+        </filter>
+      </filters>
+      <scxml version="1.0" datamodel="custom" initial="_start" xmlns="http://www.w3.org/2005/07/scxml">
+        <state id="_start">
+          <transition event="Microsoft.Windows.App.Browser.FavoritePaneItemClicked" target="_complete" name="T0"/>
+        </state>
+        <final id="_complete"/>
+      </scxml>
+    </scenario>
+  </scenarios>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>vHQP8UCyYBidLVqBwRxl2tGYA0w=</DigestValue></Reference></SignedInfo><SignatureValue>
+    J5iD5QXmp01YnENxgcjAUkceQm21dDm1YNxWgA17jIHXjt/t+uDY+3AgbAs/5cDesFzyJHrs
+    CD/amKUn92ZfbFDnO553WtUvejpFhdD/0hube1zmgBWbIHFikiLgCk70g0g7KRSmQhjfla1g
+    poOAT3aQpeItJrIfhlrrpgKGLcIcCDDcugfx0oQ/SNF97eJqw7omacUhDm9YEE5JWOzz4mFh
+    CuNJueEuhjC18kP09l1qoxkY4fPC5A0TrZyDOb8zx9m5PLJglI9HHx17B4IEmuYMKqGqO5Ec
+    06VAKhv4KqRMiJD9cVD1EssI4LTuH5hFXYRe3+XIn/RMcn1FlbzDXg==
+  </SignatureValue><KeyInfo>
+      <KeyValue>
+        <RSAKeyValue>
+          <Modulus>
+            20uL6QNqX8gbXQoFOeTVDpLQxOGL6KQNBRlYwDzXKd2Jt2huS59+vJq9VIY5qfE4NRbmHaz7
+            rmvcCTDvuB7fbPhKmlWXSMgjibNZJzS9lTFHnA/OQDUyN/7p80+kGqSzebyAmz8kmMTRb9V/
+            50ON5Nzy0uauZu0EOiGUplfcA9ssxhv/KzmoXb9V/t1J31QFlKsz36R9MaZNvVbPFjFoP4Rr
+            HG3z7tUwiu5lG563CBwpfpO98n1Cdjgi1Ht89Li5cZ7DlPSChjWCpnS9AjP6VIaFoyW+qole
+            4jlfJkGYGt655kaFeLtRMgJH7OT5H70EUXXmEpt264WXFCIKoRP3YQ==
+          </Modulus>
+          <Exponent>AQAB</Exponent>
+        </RSAKeyValue>
+      </KeyValue>
+      <X509Data>
+        <X509Certificate>
+          MIIE7TCCA9WgAwIBAgITMwAAAUCWqe5wVv7MBwABAAABQDANBgkqhkiG9w0BAQUFADB5MQsw
+          CQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwG
+          A1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMSMwIQYDVQQDExpNaWNyb3NvZnQgQ29kZSBT
+          aWduaW5nIFBDQTAeFw0xNjA4MTgyMDE3MTdaFw0xNzExMDIyMDE3MTdaMIGDMQswCQYDVQQG
+          EwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwGA1UEChMV
+          TWljcm9zb2Z0IENvcnBvcmF0aW9uMQ0wCwYDVQQLEwRNT1BSMR4wHAYDVQQDExVNaWNyb3Nv
+          ZnQgQ29ycG9yYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDbS4vpA2pf
+          yBtdCgU55NUOktDE4YvopA0FGVjAPNcp3Ym3aG5Ln368mr1Uhjmp8Tg1FuYdrPuua9wJMO+4
+          Ht9s+EqaVZdIyCOJs1knNL2VMUecD85ANTI3/unzT6QapLN5vICbPySYxNFv1X/nQ43k3PLS
+          5q5m7QQ6IZSmV9wD2yzGG/8rOahdv1X+3UnfVAWUqzPfpH0xpk29Vs8WMWg/hGscbfPu1TCK
+          7mUbnrcIHCl+k73yfUJ2OCLUe3z0uLlxnsOU9IKGNYKmdL0CM/pUhoWjJb6qiV7iOV8mQZga
+          3rnmRoV4u1EyAkfs5PkfvQRRdeYSm3brhZcUIgqhE/dhAgMBAAGjggFhMIIBXTATBgNVHSUE
+          DDAKBggrBgEFBQcDAzAdBgNVHQ4EFgQUnOXobYJXrjck3upeqcRfkB3O2XswUgYDVR0RBEsw
+          SaRHMEUxDTALBgNVBAsTBE1PUFIxNDAyBgNVBAUTKzIyOTgwMytmNzg1YjFjMC01ZDlmLTQz
+          MTYtOGQ2YS03NGFlNjQyZGRlMWMwHwYDVR0jBBgwFoAUyxHoytK0FlgByTcuMxYWuUyaCh8w
+          VgYDVR0fBE8wTTBLoEmgR4ZFaHR0cDovL2NybC5taWNyb3NvZnQuY29tL3BraS9jcmwvcHJv
+          ZHVjdHMvTWljQ29kU2lnUENBXzA4LTMxLTIwMTAuY3JsMFoGCCsGAQUFBwEBBE4wTDBKBggr
+          BgEFBQcwAoY+aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL3BraS9jZXJ0cy9NaWNDb2RTaWdQ
+          Q0FfMDgtMzEtMjAxMC5jcnQwDQYJKoZIhvcNAQEFBQADggEBAGvkVuPXEx0gQPlt6d5O210e
+          xmwmo/flCYAM/1fhtNTZ+VxI4QZ/wqRUuJZ69Y3JgxMMcb/4/LsuzBVz8wBrTiWq9MQKcpRS
+          n3dNKZMoCDEW2d9udKvE6E4VsZkFRE4aSUksrHnuv4VPhG5H777Y0otJaQ4pg/WlvaMbIa2i
+          pT6QIJz1nxI9ell1ZO/ao4WEMhICAmpkdwGmOZiz7qIoSWysJDIoPqiLZiz7AtiDLyOSkfdX
+          Zf+k1elRCJT21v3A1cAgRf1DSU957mQZf2BO4sTKU04f+1qRDVvNJIN8c+jJQncSXzEmybDO
+          U4phVPfCjXKZ8cW2HX6qkIQEOpd5rWA=
+        </X509Certificate>
+      </X509Data>
+      <X509Data>
+        <X509Certificate>
+          MIIFmTCCA4GgAwIBAgIQea0WoUqgpa1Mc1j0BxMuZTANBgkqhkiG9w0BAQUFADBfMRMwEQYK
+          CZImiZPyLGQBGRYDY29tMRkwFwYKCZImiZPyLGQBGRYJbWljcm9zb2Z0MS0wKwYDVQQDEyRN
+          aWNyb3NvZnQgUm9vdCBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkwHhcNMDEwNTA5MjMxOTIyWhcN
+          MjEwNTA5MjMyODEzWjBfMRMwEQYKCZImiZPyLGQBGRYDY29tMRkwFwYKCZImiZPyLGQBGRYJ
+          bWljcm9zb2Z0MS0wKwYDVQQDEyRNaWNyb3NvZnQgUm9vdCBDZXJ0aWZpY2F0ZSBBdXRob3Jp
+          dHkwggIiMA0GCSq

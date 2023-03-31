@@ -1,0 +1,588 @@
+ControlSet	CacheEntryPosition	Path	LastModifiedTimeUTC	Executed
+1	0	C:\Windows\system32\launchtm.exe	2017-03-18 20:57:08	NA
+1	1	C:\Windows\9129837.exe	2008-11-12 06:07:32	NA
+1	2	C:\Windows\notepad.exe	2017-03-18 20:58:25	NA
+1	3	C:\Windows\bfsvc.exe	2017-06-03 08:51:12	NA
+1	4	C:\Windows\HelpPane.exe	2017-06-03 08:59:43	NA
+1	5	C:\Windows\hh.exe	2017-03-18 20:57:33	NA
+1	6	C:\Windows\javainstall.exe	2008-11-12 06:07:32	NA
+1	7	C:\Windows\system32\RAServer.exe	2017-03-18 20:59:52	NA
+1	8	C:\Users\ROCKHA~1\AppData\Local\Temp\8354F86C-DBEC-4515-BC23-BFA0032644E9\dismhost.exe	2017-03-18 11:40:21	NA
+1	9	C:\Users\Rock Hammerfist\AppData\Local\Temp\8354F86C-DBEC-4515-BC23-BFA0032644E9\DismHost.exe	2017-03-18 11:40:21	NA
+1	10	C:\Windows\SystemApps\Microsoft.Windows.SecHealthUI_cw5n1h2txyewy\Application	2017-07-12 15:11:23	NA
+1	11	C:\Program Files\Windows Defender\mpuxsrv.exe	2017-03-18 20:56:44	NA
+1	12	C:\Windows\PSEXESVC.exe	2017-08-01 17:48:09	NA
+1	13	C:\Windows\regedit.exe	2017-03-18 20:57:08	NA
+1	14	C:\Windows\system32\UserAccountControlSettings.exe	2017-03-18 20:58:25	NA
+1	15	C:\Windows\Temp\AvgClean_2cd25579-8334-42dd-901a-6c98f5133bca\avgsetupx.exe	2017-07-05 14:50:28	NA
+1	16	C:\Program Files (x86)\AVG\Antivirus\OpenVPN\driver\win64\ndis6\tapinstall.exe	2017-07-05 14:52:22	NA
+1	17	C:\Program Files (x86)\AVG\Antivirus\DataSafeMonitor.exe	2017-07-24 19:50:50	NA
+1	18	C:\Windows\system32\netsh.exe	2017-03-18 20:58:48	NA
+1	19	C:\Windows\SysWOW64\netsh.exe	2017-03-18 20:58:48	NA
+1	20	C:\Windows\SysWOW64\WerFault.exe	2017-03-18 20:58:49	NA
+1	21	"0000000b	0006000200000000	000a00003fff0000	014c	windows.immersivecontrolpanel	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	22	C:\Windows\System32\rdpclip.exe	2017-03-19 02:31:09	NA
+1	23	C:\Windows\system32\atbroker.exe	2017-03-18 20:57:30	NA
+1	24	C:\Windows\system32\TSTheme.exe	2017-03-18 20:58:33	NA
+1	25	C:\Windows\system32\systempropertiesadvanced.exe	2017-03-18 20:58:25	NA
+1	26	C:\Windows\system32\FlashPlayerCPLApp.cpl	2017-06-30 14:47:29	NA
+1	27	C:\Windows\system32\mmc.exe	2017-03-18 20:57:05	NA
+1	28	C:\Windows\system32\CompMgmtLauncher.exe	2017-03-18 20:57:03	NA
+1	29	C:\Users\Rock Hammerfist\Downloads\cc_setup532 (1).exe	2017-07-25 14:09:40	NA
+1	30	C:\Program Files\Microsoft Office\Office15\MsoSync.exe	2014-01-23 20:06:24	NA
+1	31	C:\Windows\system32\control.exe	2017-03-18 20:58:29	NA
+1	32	C:\Users\Rock Hammerfist\AppData\Local\Google\Chrome\User Data\SwReporter\20.114.2\software_reporter_tool.exe	2017-07-13 19:02:18	NA
+1	33	C:\Program Files\WindowsApps\Microsoft.ZuneMusic_10.17062.14111.0_x64__8wekyb3d8bbwe\Application	2017-07-31 19:24:06	NA
+1	34	C:\Users\ROCKHA~1\AppData\Local\Temp\247B9A05-0A27-4079-8170-5729BCB2E4A8\dismhost.exe	2017-03-18 11:40:21	NA
+1	35	C:\Users\Rock Hammerfist\AppData\Local\Temp\247B9A05-0A27-4079-8170-5729BCB2E4A8\DismHost.exe	2017-03-18 11:40:21	NA
+1	36	C:\Windows\Installer\MSI8E42.tmp	2017-07-31 19:29:35	NA
+1	37	C:\Windows\Installer\MSI1EF.tmp	2017-07-31 19:28:59	NA
+1	38	"00000009	2dba06ab1b620000	000a00003ad70000	8664	Microsoft.StorePurchaseApp	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	39	"00000009	000a42a6371f0000	000a00003ad80000	8664	Microsoft.ZuneMusic	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	40	"00000009	000206aa078e0000	000a00003ad20000	8664	Microsoft.OneConnect	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	41	C:\Program Files\WindowsApps\Microsoft.WindowsStore_11706.1001.26.0_x64__8wekyb3d8bbwe\Application	2017-07-31 19:23:54	NA
+1	42	"00000009	2dba03e9001a0000	000a00003ad70000	8664	Microsoft.WindowsStore	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	43	"00000009	0005000b06690000	000a000038390000	8664	Microsoft.Getstarted	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	44	C:\Program Files\Common Files\Microsoft Shared\Office15\OLicenseHeartbeat.exe	2014-01-23 20:04:54	NA
+1	45	C:\Users\Rock Hammerfist\AppData\Local\Microsoft\OneDrive\17.3.6943.0625\FileSyncConfig.exe	2017-07-31 19:21:45	NA
+1	46	C:\Program Files\CCleaner\CCleaner.exe	2017-06-30 12:38:08	NA
+1	47	C:\Program Files\Microsoft Office\Office15\msoia.exe	2014-01-23 17:54:12	NA
+1	48	C:\Program Files\Common Files\Microsoft Shared\Office15\msosqm.exe	2012-10-02 00:35:42	NA
+1	49	C:\Program Files\Microsoft Office\Office15\FIRSTRUN.EXE	2012-10-02 00:34:44	NA
+1	50	C:\Program Files\Common Files\Microsoft Shared\OFFICE15\LICLUA.EXE	2012-10-02 00:34:38	NA
+1	51	C:\Program Files\Microsoft Office\Office15\WINWORD.EXE	2014-01-23 20:06:42	NA
+1	52	C:\Windows\Installer\MSIA992.tmp	2017-07-25 14:56:57	NA
+1	53	C:\Program Files\Microsoft Office\Office15\msohtmed.exe	2012-10-02 00:35:44	NA
+1	54	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\accicons.exe	2017-07-25 14:55:25	NA
+1	55	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\xlicons.exe	2017-07-25 14:55:24	NA
+1	56	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\pptico.exe	2017-07-25 14:55:24	NA
+1	57	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\wordicon.exe	2017-07-25 14:55:24	NA
+1	58	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\pubs.exe	2017-07-25 14:55:24	NA
+1	59	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\lyncicon.exe	2017-07-25 14:55:25	NA
+1	60	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\outicon.exe	2017-07-31 19:30:03	NA
+1	61	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\grv_icons.exe	2017-07-25 14:55:25	NA
+1	62	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\dbcicons.exe	2017-07-31 19:30:03	NA
+1	63	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\msouc.exe	2017-07-25 14:55:24	NA
+1	64	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\misc.exe	2017-07-25 14:55:24	NA
+1	65	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\inficon.exe	2017-07-25 14:55:25	NA
+1	66	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\joticon.exe	2017-07-25 14:55:25	NA
+1	67	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\osmadminicon.exe	2017-07-25 14:55:24	NA
+1	68	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\osmclienticon.exe	2017-07-25 14:55:24	NA
+1	69	C:\Windows\Installer\{91150000-0011-0000-1000-0000000FF1CE}\sscicons.exe	2017-07-31 19:30:03	NA
+1	70	C:\Windows\System32\wevtutil.exe	2017-03-18 20:57:58	NA
+1	71	C:\Windows\syswow64\wevtutil.exe	2017-03-18 20:58:51	NA
+1	72	C:\Windows\syswow64\lodctr.exe	2017-03-18 20:58:56	NA
+1	73	C:\Windows\syswow64\schtasks.exe	2017-03-18 20:58:47	NA
+1	74	C:\Users\ROCKHA~1\AppData\Local\Temp\ose00000.exe	2012-10-02 00:44:32	NA
+1	75	C:\Users\Rock Hammerfist\AppData\Local\Temp\ose00000.exe	2012-10-02 00:44:32	NA
+1	76	SIGN.MEDIA=1282DC66 proplusr.ww\ose.exe	2012-10-02 00:44:32	NA
+1	77	SIGN.MEDIA=23186C setup.exe	2012-10-02 00:25:32	NA
+1	78	SIGN.MEDIA=D10FA57 Drobo-Dashboard-2.8.3.exe	2016-10-26 15:18:18	NA
+1	79	C:\Windows\system32\wbem\unsecapp.exe	2017-03-18 20:57:50	NA
+1	80	C:\Program Files\CCleaner\CCleaner64.exe	2017-06-30 12:38:10	NA
+1	81	C:\Windows\SysWOW64\PING.EXE	2017-03-18 20:58:51	NA
+1	82	C:\Users\Rock Hammerfist\Downloads\cc_setup532.exe	2017-07-25 14:09:40	NA
+1	83	C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.17062.12911.0_x64__8wekyb3d8bbwe\Application	2017-07-24 19:58:22	NA
+1	84	C:\Users\ROCKHA~1\AppData\Local\Temp\D0E1718E-A99E-43F5-A971-1E565F907EF8\dismhost.exe	2017-03-18 11:40:21	NA
+1	85	C:\Users\Rock Hammerfist\AppData\Local\Temp\D0E1718E-A99E-43F5-A971-1E565F907EF8\DismHost.exe	2017-03-18 11:40:21	NA
+1	86	"00000009	000a000300010000	000a000038390000	8664	KeeperSecurityInc.Keeper	kejf07qmg0jnm	"	1601-01-01 00:00:00	NA
+1	87	"00000000	0001005d05790000	000a000028000000	8664	king.com.CandyCrushSodaSaga	kgqvnymyfvs32	"	1601-01-01 00:00:00	NA
+1	88	C:\Program Files\WindowsApps\Microsoft.MicrosoftOfficeHub_17.8414.5925.0_x64__8wekyb3d8bbwe\Application	2017-07-24 19:59:16	NA
+1	89	"00000009	001120de17250000	000a000037b10000	8664	Microsoft.MicrosoftOfficeHub	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	90	"00000009	000a06aa07460000	000a00003ad70000	8664	Microsoft.WindowsCalculator	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	91	C:\Users\Rock Hammerfist\Downloads\NOVA\novasdkdev.exe	2017-07-14 13:13:47	NA
+1	92	C:\Users\Rock Hammerfist\Downloads\NOVA\novapdf-full.exe	2017-07-14 13:13:19	NA
+1	93	C:\Users\Rock Hammerfist\Downloads\NOVA\novaoemdev.exe	2017-07-14 13:13:52	NA
+1	94	C:\Program Files\WindowsApps\Microsoft.WindowsStore_11706.1001.25.0_x64__8wekyb3d8bbwe\Application	2017-07-24 19:58:55	NA
+1	95	"00000009	2dba03e900190000	000a00003ad70000	8664	Microsoft.WindowsStore	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	96	"00000000	0002000600010001	0006000300000000	8664	A278AB0D.MarchofEmpires	h6adky7gbf63m	"	1601-01-01 00:00:00	NA
+1	97	"00000009	0002000000560000	000a0000295a0000	8664	ThumbmunkeysLtd.PhototasticCollage	nfy108tqq3p12	"	1601-01-01 00:00:00	NA
+1	98	"00000009	000a42a6326f0000	000a00003ad80000	8664	Microsoft.ZuneVideo	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	99	C:\Program Files (x86)\AVG\Antivirus\setup\New_11050bce\instup.exe	2017-07-24 19:50:30	NA
+1	100	C:\Users\ROCKHA~1\AppData\Local\Temp\E3243725-7826-4C0E-B4E3-ECFCA53B4E0B\dismhost.exe	2017-03-18 11:40:21	NA
+1	101	C:\Users\Rock Hammerfist\AppData\Local\Temp\E3243725-7826-4C0E-B4E3-ECFCA53B4E0B\DismHost.exe	2017-03-18 11:40:21	NA
+1	102	C:\Windows\sysWOW64\wbem\wmiprvse.exe	2017-03-18 20:58:50	NA
+1	103	C:\Program Files (x86)\AVG\Antivirus\asulaunch.exe	2017-07-05 14:52:22	NA
+1	104	C:\Program Files\WindowsApps\Microsoft.SkypeApp_11.19.820.0_x64__kzf8qxf38zg5c\Application	2017-07-18 17:50:58	NA
+1	105	C:\Program Files\WindowsApps\microsoft.windowscommunicationsapps_17.8241.41275.0_x64__8wekyb3d8bbwe\Application	2017-07-18 17:50:57	NA
+1	106	"00000009	000b001303340000	000a000038390000	8664	Microsoft.SkypeApp	kzf8qxf38zg5c	"	1601-01-01 00:00:00	NA
+1	107	"00000009	00112031a13b0000	000a00003aa90000	8664	microsoft.windowscommunicationsapps	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	108	"00000009	001120aee10b0000	000a00003aa90000	8664	Microsoft.Office.OneNote	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	109	C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\Temp\633965268\AdobeARMHelper.exe	2017-02-03 03:21:46	NA
+1	110	C:\Users\ROCKHA~1\AppData\Local\Temp\92480129-877F-46F2-903A-90C55CAD36AD\dismhost.exe	2017-03-18 11:40:21	NA
+1	111	C:\Users\Rock Hammerfist\AppData\Local\Temp\92480129-877F-46F2-903A-90C55CAD36AD\DismHost.exe	2017-03-18 11:40:21	NA
+1	112	C:\Program Files\WindowsApps\Microsoft.XboxGameOverlay_1.19.11001.0_x64__8wekyb3d8bbwe\Application	2017-07-17 12:31:28	NA
+1	113	"00000009	000100132af90000	000a00003f520000	8664	Microsoft.XboxGameOverlay	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	114	C:\Windows\System32\Speech_OneCore\Common\SpeechRuntime.exe	2017-03-18 20:58:18	NA
+1	115	C:\Windows\Installer\MSI8E3B.tmp	2017-07-14 19:37:33	NA
+1	116	C:\Program Files (x86)\Adobe\Reader 11.0\Reader\Reader_sl.exe	2014-12-03 06:31:24	NA
+1	117	C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\Temp\295458732\AdobeARMHelper.exe	2014-12-03 06:31:16	NA
+1	118	C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\AdobeARM.exe	2017-04-25 13:12:12	NA
+1	119	C:\Windows\SysWOW64\runonce.exe	2017-03-18 20:58:56	NA
+1	120	"00000000	0001005d05780000	000a000028000000	8664	king.com.CandyCrushSodaSaga	kgqvnymyfvs32	"	1601-01-01 00:00:00	NA
+1	121	"00000009	0002000000510000	000a0000295a0000	8664	ThumbmunkeysLtd.PhototasticCollage	nfy108tqq3p12	"	1601-01-01 00:00:00	NA
+1	122	"00000009	001120aee0ed0000	000a00003aa90000	8664	Microsoft.Office.OneNote	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	123	C:\Program Files\WindowsApps\Microsoft.XboxApp_30.31.1001.0_x64__8wekyb3d8bbwe\Application	2017-07-14 17:49:15	NA
+1	124	"00000009	001e001f03e90000	000a00003ad70000	8664	Microsoft.XboxApp	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	125	"0000000b	000a00003ad70000	000a00003ad70000	8664	Microsoft.Windows.CloudExperienceHost	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	126	C:\Windows\SystemApps\Microsoft.Windows.CloudExperienceHost_cw5n1h2txyewy\Application	2017-07-05 17:32:07	NA
+1	127	C:\Program Files (x86)\AVG\Antivirus\x64\Gf2Vss.exe	2017-07-05 14:52:20	NA
+1	128	C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.17054.14711.0_x64__8wekyb3d8bbwe\Application	2017-07-06 13:22:52	NA
+1	129	C:\Program Files (x86)\4KDownload\4kvideodownloader\4kvideodownloader.exe	2017-06-22 23:14:36	NA
+1	130	C:\Program Files (x86)\4KDownload\4kyoutubetomp3\4kyoutubetomp3.exe	2017-02-03 17:46:54	NA
+1	131	C:\Users\ROCKHA~1\AppData\Local\Temp\is-B29AA.tmp\4kyoutubetomp3_3.1.tmp	2017-07-14 16:35:38	NA
+1	132	C:\Users\Rock Hammerfist\AppData\Local\Temp\is-B29AA.tmp\4kyoutubetomp3_3.1.tmp	2017-07-14 16:35:38	NA
+1	133	C:\Users\ROCKHA~1\AppData\Local\Temp\is-48SBG.tmp\4kyoutubetomp3_3.1.tmp	2017-07-14 16:35:35	NA
+1	134	C:\Users\Rock Hammerfist\AppData\Local\Temp\is-48SBG.tmp\4kyoutubetomp3_3.1.tmp	2017-07-14 16:35:35	NA
+1	135	C:\Users\Rock Hammerfist\Downloads\4kyoutubetomp3_3.1.exe	2017-07-14 16:35:32	NA
+1	136	C:\Program Files\WindowsApps\Microsoft.ZuneMusic_10.17054.15411.0_x64__8wekyb3d8bbwe\Application	2017-07-13 15:59:02	NA
+1	137	C:\Users\Rock Hammerfist\Downloads\novasdkdev.exe	2017-07-14 13:13:47	NA
+1	138	C:\Users\Rock Hammerfist\Downloads\novaoemdev.exe	2017-07-14 13:13:52	NA
+1	139	C:\Users\Rock Hammerfist\Downloads\novapdf-full.exe	2017-07-14 13:13:19	NA
+1	140	C:\Windows\SYSTEM32\explorer.exe	2017-06-20 05:08:14	NA
+1	141	C:\Windows\SysWOW64\explorer.exe	2017-06-20 05:08:14	NA
+1	142	C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe	2017-04-25 13:12:12	NA
+1	143	C:\Program Files (x86)\Adobe\Reader 11.0\Reader\AcroRd32.exe	2017-03-28 17:24:42	NA
+1	144	C:\ProgramData\Adobe\Setup\{AC76BA86-7AD7-1033-7B44-AB0000000001}\setup.exe	2014-12-03 09:27:47	NA
+1	145	C:\Users\Rock Hammerfist\AppData\Local\Adobe\3351CFFB-CF38-4C4D-9E6E-24C629624EED\D7AAD00E-A331-40BF-91DB-4A5562DEB6B9\61E2D849-16D9-449E-8395-5E282F5E53F5	2017-07-14 12:52:45	NA
+1	146	C:\Users\Rock Hammerfist\AppData\Local\Adobe\3351CFFB-CF38-4C4D-9E6E-24C629624EED\gccheck_small.exe	2017-07-14 12:52:13	NA
+1	147	C:\Users\Rock Hammerfist\AppData\Local\Adobe\3351CFFB-CF38-4C4D-9E6E-24C629624EED\gtcheck.exe	2017-07-14 12:52:13	NA
+1	148	C:\Users\Rock Hammerfist\Downloads\reader11_en_xa_install.exe	2017-07-14 12:51:43	NA
+1	149	C:\Users\ROCKHA~1\AppData\Local\Temp\198CB521-CA54-480A-9F59-0C9FA4CE6EAD\dismhost.exe	2017-03-18 11:40:21	NA
+1	150	C:\Users\Rock Hammerfist\AppData\Local\Temp\198CB521-CA54-480A-9F59-0C9FA4CE6EAD\DismHost.exe	2017-03-18 11:40:21	NA
+1	151	"00000009	000a429e3c330000	000a00003ac20000	8664	Microsoft.ZuneMusic	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	152	C:\Program Files (x86)\SecondLifeViewer\SLVoice.exe	2017-05-24 13:02:42	NA
+1	153	C:\Program Files (x86)\SecondLifeViewer\llplugin\llceflib_host.exe	2016-10-26 23:35:00	NA
+1	154	C:\Program Files (x86)\SecondLifeViewer\SLPlugin.exe	2017-05-24 13:07:12	NA
+1	155	C:\Program Files (x86)\SecondLifeViewer\win_crash_logger.exe	2017-05-24 13:07:10	NA
+1	156	C:\Program Files (x86)\SecondLifeViewer\SecondLifeViewer.exe	2017-05-24 13:28:40	NA
+1	157	C:\Program Files (x86)\SecondLifeViewer\autorun.bat	2017-07-13 15:31:10	NA
+1	158	C:\Users\Rock Hammerfist\Downloads\Second_Life_5_0_6_326593_i686_Setup.exe	2017-07-13 15:30:35	NA
+1	159	C:\Windows\system32\utilman.exe	2017-03-18 20:57:30	NA
+1	160	C:\Users\ROCKHA~1\AppData\Local\Temp\4D5EE6C9-46C5-4BF8-9150-A94F1864AEC5\dismhost.exe	2017-03-18 11:40:21	NA
+1	161	C:\Users\Rock Hammerfist\AppData\Local\Temp\4D5EE6C9-46C5-4BF8-9150-A94F1864AEC5\DismHost.exe	2017-03-18 11:40:21	NA
+1	162	C:\Users\ROCKHA~1\AppData\Local\Temp\DFBA444B-3CA6-4C4D-B11F-BF1EF8F950F5\dismhost.exe	2017-03-18 11:40:21	NA
+1	163	C:\Users\Rock Hammerfist\AppData\Local\Temp\DFBA444B-3CA6-4C4D-B11F-BF1EF8F950F5\DismHost.exe	2017-03-18 11:40:21	NA
+1	164	C:\Windows\system32\makecab.exe	2017-03-18 20:57:58	NA
+1	165	C:\Windows\System32\sdiagnhost.exe	2017-03-18 20:57:15	NA
+1	166	C:\Windows\system32\tzsync.exe	2017-03-18 20:57:08	NA
+1	167	C:\Program Files (x86)\OpenOffice 4\program\soffice.bin	2016-09-29 17:15:42	NA
+1	168	"00000009	000a000300000000	000a000038390000	8664	KeeperSecurityInc.Keeper	kejf07qmg0jnm	"	1601-01-01 00:00:00	NA
+1	169	C:\Program Files (x86)\OpenOffice 4\program\swriter.exe	2016-09-29 17:15:44	NA
+1	170	C:\Program Files (x86)\OpenOffice 4\program\smath.exe	2016-09-29 17:15:44	NA
+1	171	C:\Program Files (x86)\OpenOffice 4\program\simpress.exe	2016-09-29 17:15:44	NA
+1	172	C:\Program Files (x86)\OpenOffice 4\program\sdraw.exe	2016-09-29 17:15:44	NA
+1	173	C:\Program Files (x86)\OpenOffice 4\program\sbase.exe	2016-09-29 17:15:42	NA
+1	174	C:\Program Files (x86)\OpenOffice 4\program\scalc.exe	2016-09-29 17:15:42	NA
+1	175	C:\Program Files (x86)\OpenOffice 4\program\unopkg.bin	2016-09-29 15:12:00	NA
+1	176	C:\Program Files (x86)\OpenOffice 4\program\unopkg.exe	2016-09-29 14:54:56	NA
+1	177	C:\Program Files (x86)\OpenOffice 4\program\soffice.exe	2016-09-29 17:15:42	NA
+1	178	C:\Program Files\WindowsApps\microsoft.windowscommunicationsapps_17.8241.41225.0_x64__8wekyb3d8bbwe\Application	2017-07-12 19:50:44	NA
+1	179	"00000009	00112031a1090000	000a00003aa90000	8664	microsoft.windowscommunicationsapps	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	180	"00000009	000206ab03f90000	000a00003ad70000	8664	Microsoft.MSPaint	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	181	c:\ae1c39aa9783bb80c0dfab5ac15b43\install.exe	2011-04-19 04:30:10	NA
+1	182	C:\Users\Rock Hammerfist\Desktop\OpenOffice 4.1.3 (en-US) Installation Files\redist\vcredist_x86.exe	2016-09-29 16:21:46	NA
+1	183	c:\6681009d9942b5a3fdc06e4e94a05e\install.exe	2011-04-19 08:09:16	NA
+1	184	C:\Users\Rock Hammerfist\Desktop\OpenOffice 4.1.3 (en-US) Installation Files\redist\vcredist_x64.exe	2016-09-29 16:21:46	NA
+1	185	C:\Users\Rock Hammerfist\Desktop\OpenOffice 4.1.3 (en-US) Installation Files\setup.exe	2016-09-29 16:21:48	NA
+1	186	C:\Users\Rock Hammerfist\AppData\Local\Packages\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\TempState\Downloads\Apache_OpenOffice_4.1.3_Win_x86_install_en-US.exe	2017-07-12 19:48:42	NA
+1	187	C:\Windows\system32\DsmUserTask.Exe	2017-03-18 20:57:08	NA
+1	188	C:\Windows\system32\ipconfig.exe	2017-03-18 20:57:50	NA
+1	189	C:\Windows\System32\Macromed\Flash\FlashUtil_ActiveX.exe	2017-06-30 14:47:29	NA
+1	190	C:\$Recycle.Bin\S-1-5-21-99675835-1998891890-1791891034-1000\$RAOTNXW.exe	2017-07-06 15:50:12	NA
+1	191	C:\Program Files\VMware\VMware Tools\VMToolsHookProc.exe	2017-03-17 11:56:22	NA
+1	192	C:\Windows\SysWOW64\DllHost.exe	2017-03-18 20:58:47	NA
+1	193	C:\Windows\system32\Sysprep\sysprep.exe	2017-03-18 20:57:08	NA
+1	194	C:\Windows\SoftwareDistribution\Download\Install\Windows-KB890830-x64-V5.50-delta.exe	2017-07-12 12:46:27	NA
+1	195	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2017.18062.13720.0_x64__8wekyb3d8bbwe\Application	2017-07-11 21:28:22	NA
+1	196	"00000009	07e1468e35980000	000a00003ad70000	8664	Microsoft.Windows.Photos	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	197	"00000009	000b001d59db0000	000a000037ec0000	8664	Microsoft.XboxIdentityProvider	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	198	C:\Windows\system32\srtasks.exe	2017-03-18 20:59:52	NA
+1	199	C:\Users\ROCKHA~1\AppData\Local\Temp\9F3FC23D-41C4-4BE3-873F-E4F81E6CE74A\dismhost.exe	2017-03-18 11:40:21	NA
+1	200	C:\Users\Rock Hammerfist\AppData\Local\Temp\9F3FC23D-41C4-4BE3-873F-E4F81E6CE74A\DismHost.exe	2017-03-18 11:40:21	NA
+1	201	C:\Windows\system32\mcbuilder.exe	2017-03-18 20:57:20	NA
+1	202	C:\Windows\system32\lpremove.exe	2017-03-18 20:58:29	NA
+1	203	C:\Users\ROCKHA~1\AppData\Local\Temp\31211391-3779-4A12-842F-FA2903407F0C\dismhost.exe	2017-03-18 11:40:21	NA
+1	204	C:\Users\Rock Hammerfist\AppData\Local\Temp\31211391-3779-4A12-842F-FA2903407F0C\DismHost.exe	2017-03-18 11:40:21	NA
+1	205	C:\Program Files\WindowsApps\9E2F88E3.Twitter_5.8.1.0_x86__wgeqdkkx372wm\Application	2017-07-07 16:36:20	NA
+1	206	"00000000	0005000800010000	000a00003ad70000	014c	9E2F88E3.Twitter	wgeqdkkx372wm	"	1601-01-01 00:00:00	NA
+1	207	"00000000	0005000800010000	000a00003ad70000	8664	9E2F88E3.Twitter	wgeqdkkx372wm	"	1601-01-01 00:00:00	NA
+1	208	C:\Users\ROCKHA~1\AppData\Local\Temp\F3370DDD-CAD5-482C-811C-C97EA277C416\dismhost.exe	2017-03-18 11:40:21	NA
+1	209	C:\Users\Rock Hammerfist\AppData\Local\Temp\F3370DDD-CAD5-482C-811C-C97EA277C416\DismHost.exe	2017-03-18 11:40:21	NA
+1	210	C:\Users\Rock Hammerfist\AppData\Local\Google\Chrome\User Data\SwReporter\19.108.1\software_reporter_tool.exe	2017-06-01 14:58:26	NA
+1	211	C:\Windows\TEMP\avg_a06592\MachineIdCreator.exe	2017-07-06 16:27:57	NA
+1	212	C:\Program Files (x86)\Mozilla Thunderbird\uninstall\helper.exe	2017-06-22 14:27:10	NA
+1	213	C:\Windows\system32\winsat.exe	2017-03-18 20:57:20	NA
+1	214	C:\Users\ROCKHA~1\AppData\Local\Temp\87C6D110-A6FD-4BED-908C-3732E664B6ED\dismhost.exe	2017-03-18 11:40:21	NA
+1	215	C:\Users\Rock Hammerfist\AppData\Local\Temp\87C6D110-A6FD-4BED-908C-3732E664B6ED\DismHost.exe	2017-03-18 11:40:21	NA
+1	216	C:\Windows\system32\dstokenclean.exe	2017-03-18 20:58:12	NA
+1	217	C:\Windows\system32\disksnapshot.exe	2017-03-18 20:57:58	NA
+1	218	C:\Program Files (x86)\Mozilla Thunderbird\thunderbird.exe	2017-06-22 14:26:30	NA
+1	219	C:\Program Files (x86)\Mozilla Maintenance Service\maintenanceservice.exe	2017-06-22 14:26:06	NA
+1	220	C:\Program Files (x86)\Mozilla Thunderbird\maintenanceservice_installer.exe	2017-06-22 14:26:08	NA
+1	221	C:\Users\ROCKHA~1\AppData\Local\Temp\7zSE0AC.tmp\setup.exe	2017-06-22 14:28:36	NA
+1	222	C:\Users\Rock Hammerfist\AppData\Local\Temp\7zSE0AC.tmp\setup.exe	2017-06-22 14:28:36	NA
+1	223	C:\Users\Rock Hammerfist\Downloads\Thunderbird Setup 52.2.1.exe	2017-07-06 15:50:12	NA
+1	224	C:\Users\Rock Hammerfist\AppData\Local\Microsoft\OneDrive\OneDriveStandaloneUpdater.exe	2017-07-31 19:21:47	NA
+1	225	"00000009	000a429e39770000	000a00003ac20000	8664	Microsoft.ZuneVideo	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	226	C:\Program Files\WindowsApps\Microsoft.XboxGameOverlay_1.18.23001.0_x64__8wekyb3d8bbwe\Application	2017-07-06 13:22:38	NA
+1	227	"00000009	0001001259d90000	000a00003f520000	8664	Microsoft.XboxGameOverlay	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	228	C:\Program Files (x86)\AVG\Antivirus\AvLaunch.exe	2017-07-24 19:50:53	NA
+1	229	C:\Program Files (x86)\AVG\Framework\Common\avguirna.exe	2017-07-03 17:20:04	NA
+1	230	"0000000b	000a00003ad7014c	000a00003ad7014c	8664	Microsoft.Windows.ShellExperienceHost	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	231	C:\Windows\system32\speech_onecore\common\SpeechModelDownload.exe	2017-03-18 20:58:10	NA
+1	232	C:\Windows\TEMP\DD68012A-D2A6-4319-862C-159C72FEB14A\dismhost.exe	2017-03-18 11:40:21	NA
+1	233	C:\Windows\system32\MusNotificationUX.exe	2017-06-03 09:10:02	NA
+1	234	C:\Windows\system32\MRT.exe	2017-07-12 12:55:27	NA
+1	235	C:\Windows\SoftwareDistribution\Download\Install\Windows-KB890830-x64-V5.49.exe	2017-07-06 00:02:19	NA
+1	236	C:\Windows\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.15063.410_none_9e914f9d2d85dacb\TiWorker.exe	2017-03-18 11:40:23	NA
+1	237	C:\Windows\system32\wuauclt.exe	2017-03-18 20:58:01	NA
+1	238	C:\Windows\system32\MusNotification.exe	2017-06-20 05:12:57	NA
+1	239	C:\Windows\system32\usoclient.exe	2017-03-18 20:58:01	NA
+1	240	C:\Windows\System32\sihclient.exe	2017-07-07 06:17:30	NA
+1	241	C:\Windows\system32\sc.exe	2017-03-18 20:57:46	NA
+1	242	C:\Windows\System32\wsqmcons.exe	2017-03-18 20:58:35	NA
+1	243	"00000000	0001005d04b00000	000a000028000000	8664	king.com.CandyCrushSodaSaga	kgqvnymyfvs32	"	1601-01-01 00:00:00	NA
+1	244	"00000009	0001000100fd0000	000a000038390000	8664	Microsoft.MinecraftUWP	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	245	"00000009	000c0000520d0001	0006000300000000	8664	Microsoft.VCLibs.120.00	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	246	"00000000	000c0000520d0001	0006000300000000	8664	Microsoft.VCLibs.120.00	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	247	"00000000	000200050000000b	0006000300000000	8664	A278AB0D.MarchofEmpires	h6adky7gbf63m	"	1601-01-01 00:00:00	NA
+1	248	C:\Program Files\WindowsApps\microsoft.windowscommunicationsapps_17.8241.41125.0_x64__8wekyb3d8bbwe\Application	2017-07-06 13:22:44	NA
+1	249	"00000009	00020000004a0000	000a0000295a0000	8664	ThumbmunkeysLtd.PhototasticCollage	nfy108tqq3p12	"	1601-01-01 00:00:00	NA
+1	250	"00000000	000a06aa00030000	000a000028000000	8664	Microsoft.Advertising.Xaml	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	251	"00000009	000a06aa00030000	000a000028000000	8664	Microsoft.Advertising.Xaml	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	252	"00000009	0003001018380000	000a000028000000	8664	Microsoft.MicrosoftSolitaireCollection	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	253	C:\Windows\Microsoft.NET\Framework\v4.0.30319\mscorsvw.exe	2017-03-18 21:00:01	NA
+1	254	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscorsvw.exe	2017-03-18 20:59:42	NA
+1	255	C:\Windows\Microsoft.NET\Framework\v4.0.30319\ngen.exe	2017-03-18 21:00:02	NA
+1	256	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\ngen.exe	2017-03-18 20:59:46	NA
+1	257	C:\Windows\Microsoft.NET\Framework\v4.0.30319\NGenTask.exe	2017-03-18 21:00:01	NA
+1	258	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\NGenTask.exe	2017-03-18 20:59:43	NA
+1	259	C:\Windows\system32\defrag.exe	2017-03-18 20:58:04	NA
+1	260	"00000009	00040015059a0000	000a00003ad70000	8664	Microsoft.BingNews	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	261	"00000009	000206a865b50000	000a00003ad70000	8664	Microsoft.MSPaint	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	262	"00000000	0005000800000000	000a00003ad70000	8664	9E2F88E3.Twitter	wgeqdkkx372wm	"	1601-01-01 00:00:00	NA
+1	263	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2017.18062.12990.0_x64__8wekyb3d8bbwe\Application	2017-07-05 15:09:15	NA
+1	264	"00000009	07e1468e32be0000	000a00003ad70000	8664	Microsoft.Windows.Photos	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	265	"00000009	000a0000064a0000	000a000028000000	8664	Microsoft.Services.Store.Engagement	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	266	"00000000	000a0000064a0000	000a000028000000	8664	Microsoft.Services.Store.Engagement	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	267	"00000009	000106a90bdf0000	000a00003ad70000	8664	Microsoft.Microsoft3DViewer	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	268	C:\Program Files\WindowsApps\Microsoft.SkypeApp_11.18.614.0_x64__kzf8qxf38zg5c\Application	2017-07-05 15:08:18	NA
+1	269	"00000009	0011204de1f10000	000a00003aa90000	8664	Microsoft.Office.OneNote	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	270	"00000009	000b001202660000	000a000038390000	8664	Microsoft.SkypeApp	kzf8qxf38zg5c	"	1601-01-01 00:00:00	NA
+1	271	"00000009	00112031a0a50000	000a00003aa90000	8664	microsoft.windowscommunicationsapps	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	272	C:\Program Files\WindowsApps\Microsoft.WindowsAlarms_10.1706.1531.0_x64__8wekyb3d8bbwe\Application	2017-07-05 15:07:26	NA
+1	273	"00000009	000a4292371f0000	000a00003ac20000	8664	Microsoft.ZuneMusic	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	274	"00000009	0001000661470000	000a000027410000	8664	Microsoft.NET.Native.Runtime.1.6	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	275	"00000000	0001000661470000	000a000027410000	8664	Microsoft.NET.Native.Runtime.1.6	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	276	"00000000	0001000661470000	000a000027410000	8664	Microsoft.NET.Native.Framework.1.6	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	277	"00000009	000a06aa05fb0000	000a00003ad70000	8664	Microsoft.WindowsAlarms	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	278	"00000009	0001000661470000	000a000027410000	8664	Microsoft.NET.Native.Framework.1.6	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	279	"00000009	07e1013400320000	000a000028000000	8664	Microsoft.WindowsCamera	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	280	"00000009	000a429237830000	000a00003ac20000	8664	Microsoft.ZuneVideo	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	281	"00000009	000a06aa06420000	000a00003ad70000	8664	Microsoft.WindowsCalculator	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	282	C:\Program Files (x86)\AVG\Framework\1\avgdiagex.exe	2017-07-03 17:20:52	NA
+1	283	"00000009	000106a806430000	000a00003ad70000	8664	Microsoft.WindowsFeedbackHub	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	284	C:\Program Files\WindowsApps\Microsoft.WindowsStore_11705.1001.21.0_x64__8wekyb3d8bbwe\Application	2017-07-05 15:05:17	NA
+1	285	"00000009	000a06aa06190000	000a00003ad70000	8664	Microsoft.WindowsSoundRecorder	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	286	C:\Program Files\WindowsApps\Microsoft.WindowsMaps_5.1705.1391.0_x64__8wekyb3d8bbwe\Application	2017-07-05 15:04:49	NA
+1	287	"00000009	000506a9056f0000	000a00003a9a0000	8664	Microsoft.WindowsMaps	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	288	"00000009	0005000a05a10000	000a000038390000	8664	Microsoft.Getstarted	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	289	"00000009	000a000205ab0000	000a00003a9b0000	8664	Microsoft.People	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	290	"00000009	2db903e900150000	000a00003ad70000	8664	Microsoft.WindowsStore	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	291	C:\Program Files\WindowsApps\Microsoft.MicrosoftOfficeHub_17.8312.7601.0_x64__8wekyb3d8bbwe\Application	2017-07-05 15:04:05	NA
+1	292	"00000009	001120781db10000	000a000037b10000	8664	Microsoft.MicrosoftOfficeHub	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	293	C:\Program Files\WindowsApps\Microsoft.XboxApp_29.30.2001.0_x64__8wekyb3d8bbwe\Application	2017-07-05 15:03:32	NA
+1	294	"00000009	0001000800000000	000a00003a920000	8664	Microsoft.MicrosoftStickyNotes	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	295	"00000009	001d001e07d10000	000a0000295a0000	8664	Microsoft.XboxApp	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	296	C:\Program Files\WindowsApps\Microsoft.BingWeather_4.20.1102.0_x64__8wekyb3d8bbwe\Application	2017-07-05 15:02:49	NA
+1	297	"00000009	000206a803b80000	000a00003ad20000	8664	Microsoft.OneConnect	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	298	"00000009	00040014044e0000	000a000038390000	8664	Microsoft.BingWeather	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	299	C:\Windows\system32\OpenWith.exe	2017-03-18 20:58:29	NA
+1	300	C:\Program Files (x86)\AVG\Antivirus\avBugReport.exe	2017-07-24 19:50:29	NA
+1	301	C:\Windows\SystemApps\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy\Application	2017-07-12 15:11:22	NA
+1	302	C:\Windows\system32\AuthHost.exe	2017-03-18 20:57:24	NA
+1	303	C:\Windows\System32\PickerHost.Exe	2017-03-18 20:58:16	NA
+1	304	C:\Program Files (x86)\AVG\Antivirus\x64\aswidsagenta.exe	2017-07-24 19:50:51	NA
+1	305	C:\Program Files (x86)\Google\Update\1.3.33.5\GoogleCrashHandler64.exe	2017-07-05 14:48:11	NA
+1	306	C:\Program Files (x86)\Google\Update\1.3.33.5\GoogleCrashHandler.exe	2017-07-05 14:48:10	NA
+1	307	C:\Program Files (x86)\AVG\Antivirus\setup\aswOfferTool.exe	2017-07-24 19:50:31	NA
+1	308	C:\Program Files (x86)\AVG\Antivirus\setup\instup.exe	2017-07-24 19:50:30	NA
+1	309	C:\Program Files (x86)\AVG\Setup\avgsetupx.exe	2017-07-05 14:50:28	NA
+1	310	C:\Program Files (x86)\AVG\Antivirus\wsc_proxy.exe	2017-07-24 19:50:52	NA
+1	311	C:\Program Files (x86)\AVG\Antivirus\AVGUI.exe	2017-07-31 19:28:31	NA
+1	312	C:\Program Files (x86)\AVG\Antivirus\AVGSvc.exe	2017-07-24 19:50:51	NA
+1	313	C:\Program Files (x86)\AVG\Antivirus\aswRunDll.exe	2017-07-24 19:50:54	NA
+1	314	C:\Program Files (x86)\AVG\Antivirus\x64\RegSvr.exe	2017-07-24 19:50:54	NA
+1	315	C:\Program Files (x86)\AVG\Antivirus\RegSvr.exe	2017-07-24 19:50:54	NA
+1	316	C:\Program Files (x86)\AVG\Antivirus\AvEmUpdate.exe	2017-07-24 19:50:51	NA
+1	317	C:\Program Files (x86)\AVG\Antivirus\x64\SetupInf.exe	2017-07-24 19:50:54	NA
+1	318	C:\Program Files (x86)\AVG\Antivirus\setup\CRT\InstallCrt.exe	2017-07-24 19:50:52	NA
+1	319	C:\Users\ROCKHA~1\AppData\Local\Temp\_av_iup.tm~a01368\New_11050bcd\instup.exe	2017-06-26 09:59:47	NA
+1	320	C:\Users\Rock Hammerfist\AppData\Local\Temp\_av_iup.tm~a01368\New_11050bcd\instup.exe	2017-06-26 09:59:47	NA
+1	321	C:\Users\ROCKHA~1\AppData\Local\Temp\_av_iup.tm~a01368\instup.exe	2017-07-05 14:51:42	NA
+1	322	C:\Users\Rock Hammerfist\AppData\Local\Temp\_av_iup.tm~a01368\Instup.exe	2017-07-05 14:51:42	NA
+1	323	C:\Windows\Temp\AvgSetup\921661a9-5790-47cf-905d-d119100afebf\install\bav\avg_free_antivirus_setup_online.exe	2017-07-05 14:51:40	NA
+1	324	C:\Program Files (x86)\AVG\Framework\Common\avguix.exe	2017-07-03 17:20:52	NA
+1	325	C:\Program Files (x86)\AVG\Framework\Common\avgsvca.exe	2017-07-03 17:20:48	NA
+1	326	C:\Windows\Temp\7zSC3BF55DC\InstallCrt.exe	2017-01-03 12:26:22	NA
+1	327	C:\Windows\Temp\AvgSetup\921661a9-5790-47cf-905d-d119100afebf\install\fmw\vc_redist.x86.exe	2017-07-05 14:51:01	NA
+1	328	C:\Windows\Temp\7zS48C042AC\InstallCrt.exe	2017-01-03 12:26:22	NA
+1	329	C:\Windows\Temp\AvgSetup\921661a9-5790-47cf-905d-d119100afebf\install\fmw\vc_redist.x64.exe	2017-07-05 14:51:00	NA
+1	330	C:\Windows\Temp\AvgSetup\921661a9-5790-47cf-905d-d119100afebf\install\avgOfferTool.exe	2017-07-05 14:50:40	NA
+1	331	C:\Windows\System32\conhost.exe	2017-03-18 20:57:35	NA
+1	332	C:\Users\ROCKHA~1\AppData\Local\Temp\avg_a00320\MachineIdCreator.exe	2017-07-05 14:50:43	NA
+1	333	C:\Users\Rock Hammerfist\AppData\Local\Temp\avg_a00320\MachineIdCreator.exe	2017-07-05 14:50:43	NA
+1	334	C:\Windows\Temp\AvgSetup\921661a9-5790-47cf-905d-d119100afebf\install\avgsetupx.exe	2017-07-05 14:50:28	NA
+1	335	C:\Windows\Temp\7zS860D866C\avgsetupx.exe	2017-01-09 14:35:02	NA
+1	336	C:\Users\Rock Hammerfist\AppData\Local\Packages\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\TempState\Downloads\AVG_Protection_Free_1606.exe	2017-07-05 14:50:14	NA
+1	337	C:\Windows\System32\InstallAgentUserBroker.exe	2017-06-20 05:05:53	NA
+1	338	C:\Program Files (x86)\Google\Chrome\Application\59.0.3071.115\Installer\chrmstp.exe	2017-07-05 14:48:20	NA
+1	339	C:\Program Files (x86)\Google\Chrome\Application\chrome.exe	2017-06-23 03:21:09	NA
+1	340	C:\Program Files (x86)\Google\Update\1.3.33.5\GoogleUpdateOnDemand.exe	2017-07-05 14:48:11	NA
+1	341	C:\Users\ROCKHA~1\AppData\Local\Temp\CR_C5CBE.tmp\setup.exe	2017-07-05 14:48:20	NA
+1	342	C:\Users\Rock Hammerfist\AppData\Local\Temp\CR_C5CBE.tmp\setup.exe	2017-07-05 14:48:20	NA
+1	343	C:\Program Files (x86)\Google\Update\Install\{946D1D1D-EAC6-479A-82A9-0EC745884422}\59.0.3071.115_chrome_installer.exe	2017-06-23 04:57:46	NA
+1	344	C:\Program Files (x86)\Google\Update\1.3.33.5\GoogleUpdateComRegisterShell64.exe	2017-07-05 14:48:11	NA
+1	345	C:\Program Files (x86)\Google\Update\GoogleUpdate.exe	2017-07-05 14:48:10	NA
+1	346	C:\Program Files (x86)\GUM201A.tmp\GoogleUpdate.exe	2017-07-05 14:48:10	NA
+1	347	C:\Users\ROCKHA~1\AppData\Local\Temp\GUMEFE2.tmp\GoogleUpdateSetup.exe	2017-07-05 14:47:54	NA
+1	348	C:\Users\Rock Hammerfist\AppData\Local\Temp\GUMEFE2.tmp\GoogleUpdateSetup.exe	2017-07-05 14:47:54	NA
+1	349	C:\Users\ROCKHA~1\AppData\Local\Temp\GUMEFE2.tmp\GoogleUpdate.exe	2017-07-05 14:47:58	NA
+1	350	C:\Users\Rock Hammerfist\AppData\Local\Temp\GUMEFE2.tmp\GoogleUpdate.exe	2017-07-05 14:47:58	NA
+1	351	C:\Users\Rock Hammerfist\AppData\Local\Packages\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\TempState\Downloads\ChromeSetup.exe	2017-07-05 14:47:54	NA
+1	352	C:\Users\Rock Hammerfist\AppData\Local\Microsoft\OneDrive\17.3.6917.0607\FileSyncConfig.exe	2017-07-05 14:45:35	NA
+1	353	C:\Users\Rock Hammerfist\AppData\Local\Microsoft\OneDrive\Update\OneDriveSetup.exe	2017-07-13 01:02:12	NA
+1	354	C:\Users\Rock Hammerfist\AppData\Local\Microsoft\OneDrive\OneDrive.exe	2017-07-31 19:21:46	NA
+1	355	C:\Windows\System32\LocationNotificationWindows.exe	2017-03-18 20:57:23	NA
+1	356	C:\Users\Rock Hammerfist\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\FileSyncConfig.exe	2017-07-05 14:41:34	NA
+1	357	C:\Windows\system32\AUDIODG.EXE	2017-06-20 05:59:05	NA
+1	358	C:\Windows\system32\mspaint.exe	2017-03-18 20:58:25	NA
+1	359	C:\Windows\Speech\Common\sapisvr.exe	2017-03-18 20:57:33	NA
+1	360	C:\Windows\system32\notepad.exe	2017-03-18 20:58:29	NA
+1	361	C:\Windows\system32\osk.exe	2017-03-18 20:57:32	NA
+1	362	C:\Windows\system32\charmap.exe	2017-03-18 20:58:29	NA
+1	363	C:\Windows\system32\odbcad32.exe	2017-03-18 20:57:30	NA
+1	364	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe	2017-03-18 21:00:04	NA
+1	365	C:\Windows\system32\msconfig.exe	2017-03-18 20:57:19	NA
+1	366	C:\Windows\system32\quickassist.exe	2017-03-18 04:55:42	NA
+1	367	C:\Windows\system32\cleanmgr.exe	2017-03-18 20:58:27	NA
+1	368	C:\Windows\system32\iscsicpl.exe	2017-03-18 20:57:24	NA
+1	369	C:\Program Files (x86)\Windows Media Player\wmplayer.exe	2017-03-18 04:42:24	NA
+1	370	C:\Windows\system32\narrator.exe	2017-03-18 20:57:33	NA
+1	371	C:\Windows\system32\mstsc.exe	2017-03-18 20:58:33	NA
+1	372	C:\Windows\syswow64\WindowsPowerShell\v1.0\PowerShell_ISE.exe	2017-03-18 20:59:52	NA
+1	373	C:\Windows\system32\msinfo32.exe	2017-03-18 20:57:08	NA
+1	374	C:\Windows\system32\WFS.exe	2017-03-18 20:59:50	NA
+1	375	C:\Program Files\Common Files\Microsoft Shared\Ink\mip.exe	2017-03-19 02:30:54	NA
+1	376	C:\Windows\system32\MdSched.exe	2017-03-18 20:57:16	NA
+1	377	C:\Windows\system32\dfrgui.exe	2017-03-18 20:57:16	NA
+1	378	C:\Windows\syswow64\odbcad32.exe	2017-03-18 20:58:42	NA
+1	379	C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe	2017-03-18 21:00:07	NA
+1	380	C:\Windows\system32\magnify.exe	2017-03-18 20:57:33	NA
+1	381	C:\Windows\system32\taskmgr.exe	2017-03-18 20:57:08	NA
+1	382	C:\Windows\system32\SnippingTool.exe	2017-03-19 02:30:48	NA
+1	383	C:\Windows\system32\xpsrchvw.exe	2017-03-18 20:59:52	NA
+1	384	C:\Windows\system32\psr.exe	2017-03-18 20:57:12	NA
+1	385	C:\Program Files\Windows NT\Accessories\wordpad.exe	2017-03-18 20:58:29	NA
+1	386	C:\Windows\system32\AppHostRegistrationVerifier.exe	2017-03-18 20:58:21	NA
+1	387	C:\Program Files\WindowsApps\Microsoft.BingWeather_4.18.56.0_x64__8wekyb3d8bbwe\Application	2017-07-05 17:32:13	NA
+1	388	C:\Windows\ImmersiveControlPanel\SystemSettings.exe	2017-03-18 20:59:54	NA
+1	389	C:\Program Files\WindowsApps\Microsoft.Messaging_3.26.24002.0_x64__8wekyb3d8bbwe\Application	2017-07-05 17:32:16	NA
+1	390	C:\Program Files\WindowsApps\Microsoft.MicrosoftOfficeHub_17.8010.5926.0_x64__8wekyb3d8bbwe\Application	2017-07-05 17:32:17	NA
+1	391	C:\Windows\System32\SystemSettingsBroker.exe	2017-03-18 20:58:07	NA
+1	392	C:\Program Files\WindowsApps\Microsoft.Wallet_1.0.16328.0_x64__8wekyb3d8bbwe\Application	2017-07-05 17:32:31	NA
+1	393	C:\Program Files\VMware\VMware Tools\VMwareResolutionSet.exe	2017-03-17 11:56:20	NA
+1	394	C:\Program Files\WindowsApps\Microsoft.WindowsMaps_5.1611.10393.0_x64__8wekyb3d8bbwe\Application	2017-07-05 17:32:45	NA
+1	395	C:\Program Files\WindowsApps\Microsoft.XboxApp_25.25.13009.0_x64__8wekyb3d8bbwe\Application	2017-07-05 17:32:48	NA
+1	396	"00000009	000100045e890000	000a000027410000	8664	Microsoft.NET.Native.Runtime.1.4	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	397	"00000000	000100045e890000	000a000027410000	8664	Microsoft.NET.Native.Runtime.1.4	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	398	C:\Program Files\WindowsApps\Microsoft.XboxGameOverlay_1.15.2003.0_x64__8wekyb3d8bbwe\Application	2017-07-05 17:32:48	NA
+1	399	C:\Program Files\WindowsApps\Microsoft.SkypeApp_11.8.204.0_x64__kzf8qxf38zg5c\Application	2017-07-05 17:32:31	NA
+1	400	C:\Program Files\WindowsApps\Microsoft.WindowsAlarms_10.1702.333.0_x64__8wekyb3d8bbwe\Application	2017-07-05 17:32:34	NA
+1	401	"0000000b	000a00003ad70000	000a00003ad70000	8664	Microsoft.Windows.HolographicFirstRun	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	402	"0000000b	000a00003ad70000	000a000000000000	8664	Microsoft.Windows.OOBENetworkConnectionFlow	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	403	"0000000b	000a00003ad70000	000a00003ad70000	8664	Microsoft.Windows.WindowPicker	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	404	"0000000b	03e83ad700000000	000a000000000000	8664	Microsoft.Windows.ParentalControls	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	405	"0000000b	000a00003ad70000	000a000000000000	8664	Microsoft.Windows.OOBENetworkCaptivePortal	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	406	"0000000b	000a00003ad70000	000a000029360000	8664	EnvironmentsApp	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	407	"0000000b	000a00003ad70000	000a00003ad70000	8664	E2A4F912-2574-4A75-9BB0-0D023378592B	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	408	"0000000b	03e83ad700000000	000a000000000000	8664	DesktopView	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	409	"0000000b	000a00003ad70000	000a000000000000	8664	Microsoft.CredDialogHost	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	410	"0000000b	000a00003ad70000	000a000000000000	8664	Microsoft.LockApp	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	411	"0000000b	03e83ad700000000	000a000000000000	8664	Microsoft.Windows.AssignedAccessLockApp	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	412	"0000000b	03e83ad700000000	000a000000000000	8664	Microsoft.Windows.Apprep.ChxApp	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	413	"0000000b	0006000300000000	000a000000000000	8664	Windows.MiracastView	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	414	"0000000b	000a00003ad70000	000a00003ad70000	8664	1527c705-839a-4832-9118-54d4Bd6a0c89	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	415	"0000000b	000a000000000000	000a000000000000	8664	Microsoft.Windows.SecondaryTileExperience	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	416	"0000000b	000a00003ad70000	000a00003ad70000	8664	c5e2524a-ea46-4f67-841f-6a9465d9d515	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	417	"0000000b	0006000200000000	000a000000000000	8664	Windows.PrintDialog	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	418	C:\Windows\system32\browser_broker.exe	2017-04-28 00:59:32	NA
+1	419	"0000000b	00283ad700000000	000a00003ad70000	8664	Microsoft.MicrosoftEdge	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	420	C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\Application	2017-07-12 15:11:22	NA
+1	421	C:\Windows\system32\ApplicationFrameHost.exe	2017-03-18 20:58:23	NA
+1	422	C:\Windows\system32\verclsid.exe	2017-03-18 20:58:27	NA
+1	423	C:\Windows\SysWOW64\OneDriveSetup.exe	2017-03-18 20:57:00	NA
+1	424	C:\Program Files\Windows Defender\MSASCuiL.exe	2017-03-18 20:56:44	NA
+1	425	C:\Windows\system32\consent.exe	2017-03-18 20:57:29	NA
+1	426	C:\Program Files\Internet Explorer\iexplore.exe	2017-03-18 05:43:20	NA
+1	427	C:\Windows\System32\mobsync.exe	2017-03-18 20:58:27	NA
+1	428	\\?\C:\Windows\system32\wbem\WMIADAP.EXE	2017-03-18 20:57:50	NA
+1	429	C:\Windows\System32\fsquirt.exe	2017-03-18 20:57:20	NA
+1	430	C:\Program Files\WindowsApps\microsoft.windowscommunicationsapps_17.7906.42257.0_x64__8wekyb3d8bbwe\Application	2017-07-05 17:32:41	NA
+1	431	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_16.511.8780.0_x64__8wekyb3d8bbwe\Application	2017-07-05 17:32:33	NA
+1	432	C:\Program Files\WindowsApps\Microsoft.WindowsStore_11701.1001.87.0_x64__8wekyb3d8bbwe\Application	2017-07-05 17:32:47	NA
+1	433	C:\Windows\system32\SettingSyncHost.exe	2017-03-18 20:58:10	NA
+1	434	C:\Windows\system32\vssvc.exe	2017-03-18 20:57:08	NA
+1	435	C:\Windows\system32\dmclient.exe	2017-03-18 20:57:50	NA
+1	436	C:\Windows\system32\wermgr.exe	2017-03-18 20:57:50	NA
+1	437	C:\Windows\system32\WerFault.exe	2017-03-18 20:57:54	NA
+1	438	C:\Windows\system32\wbem\WmiApSrv.exe	2017-03-18 20:57:50	NA
+1	439	C:\Program Files\VMware\VMware Tools\TPAutoConnect.exe	2017-03-17 11:06:06	NA
+1	440	C:\Windows\System32\SLUI.exe	2017-03-18 20:57:29	NA
+1	441	C:\Windows\System32\msdtc.exe	2017-03-18 20:57:20	NA
+1	442	C:\Windows\system32\SppExtComObj.exe	2017-03-18 20:57:29	NA
+1	443	C:\Program Files\Common Files\VMware\Drivers\vss\comreg.exe	2017-03-17 12:00:00	NA
+1	444	C:\Program Files\VMware\VMware Tools\vmtoolsd.exe	2017-03-17 11:56:42	NA
+1	445	C:\Program Files\VMware\VMware Tools\guestproxycerttool.exe	2017-03-17 11:56:22	NA
+1	446	C:\Windows\syswow64\WOWReg32.exe	2017-03-18 20:58:39	NA
+1	447	C:\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\RemoteCommandProvider.exe	2017-03-17 11:36:14	NA
+1	448	C:\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\InstallProvider.exe	2017-03-17 11:36:14	NA
+1	449	C:\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\ConfigProvider.exe	2017-03-17 11:36:14	NA
+1	450	C:\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\TestInfraProvider.exe	2017-03-17 11:36:14	NA
+1	451	C:\Windows\system32\GenValObj.exe	2017-03-18 20:57:29	NA
+1	452	C:\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\ManagementAgentHost.exe	2017-03-17 11:25:28	NA
+1	453	C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe	2017-03-17 11:05:14	NA
+1	454	C:\Program Files\VMware\VMware Tools\vmacthlp.exe	2017-03-17 11:51:48	NA
+1	455	C:\Program Files\VMware\VMware Tools\TPVCGateway.exe	2017-03-17 11:06:06	NA
+1	456	C:\Program Files\VMware\VMware Tools\TPAutoConnSvc.exe	2017-03-17 11:06:04	NA
+1	457	C:\Windows\System32\printui.exe	2017-03-18 20:58:23	NA
+1	458	C:\Windows\SysWOW64\cmd.exe	2017-03-18 20:58:48	NA
+1	459	C:\Windows\syswow64\MsiExec.exe	2017-03-18 20:58:37	NA
+1	460	c:\1886ab3a5d85eed3ee\install.exe	2011-04-19 08:09:16	NA
+1	461	C:\Users\ROCKHA~1\AppData\Local\Temp\{D2236796-832D-4E8C-A337-0C6EEB8ACB27}~setup\vcredist_x64.exe	2017-07-05 14:34:37	NA
+1	462	C:\Users\Rock Hammerfist\AppData\Local\Temp\{D2236796-832D-4E8C-A337-0C6EEB8ACB27}~setup\vcredist_x64.exe	2017-07-05 14:34:37	NA
+1	463	C:\Windows\System32\smartscreen.exe	2017-05-20 05:56:34	NA
+1	464	C:\Windows\System32\InstallAgent.exe	2017-06-20 05:05:25	NA
+1	465	C:\Windows\System32\RuntimeBroker.exe	2017-03-18 20:58:01	NA
+1	466	C:\Windows\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy\Application	2017-07-12 15:11:23	NA
+1	467	C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\Application	2017-07-06 01:05:02	NA
+1	468	C:\Windows\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.15063.0_none_1a733a82001933cc\TiWorker.exe	2017-03-18 11:40:23	NA
+1	469	C:\Windows\system32\msiexec.exe	2017-03-18 20:57:05	NA
+1	470	"00000009	000e00005e3b0000	000a0000273a0000	8664	Microsoft.VCLibs.140.00	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	471	"00000000	000e00005e3b0000	000a0000273a0000	8664	Microsoft.VCLibs.140.00	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	472	"00000009	000100035e890000	000a000027410000	8664	Microsoft.NET.Native.Framework.1.3	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	473	"00000000	000100035e890000	000a000027410000	8664	Microsoft.NET.Native.Framework.1.3	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	474	"00000009	000100035d5d0000	000a000027410000	8664	Microsoft.NET.Native.Runtime.1.3	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	475	"00000000	000100035d5d0000	000a000027410000	8664	Microsoft.NET.Native.Runtime.1.3	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	476	c:\129cc482f2dc4a876458d9\install.exe	2011-04-19 04:30:10	NA
+1	477	C:\Users\ROCKHA~1\AppData\Local\Temp\{D2236796-832D-4E8C-A337-0C6EEB8ACB27}~setup\vcredist_x86.exe	2017-07-05 14:34:36	NA
+1	478	C:\Users\Rock Hammerfist\AppData\Local\Temp\{D2236796-832D-4E8C-A337-0C6EEB8ACB27}~setup\vcredist_x86.exe	2017-07-05 14:34:36	NA
+1	479	C:\Users\ROCKHA~1\AppData\Local\Temp\vmware-Rock Hammerfist\000010f5\setup64.exe	2017-07-05 14:34:34	NA
+1	480	C:\Windows\SystemApps\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\Application	2017-07-12 15:11:23	NA
+1	481	C:\Users\Rock Hammerfist\AppData\Local\Temp\vmware-Rock Hammerfist\000010f5\setup64.exe	2017-07-05 14:34:34	NA
+1	482	C:\Users\ROCKHA~1\AppData\Local\Temp\vmware-Rock Hammerfist\000010f5\setup.exe	2017-07-05 14:34:33	NA
+1	483	C:\Users\Rock Hammerfist\AppData\Local\Temp\vmware-Rock Hammerfist\000010f5\setup.exe	2017-07-05 14:34:33	NA
+1	484	"0000000b	0006000200000000	000a00003fff0000	8664	windows.immersivecontrolpanel	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	485	C:\Windows\System32\cscript.exe	2017-03-18 20:58:07	NA
+1	486	C:\Windows\system32\net1.exe	2017-03-18 20:57:54	NA
+1	487	C:\Windows\System32\net.exe	2017-03-18 20:57:58	NA
+1	488	C:\Windows\System32\powercfg.exe	2017-03-18 20:58:00	NA
+1	489	C:\Users\ROCKHA~1\AppData\Local\Temp\upgrader.exe	2017-07-05 14:28:00	NA
+1	490	C:\Users\Rock Hammerfist\AppData\Local\Temp\upgrader.exe	2017-07-05 14:28:00	NA
+1	491	C:\Windows\system32\PING.EXE	2017-03-18 20:58:51	NA
+1	492	C:\Windows\System32\cmd.exe	2017-03-18 20:57:50	NA
+1	493	C:\Windows\System32\ie4uinit.exe	2017-04-28 00:05:49	NA
+1	494	C:\Windows\System32\unregmp2.exe	2017-03-18 04:54:52	NA
+1	495	C:\Windows\System32\runonce.exe	2017-03-18 20:58:29	NA
+1	496	C:\Windows\system32\ClipRenew.exe	2017-03-19 02:31:02	NA
+1	497	C:\Windows\Explorer.EXE	2017-06-20 06:04:03	NA
+1	498	C:\Windows\system32\userinit.exe	2017-03-18 20:58:21	NA
+1	499	C:\Windows\system32\MDMAgent.exe	2017-03-18 20:57:05	NA
+1	500	C:\Windows\System32\sihost.exe	2017-03-18 20:58:10	NA
+1	501	C:\Windows\system32\DllHost.exe	2017-03-18 20:58:21	NA
+1	502	C:\Windows\system32\oobe\FirstLogonAnim.exe	2017-03-18 20:58:29	NA
+1	503	C:\Windows\system32\LogonUI.exe	2017-03-18 20:57:29	NA
+1	504	C:\Windows\system32\compattelrunner.exe	2017-06-20 06:18:42	NA
+1	505	C:\Windows\system32\devicecensus.exe	2017-06-20 06:17:57	NA
+1	506	C:\Windows\SysWOW64\regsvr32.exe	2017-03-18 20:58:48	NA
+1	507	C:\Windows\system32\regsvr32.exe	2017-03-18 20:57:53	NA
+1	508	C:\Windows\System32\taskhostw.exe	2017-03-18 20:57:57	NA
+1	509	C:\Windows\system32\Clipup.exe	2017-03-18 20:57:50	NA
+1	510	C:\Windows\system32\wbem\wmiprvse.exe	2017-03-18 20:58:01	NA
+1	511	C:\Windows\system32\SearchFilterHost.exe	2017-03-18 20:58:18	NA
+1	512	C:\Windows\system32\SearchProtocolHost.exe	2017-06-20 05:05:05	NA
+1	513	C:\Windows\system32\SearchIndexer.exe	2017-06-03 09:00:22	NA
+1	514	C:\Windows\system32\oobe\msoobe.exe	2017-03-18 20:58:25	NA
+1	515	C:\WINDOWS\SYSTEM32\RUNDLL32.EXE	2017-03-18 20:58:29	NA
+1	516	C:\Windows\system32\oobe\oobeldr.exe	2017-03-18 20:57:53	NA
+1	517	C:\WINDOWS\SYSTEM32\reg.exe	2017-03-18 20:57:53	NA
+1	518	C:\WINDOWS\SYSTEM32\SETUPUGC.EXE	2017-03-18 20:57:47	NA
+1	519	C:\Windows\system32\provtool.exe	2017-03-18 20:58:10	NA
+1	520	C:\Windows\SysWOW64\ByteCodeGenerator.exe	2017-03-18 20:58:46	NA
+1	521	C:\Windows\system32\ByteCodeGenerator.exe	2017-03-18 20:58:01	NA
+1	522	"00000009	000a3ef02d510000	000a00003aa10000	8664	Microsoft.ZuneVideo	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	523	"00000009	000a3ef02d650000	000a00003aa10000	8664	Microsoft.ZuneMusic	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	524	"00000009	000b00134a3b0000	000a000037ec0000	8664	Microsoft.XboxIdentityProvider	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	525	"00000009	0001000f07d30000	000a00003ab70000	8664	Microsoft.XboxGameOverlay	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	526	"00000009	0019001932d10000	000a0000295a0000	8664	Microsoft.XboxApp	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	527	"00000009	2db503e900570000	000a000038390000	8664	Microsoft.WindowsStore	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	528	"00000009	000a06a6012d0000	000a000038390000	8664	Microsoft.WindowsSoundRecorder	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	529	"00000009	0005064b28990000	000a000037cd0000	8664	Microsoft.WindowsMaps	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	530	"00000009	0001064c28480000	000a00003a8b0000	8664	Microsoft.WindowsFeedbackHub	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	531	"00000009	00111ee2a5110000	000a0000383a0000	8664	microsoft.windowscommunicationsapps	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	532	"00000009	07e1007d00280000	000a000028000000	8664	Microsoft.WindowsCamera	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	533	"00000009	000a06a6014d0000	000a000038390000	8664	Microsoft.WindowsAlarms	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	534	"00000009	001001ff224c0000	000a0000295a0000	8664	Microsoft.Windows.Photos	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	535	"00000009	000100003fc80000	000a00003a770000	8664	Microsoft.Wallet	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	536	"00000009	000b000800cc0000	000a000038390000	8664	Microsoft.SkypeApp	kzf8qxf38zg5c	"	1601-01-01 00:00:00	NA
+1	537	"00000009	000a000129230000	000a00003a9b0000	8664	Microsoft.People	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	538	"00000009	000206a501150000	000a00003a7d0000	8664	Microsoft.OneConnect	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	539	"00000009	00111df4e2d70000	000a000038200000	8664	Microsoft.Office.OneNote	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	540	"00000009	000106a66d710000	000a000039d00000	8664	Microsoft.MSPaint	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	541	"00000009	0001000400650000	000a00003a9a0000	8664	Microsoft.MicrosoftStickyNotes	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	542	"00000009	0003000e049d0000	000a000028000000	8664	Microsoft.MicrosoftSolitaireCollection	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	543	"00000009	00111f4a17260000	000a000037b10000	8664	Microsoft.MicrosoftOfficeHub	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	544	"00000009	000106a6522f0000	000a000039d00000	8664	Microsoft.Microsoft3DViewer	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	545	"00000009	0003001a5dc20000	000a000037ec0000	8664	Microsoft.Messaging	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	546	"00000009	0004000500060000	000a000038390000	8664	Microsoft.Getstarted	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	547	"00000009	0004001200380000	000a000038390000	8664	Microsoft.BingWeather	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	548	"00000000	000a000006450000	000a000028000000	8664	Microsoft.Advertising.Xaml	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	549	"00000009	000a000006450000	000a000028000000	8664	Microsoft.Advertising.Xaml	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	550	"0000000b	000a00003ad70000	000a000000000000	8664	Windows.ContactSupport	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	551	"0000000b	03e83ad700000000	000a000000000000	8664	Microsoft.XboxGameCallableUI	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	552	"0000000b	000a00003ad70000	000a00003ad70000	8664	Microsoft.Windows.ShellExperienceHost	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	553	"0000000b	000a00003ad70000	000a000000000000	8664	Microsoft.Windows.SecureAssessmentBrowser	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	554	"0000000b	000a00003ad70000	000a00003a6103e8	8664	Microsoft.Windows.SecHealthUI	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	555	"0000000b	03e83ad700000000	03e83ad700000000	8664	Microsoft.Windows.ModalSharePickerHost	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	556	"0000000b	00010008000c3ad7	000a00003ad70000	8664	Microsoft.Windows.Cortana	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	557	"0000000b	000a00003ad70000	000a000000000000	8664	Microsoft.Windows.ContentDeliveryManager	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	558	"0000000b	000a00003ad70000	000b000000000000	8664	Microsoft.Windows.CloudExperienceHost	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	559	"0000000b	000a00003ad70000	000a000000000000	8664	Microsoft.PPIProjection	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	560	"0000000b	00283ad700000000	000c000000000000	8664	Microsoft.MicrosoftEdge	8wekyb3d8bbwe	"	1601-01-01 00:00:00	NA
+1	561	"0000000b	000a00003ad70000	000a000000000000	8664	Microsoft.BioEnrollment	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	562	"0000000b	000a00003ad70000	000a00003ad70000	8664	Microsoft.AccountsControl	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	563	"0000000b	03e83ad700000000	000a0000295b0000	8664	Microsoft.AAD.BrokerPlugin	cw5n1h2txyewy	neutral"	1601-01-01 00:00:00	NA
+1	564	"0000000b	000a00003ad70000	000a000029360000	8664	HoloShell	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	565	"0000000b	0001000000000002	000a000000000000	8664	HoloItemPlayerApp	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	566	"0000000b	0001000000000005	000a000029360000	8664	HoloCamera	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	567	"0000000b	03e83ad700000000	000a000000000000	8664	DesktopLearning	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	568	"0000000b	000a00003ad70000	000a000029360000	8664	CortanaListenUIApp	cw5n1h2txyewy	"	1601-01-01 00:00:00	NA
+1	569	c:\windows\system32\NetCfgNotifyObjectHost.exe	2017-03-18 20:58:00	NA
+1	570	C:\Windows\System32\WUDFHost.exe	2017-03-18 20:57:38	NA
+1	571	C:\Program Files\Windows Defender\NisSrv.exe	2017-03-18 20:56:44	NA
+1	572	C:\Program Files\Windows Defender\MpCmdRun.exe	2017-06-20 06:01:26	NA
+1	573	C:\Windows\system32\DrvInst.exe	2017-03-18 20:57:11	NA
+1	574	C:\Program Files\Windows Defender\MsMpEng.exe	2017-06-20 06:01:21	NA
+1	575	C:\Windows\system32\SecurityHealthService.exe	2017-07-07 07:13:07	NA
+1	576	C:\Windows\System32\spoolsv.exe	2017-03-18 20:58:24	NA
+1	577	C:\Windows\servicing\TrustedInstaller.exe	2017-03-18 11:40:21	NA
+1	578	C:\Windows\system32\secinit.exe	2017-03-18 20:57:05	NA
+1	579	C:\Windows\system32\oobe\setup.exe	2017-03-18 20:57:19	NA
+1	580	C:\Windows\system32\oobe\windeploy.exe	2017-03-18 20:57:53	NA
+1	581	C:\Windows\system32\sppsvc.exe	2017-03-18 20:57:29	NA
+1	582	C:\Windows\system32\dwm.exe	2017-03-18 20:58:21	NA
+1	583	C:\Windows\system32\fontdrvhost.exe	2017-07-07 07:27:41	NA
+1	584	C:\Windows\system32\svchost.exe	2017-03-18 20:58:21	NA
+1	585	C:\Windows\system32\lsass.exe	2017-07-07 07:07:38	NA
+1	586	C:\Windows\system32\services.exe	2017-03-18 20:57:39	NA
