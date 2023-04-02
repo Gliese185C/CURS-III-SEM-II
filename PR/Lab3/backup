@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": "3d627c0b-362a-4ff7-a5ff-628e5f2d34c3",
+      "email": "ababiy495@gmail.com",
+      "nick_name": "JonyHowman",
+      "name": "Edward",
+      "phone": "+37360597059",
+      "address": "Ulita",
+      "pass id": "357 918 345"
+    },
+    {
+      "id": "7dae6069-a6cf-404c-8fd6-574e6975e09d",
+      "email": "monkey.factory@gmail.com",
+      "nick_name": "MonkeyFactory",
+      "name": "Elisabeth",
+      "phone": "+44674936834",
+      "address": "Bulevard Stefana",
+      "pass id": "876 912 345"
+    },
+    {
+      "id": "fd933289-2b8c-4a64-b50f-eb2cc2d29760",
+      "email": "usa.military@gmail.com",
+      "nick_name": "RussiaFederation",
+      "name": "Vladimir",
+      "phone": "+79583985495",
+      "address": "Kremili",
+      "pass id": "000 000 000"
+    }
+  ]
+}
